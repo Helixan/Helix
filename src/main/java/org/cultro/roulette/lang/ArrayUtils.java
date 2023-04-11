@@ -730,4 +730,180 @@ public class ArrayUtils {
         }
         return newArray;
     }
+
+    public static Boolean[] toObject(final boolean[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Boolean[] newArray = new Boolean[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Byte[] toObject(final byte[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Byte[] newArray = new Byte[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Character[] toObject(final char[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Character[] newArray = new Character[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Double[] toObject(final double[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Double[] newArray = new Double[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Float[] toObject(final float[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Float[] newArray = new Float[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Integer[] toObject(final int[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Integer[] newArray = new Integer[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Long[] toObject(final long[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Long[] newArray = new Long[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Short[] toObject(final short[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Short[] newArray = new Short[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static boolean[] toPrimitive(final Boolean[] array) {
+        if (array == null) {
+            return null;
+        }
+        final boolean[] newArray = new boolean[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static byte[] toPrimitive(final Byte[] array) {
+        if (array == null) {
+            return null;
+        }
+        final byte[] newArray = new byte[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static char[] toPrimitive(final Character[] array) {
+        if (array == null) {
+            return null;
+        }
+        final char[] newArray = new char[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static double[] toPrimitive(final Double[] array) {
+        if (array == null) {
+            return null;
+        }
+        final double[] newArray = new double[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static float[] toPrimitive(final Float[] array) {
+        if (array == null) {
+            return null;
+        }
+        final float[] newArray = new float[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static int[] toPrimitive(final Integer[] array) {
+        if (array == null) {
+            return null;
+        }
+        final int[] newArray = new int[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static long[] toPrimitive(final Long[] array) {
+        if (array == null) {
+            return null;
+        }
+        final long[] newArray = new long[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static short[] toPrimitive(final Short[] array) {
+        if (array == null) {
+            return null;
+        }
+        final short[] newArray = new short[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
 }
