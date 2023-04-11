@@ -11,11 +11,11 @@ import java.util.regex.Pattern;
 public final class RString {
     private final String value;
 
-    public RString(RString value) {
+    public RString(final RString value) {
         this.value = value.toString();
     }
 
-    public RString(String value) {
+    public RString(final String value) {
         if (value == null) {
             this.value = "";
         } else {
@@ -23,7 +23,7 @@ public final class RString {
         }
     }
 
-    public RString(char[] values) {
+    public RString(final char[] values) {
         this.value = new String(values);
     }
 
@@ -39,40 +39,40 @@ public final class RString {
         return value.isEmpty();
     }
 
-    public char charAt(int index) {
+    public char charAt(final int index) {
         return value.charAt(index);
     }
 
-    public int codePointAt(int index) {
+    public int codePointAt(final int index) {
         return value.codePointAt(index);
     }
 
-    public int codePointBefore(int index) {
+    public int codePointBefore(final int index) {
         return value.codePointBefore(index);
     }
 
-    public int codePointCount(int beginIndex, int endIndex) {
+    public int codePointCount(final int beginIndex, final int endIndex) {
         return value.codePointCount(beginIndex, endIndex);
     }
 
-    public int offsetByCodePoints(int index, int codePointOffset) {
+    public int offsetByCodePoints(final int index, final int codePointOffset) {
         return value.offsetByCodePoints(index, codePointOffset);
     }
 
-    public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) {
+    public void getChars(final int srcBegin, final int srcEnd, final char[] dst, final int dstBegin) {
         value.getChars(srcBegin, srcEnd, dst, dstBegin);
     }
 
     @Deprecated
-    public void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin) {
+    public void getBytes(final int srcBegin, final int srcEnd, final byte[] dst, final int dstBegin) {
         value.getBytes(srcBegin, srcEnd, dst, dstBegin);
     }
 
-    public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
+    public byte[] getBytes(final String charsetName) throws UnsupportedEncodingException {
         return value.getBytes(charsetName);
     }
 
-    public byte[] getBytes(Charset charset) {
+    public byte[] getBytes(final Charset charset) {
         return value.getBytes(charset);
     }
 
@@ -80,54 +80,54 @@ public final class RString {
         return value.getBytes();
     }
 
-    public boolean equals(Object anObject) {
+    public boolean equals(final Object anObject) {
         if (anObject instanceof String) {
-            String input = (String) anObject;
+            final String input = (String) anObject;
             return input.equals(value);
         } else if (anObject instanceof RString) {
-            RString input = (RString) anObject;
+            final RString input = (RString) anObject;
             return input.toString().equals(value);
         }
         return false;
     }
 
-    public boolean contentEquals(StringBuffer sb) {
+    public boolean contentEquals(final StringBuffer sb) {
         return value.contentEquals(sb);
     }
 
-    public boolean contentEquals(CharSequence cs) {
+    public boolean contentEquals(final CharSequence cs) {
         return value.contentEquals(cs);
     }
 
-    public boolean equalsIgnoreCase(String anotherString) {
+    public boolean equalsIgnoreCase(final String anotherString) {
         return value.equalsIgnoreCase(anotherString);
     }
 
-    public int compareTo(String anotherString) {
+    public int compareTo(final String anotherString) {
         return value.compareTo(anotherString);
     }
 
-    public int compareToIgnoreCase(String str) {
+    public int compareToIgnoreCase(final String str) {
         return value.compareToIgnoreCase(str);
     }
 
-    public boolean regionMatches(int toffset, String other, int ooffset, int len) {
+    public boolean regionMatches(final int toffset, final String other, final int ooffset, final int len) {
         return value.regionMatches(toffset, other, ooffset, len);
     }
 
-    public boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len) {
+    public boolean regionMatches(final boolean ignoreCase, final int toffset, final String other, final int ooffset, final int len) {
         return value.regionMatches(ignoreCase, toffset, other, ooffset, len);
     }
 
-    public boolean startsWith(String prefix, int toffset) {
+    public boolean startsWith(final String prefix, final int toffset) {
         return value.startsWith(prefix, toffset);
     }
 
-    public boolean startsWith(String prefix) {
+    public boolean startsWith(final String prefix) {
         return value.startsWith(prefix);
     }
 
-    public boolean endsWith(String suffix) {
+    public boolean endsWith(final String suffix) {
         return value.endsWith(suffix);
     }
 
@@ -135,82 +135,82 @@ public final class RString {
         return value.hashCode();
     }
 
-    public int indexOf(int ch) {
+    public int indexOf(final int ch) {
         return value.indexOf(ch);
     }
 
-    public int indexOf(int ch, int fromIndex) {
+    public int indexOf(final int ch, final int fromIndex) {
         return value.indexOf(ch, fromIndex);
     }
 
-    public int lastIndexOf(int ch) {
+    public int lastIndexOf(final int ch) {
         return value.lastIndexOf(ch);
     }
 
-    public int lastIndexOf(int ch, int fromIndex) {
+    public int lastIndexOf(final int ch, final int fromIndex) {
         return value.lastIndexOf(ch, fromIndex);
     }
 
-    public int indexOf(String str) {
+    public int indexOf(final String str) {
         return value.indexOf(str);
     }
 
-    public int indexOf(String str, int fromIndex) {
+    public int indexOf(final String str, final int fromIndex) {
         return value.indexOf(str, fromIndex);
     }
 
-    public int lastIndexOf(String str) {
+    public int lastIndexOf(final String str) {
         return value.lastIndexOf(str);
     }
 
-    public int lastIndexOf(String str, int fromIndex) {
+    public int lastIndexOf(final String str, final int fromIndex) {
         return value.lastIndexOf(str, fromIndex);
     }
 
-    public RString substring(int beginIndex) {
+    public RString substring(final int beginIndex) {
         return new RString(value.substring(beginIndex));
     }
 
-    public RString substring(int beginIndex, int endIndex) {
+    public RString substring(final int beginIndex, final int endIndex) {
         return new RString(value.substring(beginIndex, endIndex));
     }
 
-    public CharSequence subSequence(int beginIndex, int endIndex) {
+    public CharSequence subSequence(final int beginIndex, final int endIndex) {
         return value.substring(beginIndex, endIndex);
     }
 
-    public RString concat(String str) {
+    public RString concat(final String str) {
         return new RString(value.concat(str));
     }
 
-    public RString replace(char oldChar, char newChar) {
+    public RString replace(final char oldChar, final char newChar) {
         return new RString(value.replace(oldChar, newChar));
     }
 
-    public boolean matches(String regex) {
+    public boolean matches(final String regex) {
         return value.matches(regex);
     }
 
-    public boolean contains(CharSequence s) {
+    public boolean contains(final CharSequence s) {
         return value.contains(s);
     }
 
-    public RString replaceFirst(String regex, String replacement) {
+    public RString replaceFirst(final String regex, final String replacement) {
         return new RString(Pattern.compile(regex).matcher(value).replaceFirst(replacement));
     }
 
-    public RString replaceAll(String regex, String replacement) {
+    public RString replaceAll(final String regex, final String replacement) {
         return new RString(Pattern.compile(regex).matcher(value).replaceAll(replacement));
     }
 
-    public RString replace(CharSequence target, CharSequence replacement) {
+    public RString replace(final CharSequence target, final CharSequence replacement) {
         return new RString(Pattern.compile(target.toString(), Pattern.LITERAL).matcher(
                 value).replaceAll(Matcher.quoteReplacement(replacement.toString())));
     }
 
-    public RString[] split(String regex, int limit) {
-        String[] arr1 = value.split(regex, limit);
-        RString[] arr2 = new RString[arr1.length];
+    public RString[] split(final String regex, final int limit) {
+        final String[] arr1 = value.split(regex, limit);
+        final RString[] arr2 = new RString[arr1.length];
         for (int i = 0; i < arr1.length; i++) {
             arr2[i] = new RString(arr1[i]);
         }
@@ -222,16 +222,16 @@ public final class RString {
     }
 
 
-    public RString replaceIgnoreCase(String target, String replacement) {
-        StringBuilder sbSource = new StringBuilder(value);
-        StringBuilder sbSourceLower = new StringBuilder(value.toLowerCase());
-        String searchString = target.toLowerCase();
+    public RString replaceIgnoreCase(final String target, final String replacement) {
+        final StringBuilder sbSource = new StringBuilder(value);
+        final StringBuilder sbSourceLower = new StringBuilder(value.toLowerCase());
+        final String searchString = target.toLowerCase();
 
-        int idx = 0;
-        while ((idx = sbSourceLower.indexOf(searchString, idx)) != -1) {
-            sbSource.replace(idx, idx + searchString.length(), replacement);
-            sbSourceLower.replace(idx, idx + searchString.length(), replacement);
-            idx += replacement.length();
+        int index = 0;
+        while ((index = sbSourceLower.indexOf(searchString, index)) != -1) {
+            sbSource.replace(index, index + searchString.length(), replacement);
+            sbSourceLower.replace(index, index + searchString.length(), replacement);
+            index += replacement.length();
         }
         sbSourceLower.setLength(0);
         sbSourceLower.trimToSize();
@@ -239,38 +239,38 @@ public final class RString {
         return new RString(sbSource.toString());
     }
 
-    public RString replaceIgnoreCase(RString target, RString replacement) {
+    public RString replaceIgnoreCase(final RString target, final RString replacement) {
         return replaceIgnoreCase(target.toString(), replacement.toString());
     }
 
-    public RString replaceIgnoreCase(String target, RString replacement) {
+    public RString replaceIgnoreCase(final String target, final RString replacement) {
         return replaceIgnoreCase(target, replacement.toString());
     }
 
-    public RString replaceIgnoreCase(RString target, String replacement) {
+    public RString replaceIgnoreCase(final RString target, final String replacement) {
         return replaceIgnoreCase(target.toString(), replacement);
     }
 
-    public boolean containsIgnoreCase(String target) {
+    public boolean containsIgnoreCase(final String target) {
         return value.toLowerCase().contains(target.toLowerCase());
     }
 
-    public RString remove(String target) {
+    public RString remove(final String target) {
         return new RString(this.replace(target, ""));
     }
 
-    public RString removeIgnoreCase(String target) {
+    public RString removeIgnoreCase(final String target) {
         return new RString(this.replaceIgnoreCase(target, ""));
     }
 
 
     public RString bytesToHex() {
-        byte[] in = value.getBytes(StandardCharsets.UTF_8);
+        final byte[] in = value.getBytes(StandardCharsets.UTF_8);
         final char[] hexArray = "0123456789abcdef".toCharArray();
 
-        char[] hexChars = new char[in.length * 2];
+        final char[] hexChars = new char[in.length * 2];
         for (int j = 0; j < in.length; j++) {
-            int v = in[j] & 0xff;
+            final int v = in[j] & 0xff;
             hexChars[j * 2] = hexArray[v >>> 4];
             hexChars[j * 2 + 1] = hexArray[v & 0xf];
         }
@@ -320,56 +320,56 @@ public final class RString {
         return value.toCharArray();
     }
 
-    public static RString format(String format, Object... args) {
+    public static RString format(final String format, final Object... args) {
         return new RString(new Formatter().format(format, args).toString());
     }
 
-    public static RString format(Locale l, String format, Object... args) {
+    public static RString format(final Locale l, final String format, final Object... args) {
         return new RString(new Formatter(l).format(format, args).toString());
     }
 
-    public static RString valueOf(Object obj) {
+    public static RString valueOf(final Object obj) {
         return new RString((obj == null) ? "null" : obj.toString());
     }
 
-    public static RString valueOf(char[] data) {
+    public static RString valueOf(final char[] data) {
         return new RString(new String(data));
     }
 
-    public static RString valueOf(char[] data, int offset, int count) {
+    public static RString valueOf(final char[] data, final int offset, final int count) {
         return new RString(new String(data, offset, count));
     }
 
-    public static RString copyValueOf(char[] data, int offset, int count) {
+    public static RString copyValueOf(final char[] data, final int offset, final int count) {
         return new RString(new String(data, offset, count));
     }
 
-    public static RString copyValueOf(char[] data) {
+    public static RString copyValueOf(final char[] data) {
         return new RString(new String(data));
     }
 
-    public static RString valueOf(boolean b) {
+    public static RString valueOf(final boolean b) {
         return b ? new RString("true") : new RString("false");
     }
 
-    public static RString valueOf(char c) {
+    public static RString valueOf(final char c) {
         char[] data = {c};
         return new RString(new String(data));
     }
 
-    public static RString valueOf(int i) {
+    public static RString valueOf(final int i) {
         return new RString(Integer.toString(i));
     }
 
-    public static RString valueOf(long l) {
+    public static RString valueOf(final long l) {
         return new RString(Long.toString(l));
     }
 
-    public static RString valueOf(float f) {
+    public static RString valueOf(final float f) {
         return new RString(Float.toString(f));
     }
 
-    public static RString valueOf(double d) {
+    public static RString valueOf(final double d) {
         return new RString(Double.toString(d));
     }
 }
