@@ -1,6 +1,7 @@
 package org.cultro.roulette.lang;
 
 import java.lang.reflect.Array;
+import java.util.Comparator;
 
 public class ArrayUtils {
 
@@ -917,6 +918,33 @@ public class ArrayUtils {
             newArray[i] = array[i];
         }
         return newArray;
+    }
+
+    public static <T> boolean isSorted(final T[] array, Comparator<T> comparator) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        if (firstNullElementIndex(array) != INDEX_NOT_FOUND){
+            return false;
+        }
+        int ordering = 0;
+        T last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final T current = array[i];
+            int comparison = comparator.compare(current, last);
+            if (comparison != 0) {
+                comparison = comparison > 0 ? 1 : -1;
+            }
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
     }
 
     public static <T extends Comparable<T>> boolean isSorted(final T[] array) {
