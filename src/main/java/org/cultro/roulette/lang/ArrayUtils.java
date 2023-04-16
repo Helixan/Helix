@@ -95,6 +95,18 @@ public class ArrayUtils {
         return INDEX_NOT_FOUND;
     }
 
+    public static <T> int firstNullElementIndex(final T[] array) {
+        if (array == null) {
+            return INDEX_NOT_FOUND;
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
+                return i;
+            }
+        }
+        return INDEX_NOT_FOUND;
+    }
+
     public static <T> int lengthOfAllArraysCombined(final T[]... arrays) {
         int length = 0;
         for (T[] array : arrays) {
@@ -905,5 +917,200 @@ public class ArrayUtils {
             newArray[i] = array[i];
         }
         return newArray;
+    }
+
+    public static <T extends Comparable<T>> boolean isSorted(final T[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        if (firstNullElementIndex(array) != INDEX_NOT_FOUND){
+            return false;
+        }
+        int ordering = 0;
+        T last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final T current = array[i];
+            int comparison = current.compareTo(last);
+            if (comparison != 0) {
+                comparison = comparison > 0 ? 1 : -1;
+            }
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final boolean[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        boolean last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final boolean current = array[i];
+            final int comparison = BooleanUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final byte[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        byte last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final byte current = array[i];
+            final int comparison = NumberUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final char[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        char last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final char current = array[i];
+            final int comparison = CharacterUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final double[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        double last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final double current = array[i];
+            final int comparison = NumberUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final float[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        float last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final float current = array[i];
+            final int comparison = NumberUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final int[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        int last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final int current = array[i];
+            final int comparison = NumberUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final long[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        long last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final long current = array[i];
+            final int comparison = NumberUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
+    }
+
+    public static boolean isSorted(final short[] array) {
+        if (array == null || array.length < 2) {
+            return true;
+        }
+        int ordering = 0;
+        short last = array[0];
+        for (int i = 1; i < array.length; i++) {
+            final short current = array[i];
+            final int comparison = NumberUtils.compareTo(current, last);
+            if (ordering == 0 && comparison != 0) {
+                ordering = comparison;
+            } else if (ordering != 0 && comparison != 0) {
+                if (ordering - comparison != 0) {
+                    return false;
+                }
+            }
+            last = current;
+        }
+        return true;
     }
 }
