@@ -1141,4 +1141,193 @@ public class ArrayUtils {
         }
         return true;
     }
+
+    public static <T> T[] insert(final T[] array, final int index, final T... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        T[] newArray = newArrayInstance(getComponentType(array), lengthOfAllArraysCombined(array, values));
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static boolean[] insert(final boolean[] array, final int index, final boolean... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        boolean[] newArray = new boolean[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static byte[] insert(final byte[] array, final int index, final byte... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        byte[] newArray = new byte[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static char[] insert(final char[] array, final int index, final char... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        char[] newArray = new char[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static double[] insert(final double[] array, final int index, final double... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        double[] newArray = new double[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static float[] insert(final float[] array, final int index, final float... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        float[] newArray = new float[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static int[] insert(final int[] array, final int index, final int... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        int[] newArray = new int[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static long[] insert(final long[] array, final int index, final long... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        long[] newArray = new long[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
+
+    public static short[] insert(final short[] array, final int index, final short... values) {
+        if (array == null) {
+            return null;
+        }
+        if (values == null) {
+            return clone(array);
+        }
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        short[] newArray = new short[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        }
+        return newArray;
+    }
 }
