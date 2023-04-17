@@ -44,6 +44,35 @@ public class BooleanUtils {
         return false;
     }
 
+    public static boolean xor(final boolean... values) {
+        Validate.notNull(values);
+        boolean found = false;
+        for (final boolean value : values) {
+            if (value) {
+                if (found) {
+                    return false;
+                }
+                found = true;
+            }
+        }
+        return found;
+    }
+
+    public static boolean xor(final Boolean... values) {
+        Validate.notNull(values);
+        Validate.containsNoNullElements(values);
+        boolean found = false;
+        for (final Boolean value : values) {
+            if (value) {
+                if (found) {
+                    return false;
+                }
+                found = true;
+            }
+        }
+        return found;
+    }
+
     public static int compareTo(final boolean first, final boolean second) {
         if (first && !second) {
             return 1;
