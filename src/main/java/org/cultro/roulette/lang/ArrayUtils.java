@@ -1,6 +1,7 @@
 package org.cultro.roulette.lang;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class ArrayUtils {
@@ -76,7 +77,7 @@ public class ArrayUtils {
         if (array == null) {
             return false;
         }
-        for (T type : array) {
+        for (final T type : array) {
             if (type != null) {
                 return true;
             }
@@ -110,7 +111,7 @@ public class ArrayUtils {
 
     public static <T> int lengthOfAllArraysCombined(final T[]... arrays) {
         int length = 0;
-        for (T[] array : arrays) {
+        for (final T[] array : arrays) {
             if (array != null) {
                 length += array.length;
             }
@@ -139,7 +140,7 @@ public class ArrayUtils {
         final Class<T> componentType = getComponentType(arraysToMerge[firstNotNullIndex]);
         final T[] newArray = newArrayInstance(componentType, lengthOfAllArraysCombined(arraysToMerge));
         int currentMergeLocation = 0;
-        for (T[] array : arraysToMerge) {
+        for (final T[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -157,7 +158,7 @@ public class ArrayUtils {
         }
         final boolean[] newArray = new boolean[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (boolean[] array : arraysToMerge) {
+        for (final boolean[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -175,7 +176,7 @@ public class ArrayUtils {
         }
         final byte[] newArray = new byte[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (byte[] array : arraysToMerge) {
+        for (final byte[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -193,7 +194,7 @@ public class ArrayUtils {
         }
         final char[] newArray = new char[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (char[] array : arraysToMerge) {
+        for (final char[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -211,7 +212,7 @@ public class ArrayUtils {
         }
         final double[] newArray = new double[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (double[] array : arraysToMerge) {
+        for (final double[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -229,7 +230,7 @@ public class ArrayUtils {
         }
         final float[] newArray = new float[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (float[] array : arraysToMerge) {
+        for (final float[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -247,7 +248,7 @@ public class ArrayUtils {
         }
         final int[] newArray = new int[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (int[] array : arraysToMerge) {
+        for (final int[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -265,7 +266,7 @@ public class ArrayUtils {
         }
         final long[] newArray = new long[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (long[] array : arraysToMerge) {
+        for (final long[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
@@ -283,7 +284,7 @@ public class ArrayUtils {
         }
         final short[] newArray = new short[lengthOfAllArraysCombined(arraysToMerge)];
         int currentMergeLocation = 0;
-        for (short[] array : arraysToMerge) {
+        for (final short[] array : arraysToMerge) {
             if (array != null) {
                 System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
                 currentMergeLocation += array.length;
