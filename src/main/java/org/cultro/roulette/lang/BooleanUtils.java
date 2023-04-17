@@ -81,4 +81,15 @@ public class BooleanUtils {
         }
         return 0;
     }
+
+    public static boolean negate(final boolean value) {
+        return !value;
+    }
+
+    public static Boolean negate(final Boolean value) {
+        if (value == null) {
+            return null;
+        }
+        return !value;
+    }
 }
