@@ -1,6 +1,6 @@
 package org.cultro.roulette.lang;
 
-public class Validate {
+public final class Validate {
 
     public static <T> void notNull(T object, String message) {
         if (object == null) {
