@@ -1,6 +1,6 @@
 package org.cultro.roulette.lang;
 
-public class CharacterUtils {
+public final class CharacterUtils {
 
     public static int compareTo(char first, char second) {
         if (first > second) {
