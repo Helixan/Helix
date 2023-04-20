@@ -1,6 +1,6 @@
 package org.cultro.roulette.lang;
 
-public class BooleanUtils {
+public final class BooleanUtils {
 
     public static boolean and(final boolean... values) {
         Validate.notNull(values);
