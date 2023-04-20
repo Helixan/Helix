@@ -4,7 +4,7 @@ import org.cultro.roulette.lang.Validate;
 
 import java.util.Objects;
 
-public class Location {
+public final class Location {
 
     private double x;
     private double y;
