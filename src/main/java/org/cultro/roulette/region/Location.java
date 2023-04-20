@@ -2,6 +2,8 @@ package org.cultro.roulette.region;
 
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Objects;
+
 public class Location {
 
     private double x;
@@ -108,5 +110,29 @@ public class Location {
         this.y /= y;
         this.z /= z;
         return this;
+    }
+
+    public Location zero() {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Location)) {
+            return false;
+        }
+        Location location = (Location) o;
+        return Double.compare(location.x, x) == 0 && Double.compare(location.y, y) == 0 && Double.compare(location.z, z) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(1756240379, x, y, z);
     }
 }
