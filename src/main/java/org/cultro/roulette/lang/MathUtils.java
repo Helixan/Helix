@@ -3,7 +3,7 @@ package org.cultro.roulette.lang;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class MathUtils {
+public final class MathUtils {
 
     @SafeVarargs
     public static <V extends Comparable<V>> V min(final V... values) {
