@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ArrayUtils {
+public final class ArrayUtils {
 
     public static final boolean[] EMPTY_BOOLEAN_ARRAY = {};
     public static final Boolean[] EMPTY_BOOLEAN_OBJECT_ARRAY = {};
