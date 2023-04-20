@@ -58,11 +58,25 @@ public class Location {
         return this;
     }
 
+    public Location add(double x, double y, double z) {
+        this.x += x;
+        this.y += y;
+        this.z += z;
+        return this;
+    }
+
     public Location subtract(Location locationToAdd) {
         Validate.notNull(locationToAdd);
         this.x -= locationToAdd.x;
         this.y -= locationToAdd.y;
         this.z -= locationToAdd.z;
+        return this;
+    }
+
+    public Location subtract(double x, double y, double z) {
+        this.x -= x;
+        this.y -= y;
+        this.z -= z;
         return this;
     }
 
@@ -74,11 +88,25 @@ public class Location {
         return this;
     }
 
+    public Location multiply(double x, double y, double z) {
+        this.x *= x;
+        this.y *= y;
+        this.z *= z;
+        return this;
+    }
+
     public Location divide(Location locationToAdd) {
         Validate.notNull(locationToAdd);
         this.x /= locationToAdd.x;
         this.y /= locationToAdd.y;
         this.z /= locationToAdd.z;
+        return this;
+    }
+
+    public Location divide(double x, double y, double z) {
+        this.x /= x;
+        this.y /= y;
+        this.z /= z;
         return this;
     }
 }
