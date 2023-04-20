@@ -1,6 +1,6 @@
 package org.cultro.roulette.lang;
 
-public class NumberUtils {
+public final class NumberUtils {
 
     public static int compareTo(byte first, byte second) {
         if (first > second) {
