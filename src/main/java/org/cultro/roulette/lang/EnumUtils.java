@@ -1,6 +1,6 @@
 package org.cultro.roulette.lang;
 
-public class EnumUtils {
+public final class EnumUtils {
 
     public static <E extends Enum<E>> E getEnum(final Class<E> enumClass, final String enumName, final E defaultValue) {
         if (enumClass == null || enumName == null) {
