@@ -169,4 +169,20 @@ public final class Validate {
             throw new IllegalArgumentException();
         }
     }
+
+    public static void isValidIndex(int index, String message) {
+        if (index < 0) {
+            if (message != null) {
+                throw new IllegalArgumentException(message);
+            } else {
+                throw new IllegalArgumentException();
+            }
+        }
+    }
+
+    public static void isValidIndex(int index) {
+        if (index < 0) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
