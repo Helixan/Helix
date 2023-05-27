@@ -1,5 +1,7 @@
 package org.cultro.roulette.lang;
 
+import org.cultro.roulette.util.ArrayUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
