@@ -1,4 +1,6 @@
-package org.cultro.roulette.lang;
+package org.cultro.roulette.util;
+
+import org.cultro.roulette.lang.Validate;
 
 public final class BooleanUtils {
 
