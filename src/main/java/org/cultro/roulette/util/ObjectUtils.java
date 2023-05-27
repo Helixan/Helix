@@ -1,4 +1,4 @@
-package org.cultro.roulette.lang;
+package org.cultro.roulette.util;
 
 
 import java.io.*;
