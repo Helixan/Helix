@@ -1,4 +1,6 @@
-package org.cultro.roulette.lang;
+package org.cultro.roulette.util;
+
+import org.cultro.roulette.util.ArrayUtils;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
