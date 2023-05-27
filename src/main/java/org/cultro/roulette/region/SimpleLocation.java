@@ -2,9 +2,10 @@ package org.cultro.roulette.region;
 
 import org.cultro.roulette.lang.Validate;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public final class SimpleLocation {
+public final class SimpleLocation implements Serializable {
 
     private double x;
     private double y;
@@ -134,5 +135,14 @@ public final class SimpleLocation {
     @Override
     public int hashCode() {
         return Objects.hash(1756240379, x, y, z);
+    }
+
+    @Override
+    public String toString() {
+        return "SimpleLocation{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                '}';
     }
 }
