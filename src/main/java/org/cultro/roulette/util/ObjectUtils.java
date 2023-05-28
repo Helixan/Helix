@@ -1,6 +1,8 @@
 package org.cultro.roulette.util;
 
 
+import org.cultro.roulette.lang.Validate;
+
 import java.io.*;
 
 public class ObjectUtils {
@@ -21,5 +23,16 @@ public class ObjectUtils {
             throw new RuntimeException(e);
         }
         return copy;
+    }
+
+    public static <T> boolean anyEquals(T object, T... objects) {
+        Validate.notNull(object, "You may not pass a null object");
+        Validate.notNull(objects, "You may not pass a null list of objects");
+        for (T current : objects) {
+            if (object.equals(current)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
