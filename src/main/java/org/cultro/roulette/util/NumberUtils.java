@@ -1,5 +1,6 @@
 package org.cultro.roulette.util;
 
+@SuppressWarnings("unused")
 public final class NumberUtils {
 
     public static int compareTo(byte first, byte second) {
