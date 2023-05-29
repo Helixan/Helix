@@ -2,6 +2,7 @@ package org.cultro.roulette.util;
 
 import org.cultro.roulette.lang.Validate;
 
+@SuppressWarnings("unused")
 public final class BooleanUtils {
 
     public static boolean and(final boolean... values) {
