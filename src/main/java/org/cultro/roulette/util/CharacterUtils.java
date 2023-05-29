@@ -1,5 +1,6 @@
 package org.cultro.roulette.util;
 
+@SuppressWarnings("unused")
 public final class CharacterUtils {
 
     public static int compareTo(char first, char second) {
