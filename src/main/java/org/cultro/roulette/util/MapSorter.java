@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class MapSorter {
 
     public static <K extends Comparable<K>, V> LinkedHashMap<K, V> sortByKey(Map<K, V> map, boolean reverseOrder) {
