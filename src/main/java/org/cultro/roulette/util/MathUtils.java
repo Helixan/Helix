@@ -1,8 +1,6 @@
 package org.cultro.roulette.util;
 
-import org.cultro.roulette.util.ArrayUtils;
-
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class MathUtils {
@@ -204,6 +202,31 @@ public final class MathUtils {
             currentDivisor++;
         }
         return true;
+    }
+
+    public static int[] sieveOfEratosthenes(int n) {
+        boolean[] primes = new boolean[n + 1];
+        List<Integer> primeList = new ArrayList<>();
+
+        for (int i = 2; i * i <= n; i++) {
+            if (!primes[i]) {
+                for (int j = i * i; j <= n; j += i) {
+                    primes[j] = true;
+                }
+            }
+        }
+
+        for (int i = 2; i < primes.length; i++) {
+            if (!primes[i]) {
+                primeList.add(i);
+            }
+        }
+
+        int[] primesArray = new int[primeList.size()];
+        for (int i = 0; i < primeList.size(); i++) {
+            primesArray[i] = primeList.get(i);
+        }
+        return primesArray;
     }
 
     private static Random random() {
