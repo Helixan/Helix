@@ -3,6 +3,7 @@ package org.cultro.roulette.util;
 import java.lang.reflect.Array;
 import java.util.Comparator;
 
+@SuppressWarnings({"unused", "DuplicatedCode"})
 public final class ArrayUtils {
 
     public static final boolean[] EMPTY_BOOLEAN_ARRAY = {};
@@ -108,6 +109,7 @@ public final class ArrayUtils {
         return INDEX_NOT_FOUND;
     }
 
+    @SafeVarargs
     public static <T> int lengthOfAllArraysCombined(final T[]... arrays) {
         int length = 0;
         for (final T[] array : arrays) {
@@ -131,6 +133,7 @@ public final class ArrayUtils {
         return (T[]) Array.newInstance(type, length);
     }
 
+    @SafeVarargs
     public static <T> T[] mergeArrays(final T[]... arraysToMerge) {
         final int firstNotNullIndex = firstNotNullElementIndex(arraysToMerge);
         if (firstNotNullIndex == INDEX_NOT_FOUND) {
@@ -292,6 +295,7 @@ public final class ArrayUtils {
         return newArray;
     }
 
+    @SafeVarargs
     public static <T> T[] addAll(final T[] array, final T... elementsToAdd) {
         if (elementsToAdd == null) {
             return clone(array);
@@ -410,6 +414,7 @@ public final class ArrayUtils {
         return newArray;
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static <T> void reverse(final T[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -432,6 +437,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final boolean[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -454,6 +460,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final byte[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -476,6 +483,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final char[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -498,6 +506,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final double[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -520,6 +529,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final float[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -542,6 +552,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final int[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -564,6 +575,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final long[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -586,6 +598,7 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final short[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -1142,6 +1155,7 @@ public final class ArrayUtils {
         return true;
     }
 
+    @SafeVarargs
     public static <T> T[] insert(final T[] array, final int index, final T... values) {
         if (array == null) {
             return null;
