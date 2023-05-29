@@ -8,6 +8,7 @@ import java.io.*;
 @SuppressWarnings("unused")
 public class ObjectUtils {
 
+    @SuppressWarnings("unchecked")
     public static <T extends Serializable> T deepCopy(T object) {
         T copy;
         try {
@@ -26,6 +27,7 @@ public class ObjectUtils {
         return copy;
     }
 
+    @SafeVarargs
     public static <T> boolean anyEquals(T object, T... objects) {
         Validate.notNull(object, "You may not pass a null object");
         Validate.notNull(objects, "You may not pass a null list of objects");
