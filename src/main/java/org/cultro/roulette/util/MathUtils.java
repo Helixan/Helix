@@ -3,6 +3,7 @@ package org.cultro.roulette.util;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+@SuppressWarnings("unused")
 public final class MathUtils {
 
     @SafeVarargs
