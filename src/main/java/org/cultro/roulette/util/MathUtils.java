@@ -229,6 +229,30 @@ public final class MathUtils {
         return primesArray;
     }
 
+    public static double combination(int n, int r) {
+        if (r > n - r) {
+            r = n - r;
+        }
+        double result = 1;
+
+        for (int i = 1; i <= r; i++) {
+            result *= n - r + i;
+            result /= i;
+        }
+
+        return result;
+    }
+
+    public static double permutation(int n, int r) {
+        double result = 1;
+
+        for (int i = 0; i < r; i++) {
+            result *= n - i;
+        }
+
+        return result;
+    }
+
     private static Random random() {
         return ThreadLocalRandom.current();
     }
