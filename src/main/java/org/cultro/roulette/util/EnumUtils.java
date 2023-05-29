@@ -1,5 +1,6 @@
 package org.cultro.roulette.util;
 
+@SuppressWarnings("unused")
 public final class EnumUtils {
 
     public static <E extends Enum<E>> E getEnum(final Class<E> enumClass, final String enumName, final E defaultValue) {
