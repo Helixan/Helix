@@ -1,5 +1,6 @@
 package org.cultro.roulette.lang;
 
+@SuppressWarnings("unused")
 public final class Validate {
 
     public static <T> void notNull(T object, String message) {
