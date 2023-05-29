@@ -4,6 +4,7 @@ import org.cultro.roulette.lang.Validate;
 
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class Cooldown<T> {
 
     private final HashMap<T, Long> cooldownMap = new HashMap<>();
