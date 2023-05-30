@@ -480,7 +480,6 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
-    @SuppressWarnings("DataFlowIssue")
     public static void reverse(final char[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
