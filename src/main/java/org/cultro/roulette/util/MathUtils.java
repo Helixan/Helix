@@ -12,7 +12,7 @@ public final class MathUtils {
     public static <V extends Comparable<V>> V min(final V... values) {
         final int firstNotNullIndex = ArrayUtils.firstNotNullElementIndex(values);
         if (firstNotNullIndex == -1) {
-            return null;
+            throw new IllegalArgumentException("There are no valid elements in the array to take a min of");
         }
         V currentMin = values[firstNotNullIndex];
         for (int i = firstNotNullIndex + 1; i < values.length; i++) {
@@ -29,7 +29,7 @@ public final class MathUtils {
     public static <V extends Comparable<V>> V max(final V... values) {
         final int firstNotNullIndex = ArrayUtils.firstNotNullElementIndex(values);
         if (firstNotNullIndex == -1) {
-            return null;
+            throw new IllegalArgumentException("There are no valid elements in the array to take a max of");
         }
         V currentMax = values[firstNotNullIndex];
         for (int i = firstNotNullIndex + 1; i < values.length; i++) {
