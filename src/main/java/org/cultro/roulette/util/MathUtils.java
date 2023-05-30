@@ -270,6 +270,10 @@ public final class MathUtils {
         return area * (deltaX / 3);
     }
 
+    public static double integrate(SingleVariableFunction function, double a, double b) {
+        return integrate(function, a, b, (long) (Math.ceil(max(a, b) - min(a, b)) * 100));
+    }
+
     private static Random random() {
         return ThreadLocalRandom.current();
     }
