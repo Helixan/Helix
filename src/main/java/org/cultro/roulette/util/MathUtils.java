@@ -1,5 +1,7 @@
 package org.cultro.roulette.util;
 
+import org.cultro.roulette.lang.SingleVariableFunction;
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -252,6 +254,20 @@ public final class MathUtils {
         }
 
         return result;
+    }
+
+    public static double integrate(SingleVariableFunction function, double a, double b, int n) {
+        if (n % 2 != 0) {
+            throw new IllegalArgumentException("The number of intervals must be even");
+        }
+
+        double deltaX = (b - a) / n;
+        double area = function.valueAt(a) + function.valueAt(b);
+
+        for (int i = 1; i < n; i++) {
+            area += function.valueAt(a + i * deltaX) * (i % 2 == 0 ? 2 : 4);
+        }
+        return area * (deltaX / 3);
     }
 
     private static Random random() {
