@@ -414,7 +414,6 @@ public final class ArrayUtils {
         return newArray;
     }
 
-    @SuppressWarnings("DataFlowIssue")
     public static <T> void reverse(final T[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
