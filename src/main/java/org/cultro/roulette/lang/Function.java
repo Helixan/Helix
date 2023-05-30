@@ -2,7 +2,7 @@ package org.cultro.roulette.lang;
 
 @SuppressWarnings("unused")
 
-public interface SingleVariableFunction {
+public interface Function {
 
     double valueAt(double variableValue);
 }
