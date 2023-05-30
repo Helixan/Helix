@@ -256,7 +256,7 @@ public final class MathUtils {
         return result;
     }
 
-    public static double integrate(SingleVariableFunction function, double a, double b, int n) {
+    public static double integrate(SingleVariableFunction function, double a, double b, long n) {
         if (n % 2 != 0) {
             throw new IllegalArgumentException("The number of intervals must be even");
         }
