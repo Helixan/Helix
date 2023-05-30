@@ -1,6 +1,6 @@
 package org.cultro.roulette.util;
 
-import org.cultro.roulette.lang.SingleVariableFunction;
+import org.cultro.roulette.lang.Function;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -256,7 +256,7 @@ public final class MathUtils {
         return result;
     }
 
-    public static double integrate(SingleVariableFunction function, double a, double b, long n) {
+    public static double integrate(Function function, double a, double b, long n) {
         if (n % 2 != 0) {
             throw new IllegalArgumentException("The number of intervals must be even");
         }
@@ -270,7 +270,7 @@ public final class MathUtils {
         return area * (deltaX / 3);
     }
 
-    public static double integrate(SingleVariableFunction function, double a, double b) {
+    public static double integrate(Function function, double a, double b) {
         return integrate(function, a, b, (long) (Math.ceil(max(a, b) - min(a, b)) * 100));
     }
 
