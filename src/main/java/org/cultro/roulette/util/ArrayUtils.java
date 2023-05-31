@@ -1,5 +1,7 @@
 package org.cultro.roulette.util;
 
+import org.cultro.roulette.lang.Validate;
+
 import java.lang.reflect.Array;
 import java.util.Comparator;
 
@@ -1334,5 +1336,10 @@ public final class ArrayUtils {
             System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
+    }
+
+    public static <T> T[] nullToEmpty(final T[] array, final Class<T[]> type) {
+        Validate.notNull(type, "The type may not be null");
+        return array == null ? type.cast(Array.newInstance(type.getComponentType(), 0)) : array;
     }
 }
