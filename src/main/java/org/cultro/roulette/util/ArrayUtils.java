@@ -1374,4 +1374,15 @@ public final class ArrayUtils {
     public static short[] nullToEmpty(final short[] array) {
         return array == null ? EMPTY_SHORT_ARRAY : array;
     }
+
+    public static <T> void swap(final T[] array, final int firstOffset, final int secondOffset) {
+        if (array == null || firstOffset >= array.length ||
+                secondOffset >= array.length || firstOffset == 0 ||
+                secondOffset == 0 || firstOffset == secondOffset) {
+            return;
+        }
+        final T temp = array[firstOffset];
+        array[firstOffset] = array[secondOffset];
+        array[secondOffset] = temp;
+    }
 }
