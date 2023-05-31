@@ -26,6 +26,26 @@ public final class BooleanUtils {
         return true;
     }
 
+    public static int compareTo(final boolean first, final boolean second) {
+        if (first && !second) {
+            return 1;
+        } else if (!first && second) {
+            return -1;
+        }
+        return 0;
+    }
+
+    public static boolean negate(final boolean value) {
+        return !value;
+    }
+
+    public static Boolean negate(final Boolean value) {
+        if (value == null) {
+            return null;
+        }
+        return !value;
+    }
+
     public static boolean or(final boolean... values) {
         Validate.notNull(values);
         for (final boolean value : values) {
@@ -45,6 +65,14 @@ public final class BooleanUtils {
             }
         }
         return false;
+    }
+
+    public static boolean toBoolean(final int value) {
+        return value != 0;
+    }
+
+    public static boolean toBoolean(final long value) {
+        return value != 0;
     }
 
     public static boolean xor(final boolean... values) {
@@ -74,25 +102,5 @@ public final class BooleanUtils {
             }
         }
         return found;
-    }
-
-    public static int compareTo(final boolean first, final boolean second) {
-        if (first && !second) {
-            return 1;
-        } else if (!first && second) {
-            return -1;
-        }
-        return 0;
-    }
-
-    public static boolean negate(final boolean value) {
-        return !value;
-    }
-
-    public static Boolean negate(final Boolean value) {
-        if (value == null) {
-            return null;
-        }
-        return !value;
     }
 }
