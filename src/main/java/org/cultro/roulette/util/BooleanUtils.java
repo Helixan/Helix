@@ -6,7 +6,7 @@ import org.cultro.roulette.lang.Validate;
 public final class BooleanUtils {
 
     public static boolean and(final boolean... values) {
-        Validate.notNull(values);
+        Validate.notNull(values, "Cannot run the 'and' operation on a null array of values");
         for (final boolean value : values) {
             if (!value) {
                 return false;
@@ -16,8 +16,8 @@ public final class BooleanUtils {
     }
 
     public static boolean and(final Boolean... values) {
-        Validate.notNull(values);
-        Validate.containsNoNullElements(values);
+        Validate.notNull(values, "Cannot run the 'and' operation on a null array of values");
+        Validate.containsNoNullElements(values, "Cannot run the 'and' operation on an array with null elements");
         for (final Boolean value : values) {
             if (!value) {
                 return false;
@@ -47,7 +47,7 @@ public final class BooleanUtils {
     }
 
     public static boolean or(final boolean... values) {
-        Validate.notNull(values);
+        Validate.notNull(values, "Cannot run the 'or' operation on a null array of values");
         for (final boolean value : values) {
             if (value) {
                 return true;
@@ -57,8 +57,8 @@ public final class BooleanUtils {
     }
 
     public static boolean or(final Boolean... values) {
-        Validate.notNull(values);
-        Validate.containsNoNullElements(values);
+        Validate.notNull(values, "Cannot run the 'or' operation on a null array of values");
+        Validate.containsNoNullElements(values, "Cannot run the 'or' operation on an array with null elements");
         for (final Boolean value : values) {
             if (value) {
                 return true;
@@ -93,7 +93,7 @@ public final class BooleanUtils {
     }
 
     public static boolean xor(final boolean... values) {
-        Validate.notNull(values);
+        Validate.notNull(values, "Cannot run the 'xor' operation on a null array of values");
         boolean found = false;
         for (final boolean value : values) {
             if (value) {
@@ -107,8 +107,8 @@ public final class BooleanUtils {
     }
 
     public static boolean xor(final Boolean... values) {
-        Validate.notNull(values);
-        Validate.containsNoNullElements(values);
+        Validate.notNull(values, "Cannot run the 'xor' operation on a null array of values");
+        Validate.containsNoNullElements(values, "Cannot run the 'xor' operation on an array with null elements");
         boolean found = false;
         for (final Boolean value : values) {
             if (value) {
