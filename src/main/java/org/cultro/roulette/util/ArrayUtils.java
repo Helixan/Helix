@@ -1370,4 +1370,8 @@ public final class ArrayUtils {
     public static long[] nullToEmpty(final long[] array) {
         return array == null ? EMPTY_LONG_ARRAY : array;
     }
+
+    public static short[] nullToEmpty(final short[] array) {
+        return array == null ? EMPTY_SHORT_ARRAY : array;
+    }
 }
