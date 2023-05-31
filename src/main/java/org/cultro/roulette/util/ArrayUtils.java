@@ -1346,4 +1346,8 @@ public final class ArrayUtils {
     public static boolean[] nullToEmpty(final boolean[] array) {
         return array == null ? EMPTY_BOOLEAN_ARRAY : array;
     }
+
+    public static byte[] nullToEmpty(final byte[] array) {
+        return array == null ? EMPTY_BYTE_ARRAY : array;
+    }
 }
