@@ -1354,4 +1354,8 @@ public final class ArrayUtils {
     public static char[] nullToEmpty(final char[] array) {
         return array == null ? EMPTY_CHAR_ARRAY : array;
     }
+
+    public static double[] nullToEmpty(final double[] array) {
+        return array == null ? EMPTY_DOUBLE_ARRAY : array;
+    }
 }
