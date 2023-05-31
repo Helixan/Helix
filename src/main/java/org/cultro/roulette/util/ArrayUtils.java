@@ -1385,4 +1385,15 @@ public final class ArrayUtils {
         array[firstOffset] = array[secondOffset];
         array[secondOffset] = temp;
     }
+
+    public static void swap(final boolean[] array, final int firstOffset, final int secondOffset) {
+        if (array == null || firstOffset >= array.length ||
+                secondOffset >= array.length || firstOffset == 0 ||
+                secondOffset == 0 || firstOffset == secondOffset) {
+            return;
+        }
+        final boolean temp = array[firstOffset];
+        array[firstOffset] = array[secondOffset];
+        array[secondOffset] = temp;
+    }
 }
