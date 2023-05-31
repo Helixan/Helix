@@ -39,43 +39,7 @@ public final class ArrayUtils {
     public ArrayUtils() {
     }
 
-    public static <T> T[] clone(final T[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static boolean[] clone(final boolean[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static byte[] clone(final byte[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static char[] clone(final char[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static double[] clone(final double[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static float[] clone(final float[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static int[] clone(final int[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static long[] clone(final long[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static short[] clone(final short[] arrayToClone) {
-        return arrayToClone == null ? null : arrayToClone.clone();
-    }
-
-    public static <T> boolean containsOneNonNullElement(final T[] array) {
+    static <T> boolean containsOneNonNullElement(final T[] array) {
         if (array == null) {
             return false;
         }
@@ -87,7 +51,7 @@ public final class ArrayUtils {
         return false;
     }
 
-    public static <T> int firstNotNullElementIndex(final T[] array) {
+    static <T> int firstNotNullElementIndex(final T[] array) {
         if (array == null) {
             return INDEX_NOT_FOUND;
         }
@@ -99,7 +63,7 @@ public final class ArrayUtils {
         return INDEX_NOT_FOUND;
     }
 
-    public static <T> int firstNullElementIndex(final T[] array) {
+    static <T> int firstNullElementIndex(final T[] array) {
         if (array == null) {
             return INDEX_NOT_FOUND;
         }
@@ -111,8 +75,16 @@ public final class ArrayUtils {
         return INDEX_NOT_FOUND;
     }
 
+    @SuppressWarnings("unchecked")
+    static <T> Class<T> getComponentType(final T[] array) {
+        if (array == null) {
+            return null;
+        }
+        return (Class<T>) array.getClass().getComponentType();
+    }
+
     @SafeVarargs
-    public static <T> int lengthOfAllArraysCombined(final T[]... arrays) {
+    static <T> int lengthOfAllArraysCombined(final T[]... arrays) {
         int length = 0;
         for (final T[] array : arrays) {
             if (array != null) {
@@ -123,178 +95,8 @@ public final class ArrayUtils {
     }
 
     @SuppressWarnings("unchecked")
-    public static <T> Class<T> getComponentType(final T[] array) {
-        if (array == null) {
-            return null;
-        }
-        return (Class<T>) array.getClass().getComponentType();
-    }
-
-    @SuppressWarnings("unchecked")
-    public static <T> T[] newArrayInstance(final Class<T> type, final int length) {
+    static <T> T[] newArrayInstance(final Class<T> type, final int length) {
         return (T[]) Array.newInstance(type, length);
-    }
-
-    @SafeVarargs
-    public static <T> T[] mergeArrays(final T[]... arraysToMerge) {
-        final int firstNotNullIndex = firstNotNullElementIndex(arraysToMerge);
-        if (firstNotNullIndex == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final Class<T> componentType = getComponentType(arraysToMerge[firstNotNullIndex]);
-        final T[] newArray = newArrayInstance(componentType, lengthOfAllArraysCombined(arraysToMerge));
-        int currentMergeLocation = 0;
-        for (final T[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static boolean[] mergeArrays(final boolean[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final boolean[] newArray = new boolean[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final boolean[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static byte[] mergeArrays(final byte[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final byte[] newArray = new byte[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final byte[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static char[] mergeArrays(final char[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final char[] newArray = new char[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final char[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static double[] mergeArrays(final double[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final double[] newArray = new double[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final double[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static float[] mergeArrays(final float[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final float[] newArray = new float[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final float[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static int[] mergeArrays(final int[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final int[] newArray = new int[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final int[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static long[] mergeArrays(final long[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final long[] newArray = new long[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final long[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
-    }
-
-    public static short[] mergeArrays(final short[]... arraysToMerge) {
-        if (arraysToMerge == null) {
-            return null;
-        }
-        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
-            return null;
-        }
-        final short[] newArray = new short[lengthOfAllArraysCombined(arraysToMerge)];
-        int currentMergeLocation = 0;
-        for (final short[] array : arraysToMerge) {
-            if (array != null) {
-                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
-                currentMergeLocation += array.length;
-            }
-        }
-        return newArray;
     }
 
     @SafeVarargs
@@ -416,512 +218,228 @@ public final class ArrayUtils {
         return newArray;
     }
 
-    public static <T> void reverse(final T[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        T temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
+    public static <T> T[] clone(final T[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static <T> void reverse(final T[] array) {
-        reverse(array, 0, array.length - 1);
+    public static boolean[] clone(final boolean[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final boolean[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        boolean temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
+    public static byte[] clone(final byte[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final boolean[] array) {
-        reverse(array, 0, array.length - 1);
+    public static char[] clone(final char[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final byte[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        byte temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
+    public static double[] clone(final double[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final byte[] array) {
-        reverse(array, 0, array.length - 1);
+    public static float[] clone(final float[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final char[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        char temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
+    public static int[] clone(final int[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final char[] array) {
-        reverse(array, 0, array.length - 1);
+    public static long[] clone(final long[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final double[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        double temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
+    public static short[] clone(final short[] arrayToClone) {
+        return arrayToClone == null ? null : arrayToClone.clone();
     }
 
-    public static void reverse(final double[] array) {
-        reverse(array, 0, array.length - 1);
-    }
-
-    public static void reverse(final float[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        float temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
-    }
-
-    public static void reverse(final float[] array) {
-        reverse(array, 0, array.length - 1);
-    }
-
-    public static void reverse(final int[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        int temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
-    }
-
-    public static void reverse(final int[] array) {
-        reverse(array, 0, array.length - 1);
-    }
-
-    public static void reverse(final long[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        long temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
-    }
-
-    public static void reverse(final long[] array) {
-        reverse(array, 0, array.length - 1);
-    }
-
-    public static void reverse(final short[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
-        if (array == null) {
-            return;
-        }
-
-        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
-        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
-
-        short temp;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
-    }
-
-    public static void reverse(final short[] array) {
-        reverse(array, 0, array.length - 1);
-    }
-
-    public static <T> T[] remove(final T[] array, final int index) {
+    @SafeVarargs
+    public static <T> T[] insert(final T[] array, final int index, final T... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final Class<T> componentType = getComponentType(array);
-        final T[] newArray = newArrayInstance(componentType, array.length - 1);
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        T[] newArray = newArrayInstance(getComponentType(array), lengthOfAllArraysCombined(array, values));
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static boolean[] remove(final boolean[] array, final int index) {
+    public static boolean[] insert(final boolean[] array, final int index, final boolean... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final boolean[] newArray = new boolean[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        boolean[] newArray = new boolean[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static byte[] remove(final byte[] array, final int index) {
+    public static byte[] insert(final byte[] array, final int index, final byte... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final byte[] newArray = new byte[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        byte[] newArray = new byte[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static char[] remove(final char[] array, final int index) {
+    public static char[] insert(final char[] array, final int index, final char... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final char[] newArray = new char[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        char[] newArray = new char[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static double[] remove(final double[] array, final int index) {
+    public static double[] insert(final double[] array, final int index, final double... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final double[] newArray = new double[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        double[] newArray = new double[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static float[] remove(final float[] array, final int index) {
+    public static float[] insert(final float[] array, final int index, final float... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final float[] newArray = new float[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        float[] newArray = new float[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static int[] remove(final int[] array, final int index) {
+    public static int[] insert(final int[] array, final int index, final int... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final int[] newArray = new int[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        int[] newArray = new int[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static long[] remove(final long[] array, final int index) {
+    public static long[] insert(final long[] array, final int index, final long... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final long[] newArray = new long[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
+        }
+        long[] newArray = new long[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
+        }
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
 
-    public static short[] remove(final short[] array, final int index) {
+    public static short[] insert(final short[] array, final int index, final short... values) {
         if (array == null) {
             return null;
         }
-        if (index < 0 || index >= array.length) {
-            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        if (values == null) {
+            return clone(array);
         }
-        final short[] newArray = new short[array.length - 1];
-        System.arraycopy(array, 0, newArray, 0, index);
-        if (index < array.length - 1) {
-            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        if (index < 0 || index > array.length) {
+            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
         }
-        return newArray;
-    }
-
-    public static Boolean[] toObject(final boolean[] array) {
-        if (array == null) {
-            return null;
+        short[] newArray = new short[array.length + values.length];
+        System.arraycopy(values, 0, newArray, index, values.length);
+        if (index != 0) {
+            System.arraycopy(array, 0, newArray, 0, index);
         }
-        final Boolean[] newArray = new Boolean[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Byte[] toObject(final byte[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Byte[] newArray = new Byte[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Character[] toObject(final char[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Character[] newArray = new Character[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Double[] toObject(final double[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Double[] newArray = new Double[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Float[] toObject(final float[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Float[] newArray = new Float[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Integer[] toObject(final int[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Integer[] newArray = new Integer[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Long[] toObject(final long[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Long[] newArray = new Long[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static Short[] toObject(final short[] array) {
-        if (array == null) {
-            return null;
-        }
-        final Short[] newArray = new Short[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static boolean[] toPrimitive(final Boolean[] array) {
-        if (array == null) {
-            return null;
-        }
-        final boolean[] newArray = new boolean[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static byte[] toPrimitive(final Byte[] array) {
-        if (array == null) {
-            return null;
-        }
-        final byte[] newArray = new byte[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static char[] toPrimitive(final Character[] array) {
-        if (array == null) {
-            return null;
-        }
-        final char[] newArray = new char[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static double[] toPrimitive(final Double[] array) {
-        if (array == null) {
-            return null;
-        }
-        final double[] newArray = new double[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static float[] toPrimitive(final Float[] array) {
-        if (array == null) {
-            return null;
-        }
-        final float[] newArray = new float[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static int[] toPrimitive(final Integer[] array) {
-        if (array == null) {
-            return null;
-        }
-        final int[] newArray = new int[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static long[] toPrimitive(final Long[] array) {
-        if (array == null) {
-            return null;
-        }
-        final long[] newArray = new long[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
-        }
-        return newArray;
-    }
-
-    public static short[] toPrimitive(final Short[] array) {
-        if (array == null) {
-            return null;
-        }
-        final short[] newArray = new short[array.length];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i];
+        if (index < array.length) {
+            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
         }
         return newArray;
     }
@@ -1149,191 +667,163 @@ public final class ArrayUtils {
     }
 
     @SafeVarargs
-    public static <T> T[] insert(final T[] array, final int index, final T... values) {
-        if (array == null) {
+    public static <T> T[] mergeArrays(final T[]... arraysToMerge) {
+        final int firstNotNullIndex = firstNotNullElementIndex(arraysToMerge);
+        if (firstNotNullIndex == INDEX_NOT_FOUND) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
-        }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        T[] newArray = newArrayInstance(getComponentType(array), lengthOfAllArraysCombined(array, values));
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final Class<T> componentType = getComponentType(arraysToMerge[firstNotNullIndex]);
+        final T[] newArray = newArrayInstance(componentType, lengthOfAllArraysCombined(arraysToMerge));
+        int currentMergeLocation = 0;
+        for (final T[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static boolean[] insert(final boolean[] array, final int index, final boolean... values) {
-        if (array == null) {
+    public static boolean[] mergeArrays(final boolean[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        boolean[] newArray = new boolean[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final boolean[] newArray = new boolean[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final boolean[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static byte[] insert(final byte[] array, final int index, final byte... values) {
-        if (array == null) {
+    public static byte[] mergeArrays(final byte[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        byte[] newArray = new byte[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final byte[] newArray = new byte[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final byte[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static char[] insert(final char[] array, final int index, final char... values) {
-        if (array == null) {
+    public static char[] mergeArrays(final char[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        char[] newArray = new char[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final char[] newArray = new char[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final char[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static double[] insert(final double[] array, final int index, final double... values) {
-        if (array == null) {
+    public static double[] mergeArrays(final double[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        double[] newArray = new double[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final double[] newArray = new double[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final double[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static float[] insert(final float[] array, final int index, final float... values) {
-        if (array == null) {
+    public static float[] mergeArrays(final float[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        float[] newArray = new float[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final float[] newArray = new float[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final float[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static int[] insert(final int[] array, final int index, final int... values) {
-        if (array == null) {
+    public static int[] mergeArrays(final int[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        int[] newArray = new int[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final int[] newArray = new int[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final int[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static long[] insert(final long[] array, final int index, final long... values) {
-        if (array == null) {
+    public static long[] mergeArrays(final long[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        long[] newArray = new long[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final long[] newArray = new long[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final long[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
 
-    public static short[] insert(final short[] array, final int index, final short... values) {
-        if (array == null) {
+    public static short[] mergeArrays(final short[]... arraysToMerge) {
+        if (arraysToMerge == null) {
             return null;
         }
-        if (values == null) {
-            return clone(array);
+        if (firstNotNullElementIndex(arraysToMerge) == INDEX_NOT_FOUND) {
+            return null;
         }
-        if (index < 0 || index > array.length) {
-            throw new IndexOutOfBoundsException("Index " + index + " is outside out of bounds of array of length " + array.length);
-        }
-        short[] newArray = new short[array.length + values.length];
-        System.arraycopy(values, 0, newArray, index, values.length);
-        if (index != 0) {
-            System.arraycopy(array, 0, newArray, 0, index);
-        }
-        if (index < array.length) {
-            System.arraycopy(array, index, newArray, index + values.length, array.length - index);
+        final short[] newArray = new short[lengthOfAllArraysCombined(arraysToMerge)];
+        int currentMergeLocation = 0;
+        for (final short[] array : arraysToMerge) {
+            if (array != null) {
+                System.arraycopy(array, 0, newArray, currentMergeLocation, array.length);
+                currentMergeLocation += array.length;
+            }
         }
         return newArray;
     }
@@ -1373,6 +863,340 @@ public final class ArrayUtils {
 
     public static short[] nullToEmpty(final short[] array) {
         return array == null ? EMPTY_SHORT_ARRAY : array;
+    }
+
+    public static <T> T[] remove(final T[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final Class<T> componentType = getComponentType(array);
+        final T[] newArray = newArrayInstance(componentType, array.length - 1);
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static boolean[] remove(final boolean[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final boolean[] newArray = new boolean[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static byte[] remove(final byte[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final byte[] newArray = new byte[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static char[] remove(final char[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final char[] newArray = new char[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static double[] remove(final double[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final double[] newArray = new double[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static float[] remove(final float[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final float[] newArray = new float[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static int[] remove(final int[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final int[] newArray = new int[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static long[] remove(final long[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final long[] newArray = new long[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static short[] remove(final short[] array, final int index) {
+        if (array == null) {
+            return null;
+        }
+        if (index < 0 || index >= array.length) {
+            throw new IndexOutOfBoundsException("Array index " + index + " is out of bounds on array sized " + array.length);
+        }
+        final short[] newArray = new short[array.length - 1];
+        System.arraycopy(array, 0, newArray, 0, index);
+        if (index < array.length - 1) {
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+        }
+        return newArray;
+    }
+
+    public static <T> void reverse(final T[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        T temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static <T> void reverse(final T[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final boolean[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        boolean temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final boolean[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final byte[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        byte temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final byte[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final char[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        char temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final char[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final double[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        double temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final double[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final float[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        float temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final float[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final int[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        int temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final int[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final long[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        long temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final long[] array) {
+        reverse(array, 0, array.length - 1);
+    }
+
+    public static void reverse(final short[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
+        if (array == null) {
+            return;
+        }
+
+        int start = MathUtils.max(MathUtils.min(firstBoundInclusive, secondBoundInclusive), 0);
+        int end = MathUtils.min(MathUtils.max(firstBoundInclusive, secondBoundInclusive), array.length - 1);
+
+        short temp;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(final short[] array) {
+        reverse(array, 0, array.length - 1);
     }
 
     public static <T> void swap(final T[] array, final int firstOffset, final int secondOffset) {
@@ -1472,5 +1296,181 @@ public final class ArrayUtils {
         final short temp = array[firstOffset];
         array[firstOffset] = array[secondOffset];
         array[secondOffset] = temp;
+    }
+
+    public static Boolean[] toObject(final boolean[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Boolean[] newArray = new Boolean[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Byte[] toObject(final byte[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Byte[] newArray = new Byte[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Character[] toObject(final char[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Character[] newArray = new Character[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Double[] toObject(final double[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Double[] newArray = new Double[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Float[] toObject(final float[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Float[] newArray = new Float[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Integer[] toObject(final int[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Integer[] newArray = new Integer[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Long[] toObject(final long[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Long[] newArray = new Long[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static Short[] toObject(final short[] array) {
+        if (array == null) {
+            return null;
+        }
+        final Short[] newArray = new Short[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static boolean[] toPrimitive(final Boolean[] array) {
+        if (array == null) {
+            return null;
+        }
+        final boolean[] newArray = new boolean[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static byte[] toPrimitive(final Byte[] array) {
+        if (array == null) {
+            return null;
+        }
+        final byte[] newArray = new byte[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static char[] toPrimitive(final Character[] array) {
+        if (array == null) {
+            return null;
+        }
+        final char[] newArray = new char[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static double[] toPrimitive(final Double[] array) {
+        if (array == null) {
+            return null;
+        }
+        final double[] newArray = new double[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static float[] toPrimitive(final Float[] array) {
+        if (array == null) {
+            return null;
+        }
+        final float[] newArray = new float[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static int[] toPrimitive(final Integer[] array) {
+        if (array == null) {
+            return null;
+        }
+        final int[] newArray = new int[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static long[] toPrimitive(final Long[] array) {
+        if (array == null) {
+            return null;
+        }
+        final long[] newArray = new long[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    public static short[] toPrimitive(final Short[] array) {
+        if (array == null) {
+            return null;
+        }
+        final short[] newArray = new short[array.length];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
     }
 }
