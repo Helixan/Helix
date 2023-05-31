@@ -1366,4 +1366,8 @@ public final class ArrayUtils {
     public static int[] nullToEmpty(final int[] array) {
         return array == null ? EMPTY_INT_ARRAY : array;
     }
+
+    public static long[] nullToEmpty(final long[] array) {
+        return array == null ? EMPTY_LONG_ARRAY : array;
+    }
 }
