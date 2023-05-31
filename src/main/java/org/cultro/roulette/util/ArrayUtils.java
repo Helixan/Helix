@@ -1358,4 +1358,8 @@ public final class ArrayUtils {
     public static double[] nullToEmpty(final double[] array) {
         return array == null ? EMPTY_DOUBLE_ARRAY : array;
     }
+
+    public static float[] nullToEmpty(final float[] array) {
+        return array == null ? EMPTY_FLOAT_ARRAY : array;
+    }
 }
