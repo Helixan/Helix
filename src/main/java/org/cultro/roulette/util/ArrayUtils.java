@@ -1342,4 +1342,8 @@ public final class ArrayUtils {
         Validate.notNull(type, "The type may not be null");
         return array == null ? type.cast(Array.newInstance(type.getComponentType(), 0)) : array;
     }
+
+    public static boolean[] nullToEmpty(final boolean[] array) {
+        return array == null ? EMPTY_BOOLEAN_ARRAY : array;
+    }
 }
