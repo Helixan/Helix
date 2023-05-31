@@ -1362,4 +1362,8 @@ public final class ArrayUtils {
     public static float[] nullToEmpty(final float[] array) {
         return array == null ? EMPTY_FLOAT_ARRAY : array;
     }
+
+    public static int[] nullToEmpty(final int[] array) {
+        return array == null ? EMPTY_INT_ARRAY : array;
+    }
 }
