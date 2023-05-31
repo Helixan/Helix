@@ -84,6 +84,10 @@ public final class BooleanUtils {
         return value ? Boolean.TRUE : Boolean.FALSE;
     }
 
+    public static Boolean toBooleanObject(final int value) {
+        return value != 0;
+    }
+
     public static boolean xor(final boolean... values) {
         Validate.notNull(values);
         boolean found = false;
