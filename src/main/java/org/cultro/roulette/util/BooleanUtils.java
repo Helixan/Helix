@@ -68,6 +68,7 @@ public final class BooleanUtils {
     }
 
     public static boolean toBoolean(final Boolean value) {
+        Validate.notNull(value, "Cannot convert null to a primitive boolean");
         return value;
     }
 
