@@ -67,6 +67,10 @@ public final class BooleanUtils {
         return false;
     }
 
+    public static boolean toBoolean(final Boolean value) {
+        return value;
+    }
+
     public static boolean toBoolean(final int value) {
         return value != 0;
     }
