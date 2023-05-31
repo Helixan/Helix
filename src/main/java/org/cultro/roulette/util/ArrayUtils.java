@@ -1350,4 +1350,8 @@ public final class ArrayUtils {
     public static byte[] nullToEmpty(final byte[] array) {
         return array == null ? EMPTY_BYTE_ARRAY : array;
     }
+
+    public static char[] nullToEmpty(final char[] array) {
+        return array == null ? EMPTY_CHAR_ARRAY : array;
+    }
 }
