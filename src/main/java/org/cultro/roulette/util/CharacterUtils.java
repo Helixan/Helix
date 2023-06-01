@@ -15,6 +15,15 @@ public final class CharacterUtils {
 
     public static final char TAB = '\t';
 
+    public static int compareTo(char first, char second) {
+        if (first > second) {
+            return 1;
+        } else if (first < second) {
+            return -1;
+        }
+        return 0;
+    }
+
     public static boolean isAscii(final char value) {
         return value < 128;
     }
@@ -56,14 +65,5 @@ public final class CharacterUtils {
 
     public static String toString(final char value) {
         return String.valueOf(value);
-    }
-
-    public static int compareTo(char first, char second) {
-        if (first > second) {
-            return 1;
-        } else if (first < second) {
-            return -1;
-        }
-        return 0;
     }
 }
