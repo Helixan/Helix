@@ -1700,7 +1700,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a byrwe array
+     * Reverses the elements in a byte array
      *
      * @param array the boolean array to be reversed
      */
