@@ -1662,6 +1662,12 @@ public final class ArrayUtils {
         }
     }
 
+
+    /**
+     * Reverses the elements in a boolean array
+     *
+     * @param array the boolean array to be reversed
+     */
     public static void reverse(final boolean[] array) {
         reverse(array, 0, array.length - 1);
     }
