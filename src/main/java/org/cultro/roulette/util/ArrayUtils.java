@@ -1710,7 +1710,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a byte array within the specified bounds
+     * Reverses the elements in a char array within the specified bounds
      *
      * @param array the byte array to be reversed
      * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
