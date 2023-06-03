@@ -1708,6 +1708,14 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+
+    /**
+     * Reverses the elements in a byte array within the specified bounds
+     *
+     * @param array the byte array to be reversed
+     * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
+     * @param secondBoundInclusive the index of the last element to be reversed (inclusive)
+     */
     public static void reverse(final char[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
