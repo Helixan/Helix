@@ -1770,6 +1770,12 @@ public final class ArrayUtils {
         }
     }
 
+
+    /**
+     * Reverses the elements in a char array
+     *
+     * @param array the byte array to be reversed
+     */
     public static void reverse(final double[] array) {
         reverse(array, 0, array.length - 1);
     }
