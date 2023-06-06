@@ -1748,7 +1748,7 @@ public final class ArrayUtils {
     /**
      * Reverses the elements in a double array within the specified bounds
      *
-     * @param array the char array to be reversed
+     * @param array the double array to be reversed
      * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
      * @param secondBoundInclusive the index of the last element to be reversed (inclusive)
      */
