@@ -1736,7 +1736,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a byte array
+     * Reverses the elements in a char array
      *
      * @param array the byte array to be reversed
      */
