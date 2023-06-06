@@ -1818,7 +1818,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a float array within the specified bounds
+     * Reverses the elements in a int array within the specified bounds
      *
      * @param array the float array to be reversed
      * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
