@@ -1808,7 +1808,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a char array
+     * Reverses the elements in a float array
      *
      * @param array the double array to be reversed
      */
