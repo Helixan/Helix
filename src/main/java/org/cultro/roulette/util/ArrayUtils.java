@@ -1842,6 +1842,12 @@ public final class ArrayUtils {
         }
     }
 
+
+    /**
+     * Reverses the elements in a float array
+     *
+     * @param array the double array to be reversed
+     */
     public static void reverse(final int[] array) {
         reverse(array, 0, array.length - 1);
     }
