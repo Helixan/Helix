@@ -2,8 +2,7 @@ package org.cultro.roulette.util;
 
 import org.cultro.roulette.lang.Validate;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
@@ -53,5 +52,13 @@ public class MapUtils {
             index--;
         }
         throw new IndexOutOfBoundsException();
+    }
+
+    public static <K, V> Set<K> getKeysByValue(Map<K, V> map, V value) {
+        Validate.notNull(map, "A null map does not have keys");
+        return map.entrySet().stream()
+                .filter(entry -> Objects.equals(entry.getValue(), value))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
     }
 }
