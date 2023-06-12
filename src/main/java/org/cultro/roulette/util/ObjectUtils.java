@@ -4,6 +4,9 @@ package org.cultro.roulette.util;
 import org.cultro.roulette.lang.Validate;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
 public final class ObjectUtils {
@@ -44,5 +47,10 @@ public final class ObjectUtils {
             return object.getClass().isPrimitive();
         }
         return false;
+    }
+
+    @SafeVarargs
+    private static <T> Set<T> asSet(T... objects) {
+        return Arrays.stream(objects).collect(Collectors.toSet());
     }
 }
