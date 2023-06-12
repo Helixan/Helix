@@ -67,6 +67,15 @@ public final class StringUtils {
         return editDistance(first.toString().toLowerCase(), second.toString().toLowerCase());
     }
 
+    public static boolean isByte(String value) {
+        try {
+            Byte.parseByte(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     public static boolean isDouble(String value) {
         try {
             Double.parseDouble(value);
