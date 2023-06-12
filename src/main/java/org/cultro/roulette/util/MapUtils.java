@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
-public class MapUtils {
+public final class MapUtils {
 
     public static <K extends Comparable<K>, V> LinkedHashMap<K, V> sortByKey(Map<K, V> map, boolean reverseOrder) {
         Validate.notNull(map, "A null map cannot be sorted");
