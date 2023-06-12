@@ -42,6 +42,14 @@ public class MapUtils {
         throw new IndexOutOfBoundsException();
     }
 
+    public static <K, V> Set<K> getKeysByValue(Map<K, V> map, V value) {
+        Validate.notNull(map, "A null map does not have keys");
+        return map.entrySet().stream()
+                .filter(entry -> Objects.equals(entry.getValue(), value))
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toSet());
+    }
+
     public static <V> V getValueAtIndex(LinkedHashMap<?, V> map, int index) {
         Validate.notNull(map, "A null map does not have keys");
         Validate.isValidIndex(index, "An index may not be negative");
@@ -52,13 +60,5 @@ public class MapUtils {
             index--;
         }
         throw new IndexOutOfBoundsException();
-    }
-
-    public static <K, V> Set<K> getKeysByValue(Map<K, V> map, V value) {
-        Validate.notNull(map, "A null map does not have keys");
-        return map.entrySet().stream()
-                .filter(entry -> Objects.equals(entry.getValue(), value))
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toSet());
     }
 }
