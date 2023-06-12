@@ -19,4 +19,8 @@ public final class StringUtils {
         }
         return table[first.length()][second.length()];
     }
+
+    public static int editDistanceIgnoreCase(String first, String second) {
+        return editDistance(first.toLowerCase(), second.toLowerCase());
+    }
 }
