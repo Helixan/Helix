@@ -93,4 +93,13 @@ public final class StringUtils {
             return false;
         }
     }
+
+    public static boolean isInt(String value) {
+        try {
+            Integer.parseInt(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
