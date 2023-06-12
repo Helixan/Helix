@@ -111,4 +111,13 @@ public final class StringUtils {
             return false;
         }
     }
+
+    public static boolean isShort(String value) {
+        try {
+            Short.parseShort(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
