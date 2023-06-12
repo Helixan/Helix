@@ -38,4 +38,11 @@ public final class ObjectUtils {
         }
         return false;
     }
+
+    public static <T> boolean isPrimitive(T object) {
+        if (object != null) {
+            return object.getClass().isPrimitive();
+        }
+        return false;
+    }
 }
