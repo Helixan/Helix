@@ -58,6 +58,7 @@ public final class ObjectUtils {
 
     @SafeVarargs
     private static <T> List<T> asList(T... objects) {
+        Validate.notNull(objects, "You may not convert null into a list");
         return Arrays.stream(objects).collect(Collectors.toList());
     }
 }
