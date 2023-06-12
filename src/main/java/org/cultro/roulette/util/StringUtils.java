@@ -45,4 +45,8 @@ public final class StringUtils {
     public static int editDistanceIgnoreCase(RString first, String second) {
         return editDistance(first.toString().toLowerCase(), second.toLowerCase());
     }
+
+    public static int editDistanceIgnoreCase(RString first, RString second) {
+        return editDistance(first.toString().toLowerCase(), second.toString().toLowerCase());
+    }
 }
