@@ -66,4 +66,13 @@ public final class StringUtils {
         Validate.notNull(second, "No edit distance can be calculated on a null RString");
         return editDistance(first.toString().toLowerCase(), second.toString().toLowerCase());
     }
+
+    public static boolean isDouble(String value) {
+        try {
+            Double.parseDouble(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
