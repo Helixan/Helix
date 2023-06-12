@@ -52,6 +52,7 @@ public final class ObjectUtils {
 
     @SafeVarargs
     private static <T> Set<T> asSet(T... objects) {
+        Validate.notNull(objects, "You may not convert null into a set");
         return Arrays.stream(objects).collect(Collectors.toSet());
     }
 
