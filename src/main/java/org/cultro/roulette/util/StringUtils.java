@@ -1,5 +1,7 @@
 package org.cultro.roulette.util;
 
+import org.cultro.roulette.lang.RString;
+
 @SuppressWarnings("unused")
 public final class StringUtils {
 
@@ -18,6 +20,10 @@ public final class StringUtils {
             }
         }
         return table[first.length()][second.length()];
+    }
+
+    public static int editDistance(String first, RString second) {
+        return editDistance(first, second.toString());
     }
 
     public static int editDistanceIgnoreCase(String first, String second) {
