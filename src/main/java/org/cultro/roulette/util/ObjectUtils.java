@@ -6,7 +6,7 @@ import org.cultro.roulette.lang.Validate;
 import java.io.*;
 
 @SuppressWarnings("unused")
-public class ObjectUtils {
+public final class ObjectUtils {
 
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> T deepCopy(T object) {
