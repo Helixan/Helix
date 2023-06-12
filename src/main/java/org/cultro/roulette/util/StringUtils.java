@@ -30,6 +30,10 @@ public final class StringUtils {
         return editDistance(first.toString(), second);
     }
 
+    public static int editDistance(RString first, RString second) {
+        return editDistance(first.toString(), second.toString());
+    }
+
     public static int editDistanceIgnoreCase(String first, String second) {
         return editDistance(first.toLowerCase(), second.toLowerCase());
     }
