@@ -37,4 +37,8 @@ public final class StringUtils {
     public static int editDistanceIgnoreCase(String first, String second) {
         return editDistance(first.toLowerCase(), second.toLowerCase());
     }
+
+    public static int editDistanceIgnoreCase(String first, RString second) {
+        return editDistance(first.toLowerCase(), second.toString().toLowerCase());
+    }
 }
