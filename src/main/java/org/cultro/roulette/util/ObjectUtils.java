@@ -5,6 +5,7 @@ import org.cultro.roulette.lang.Validate;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -52,5 +53,10 @@ public final class ObjectUtils {
     @SafeVarargs
     private static <T> Set<T> asSet(T... objects) {
         return Arrays.stream(objects).collect(Collectors.toSet());
+    }
+
+    @SafeVarargs
+    private static <T> List<T> asList(T... objects) {
+        return Arrays.stream(objects).collect(Collectors.toList());
     }
 }
