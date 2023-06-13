@@ -11,18 +11,51 @@ public final class SimpleLocation implements Serializable {
     private double y;
     private double z;
 
+
+    /**
+     * Constructs a SimpleLocation object with the specified x, y, and z coordinates.
+     *
+     * @param x the double in which the x coordinate will be equal to
+     * @param y the double in which the y coordinate will be equal to
+     * @param z the double in which the z coordinate will be equal to
+     */
     public SimpleLocation(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
+
+    /**
+     * Constructs a SimpleLocation object with the specified x and y coordinates. All other coordinates default
+     * to a value of zero
+     *
+     * @param x the double in which the x coordinate will be equal to
+     * @param y the double in which the y coordinate will be equal to
+     */
     public SimpleLocation(double x, double y) {
         this(x, y, 0);
     }
 
+
+    /**
+     * Constructs a SimpleLocation object with the specified x coordinate. All other coordinates default
+     * to a value of zero
+     *
+     * @param x the double in which the x coordinate will be equal to
+     */
     public SimpleLocation(double x) {
         this(x, 0, 0);
+    }
+
+
+    /**
+     * Constructs a SimpleLocation object with the coordinates copied from the specified SimpleLocation
+     *
+     * @param location the SimpleLocation object from which to copy the coordinates
+     */
+    public SimpleLocation(SimpleLocation location) {
+        this(location.x, location.y, location.z);
     }
 
     public SimpleLocation() {
