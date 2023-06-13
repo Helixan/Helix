@@ -5,6 +5,7 @@ import org.cultro.roulette.lang.Validate;
 import java.io.Serializable;
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 public final class SimpleLocation implements Serializable {
 
     private double x;
