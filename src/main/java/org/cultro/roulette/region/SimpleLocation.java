@@ -59,6 +59,10 @@ public final class SimpleLocation implements Serializable {
         this(location.x, location.y, location.z);
     }
 
+
+    /**
+     * Constructs a SimpleLocation object with the coordinates all set to a default value of zero
+     */
     public SimpleLocation() {
         this(0, 0, 0);
     }
