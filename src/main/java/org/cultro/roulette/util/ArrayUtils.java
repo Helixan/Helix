@@ -1662,6 +1662,7 @@ public final class ArrayUtils {
         }
     }
 
+
     public static void reverse(final boolean[] array) {
         reverse(array, 0, array.length - 1);
     }
