@@ -31,10 +31,8 @@ public final class ArrayUtils {
 
     /**
      * The constructor for this class should never be called.
-     * <p>
      * This constructor is only public in the case that a tool requires
      * a JavaBean instance to run.
-     * </p>
      */
     public ArrayUtils() {
     }
