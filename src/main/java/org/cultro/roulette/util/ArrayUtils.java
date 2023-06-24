@@ -113,6 +113,14 @@ public final class ArrayUtils {
         return (Class<T>) array.getClass().getComponentType();
     }
 
+
+    /**
+     * Returns the total length of all input arrays combined
+     *
+     * @param arrays the arrays whose total length is to be returned
+     * @return the total length of all input arrays combined
+     * @param <T> the type of the elements in the array
+     */
     @SafeVarargs
     static <T> int lengthOfAllArraysCombined(final T[]... arrays) {
         int length = 0;
