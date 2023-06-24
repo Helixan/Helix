@@ -146,6 +146,17 @@ public final class ArrayUtils {
         return (T[]) Array.newInstance(type, length);
     }
 
+
+    /**
+     * Returns a new array that contains all elements of the input array followed by all elements of the
+     * input varargs array
+     *
+     * @param array the array to which the elements are to be added
+     * @param elementsToAdd the elements to be added to the array
+     * @return a new array that contains all elements of the input array followed by all elements of the
+     * input varargs array
+     * @param <T> the type of the elements in the array
+     */
     @SafeVarargs
     public static <T> T[] addAll(final T[] array, final T... elementsToAdd) {
         if (elementsToAdd == null) {
