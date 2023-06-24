@@ -148,8 +148,8 @@ public final class ArrayUtils {
 
 
     /**
-     * Returns a new array that contains all elements of the input array followed by all elements of the
-     * input varargs array
+     * Concatenates the input array with the varargs array by creating a new array that includes all elements
+     * of the initial array followed by all elements of the varargs array
      *
      * @param array the array to which the elements are to be added
      * @param elementsToAdd the elements to be added to the array
