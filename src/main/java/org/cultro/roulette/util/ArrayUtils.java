@@ -115,7 +115,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Returns the total length of all input arrays combined
+     * Calculates the length of all input arrays combined
      *
      * @param arrays the arrays whose total length is to be returned
      * @return the total length of all input arrays combined
