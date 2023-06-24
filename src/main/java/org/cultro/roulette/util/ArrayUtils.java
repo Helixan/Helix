@@ -77,6 +77,14 @@ public final class ArrayUtils {
         return INDEX_NOT_FOUND;
     }
 
+
+    /**
+     * Returns the index of the first null element in an array
+     *
+     * @param array the array to check for the index of a null element
+     * @return the index of the first null array element or -1 otherwise
+     * @param <T> the type of elements in the array
+     */
     static <T> int firstNullElementIndex(final T[] array) {
         if (array == null) {
             return INDEX_NOT_FOUND;
