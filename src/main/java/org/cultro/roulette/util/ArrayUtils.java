@@ -37,6 +37,14 @@ public final class ArrayUtils {
     public ArrayUtils() {
     }
 
+
+    /**
+     * Returns true if the input array contains at least one non-null element
+     *
+     * @param array the array to check for non-null elements
+     * @return true if the input array contains at least one non-null element, false otherwise
+     * @param <T> the type of the elements in the array
+     */
     static <T> boolean containsOneNonNullElement(final T[] array) {
         if (array == null) {
             return false;
@@ -49,6 +57,14 @@ public final class ArrayUtils {
         return false;
     }
 
+
+    /**
+     * Returns the index of the first non-null element in an array
+     *
+     * @param array the array to check for the index of a non-null element
+     * @return the index of the first non-null array element or -1 otherwise
+     * @param <T> the type of elements in the array
+     */
     static <T> int firstNotNullElementIndex(final T[] array) {
         if (array == null) {
             return INDEX_NOT_FOUND;
