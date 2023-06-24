@@ -134,7 +134,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Returns a new array instance of the specified type and length
+     * Creates a new instance of an array with a specified type and length
      *
      * @param type the type of the elements in the new array
      * @param length the length of the new array
