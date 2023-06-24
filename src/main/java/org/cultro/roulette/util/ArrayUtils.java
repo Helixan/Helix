@@ -99,7 +99,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Returns the component type of the input array
+     * Gets the component type within the array
      *
      * @param array the array whose component type is to be returned
      * @return the component type of the input array, or null if the input array is null
