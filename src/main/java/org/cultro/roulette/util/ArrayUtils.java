@@ -62,8 +62,8 @@ public final class ArrayUtils {
      * Returns the index of the first non-null element in an array
      *
      * @param array the array to check for the index of a non-null element
-     * @return the index of the first non-null array element or -1 otherwise
-     * @param <T> the type of elements in the array
+     * @return the index of the first non-null array element, or -1 otherwise
+     * @param <T> the type of the elements in the array
      */
     static <T> int firstNotNullElementIndex(final T[] array) {
         if (array == null) {
@@ -82,8 +82,8 @@ public final class ArrayUtils {
      * Returns the index of the first null element in an array
      *
      * @param array the array to check for the index of a null element
-     * @return the index of the first null array element or -1 otherwise
-     * @param <T> the type of elements in the array
+     * @return the index of the first null array element, or -1 otherwise
+     * @param <T> the type of the elements in the array
      */
     static <T> int firstNullElementIndex(final T[] array) {
         if (array == null) {
@@ -97,6 +97,14 @@ public final class ArrayUtils {
         return INDEX_NOT_FOUND;
     }
 
+
+    /**
+     * Returns the component type of the input array
+     *
+     * @param array the array whose component type is to be returned
+     * @return the component type of the input array, or null if the input array is null
+     * @param <T> the type of the elements in the array
+     */
     @SuppressWarnings("unchecked")
     static <T> Class<T> getComponentType(final T[] array) {
         if (array == null) {
