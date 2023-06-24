@@ -59,7 +59,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Returns the index of the first non-null element in an array
+     * Finds the first index of a non-null element
      *
      * @param array the array to check for the index of a non-null element
      * @return the index of the first non-null array element, or -1 otherwise
