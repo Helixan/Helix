@@ -132,6 +132,15 @@ public final class ArrayUtils {
         return length;
     }
 
+
+    /**
+     * Returns a new array instance of the specified type and length
+     *
+     * @param type the type of the elements in the new array
+     * @param length the length of the new array
+     * @return a new array instance of the specified type and length
+     * @param <T> the type of the elements in the array
+     */
     @SuppressWarnings("unchecked")
     static <T> T[] newArrayInstance(final Class<T> type, final int length) {
         return (T[]) Array.newInstance(type, length);
