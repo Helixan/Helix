@@ -39,7 +39,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Returns true if the input array contains at least one non-null element
+     * Determines whether an input array contains at least one non-null element
      *
      * @param array the array to check for non-null elements
      * @return true if the input array contains at least one non-null element, false otherwise
