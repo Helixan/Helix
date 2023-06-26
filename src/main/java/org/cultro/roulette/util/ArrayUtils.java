@@ -380,6 +380,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified char array
+     *
+     * @param arrayToClone the char array to be cloned
+     * @return a clone of the specified char array, or null if the input array is null
+     */
     public static char[] clone(final char[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
