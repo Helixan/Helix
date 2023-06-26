@@ -541,6 +541,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Inserts elements at the specified index in the char array. Shifts the element
+     * at the specified index as well as all subsequent elements to the right.
+     *
+     * @param array the char array to insert the elements into
+     * @param index the position within the array to insert the elements
+     * @param values the elements to insert
+     * @return the new char array with the elements inserted at the specified index
+     */
     public static char[] insert(final char[] array, final int index, final char... values) {
         if (array == null) {
             return null;
