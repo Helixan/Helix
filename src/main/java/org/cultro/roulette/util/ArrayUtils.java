@@ -402,6 +402,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified float array
+     *
+     * @param arrayToClone the float array to be cloned
+     * @return a clone of the specified float array, or null if the input array is null
+     */
     public static float[] clone(final float[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
