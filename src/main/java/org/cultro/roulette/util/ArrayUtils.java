@@ -456,6 +456,7 @@ public final class ArrayUtils {
      * @param values the elements to insert
      * @return the new array with the elements inserted at the specified index
      * @param <T> the type of the elements in the array
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     @SafeVarargs
     public static <T> T[] insert(final T[] array, final int index, final T... values) {
@@ -488,6 +489,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new boolean array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static boolean[] insert(final boolean[] array, final int index, final boolean... values) {
         if (array == null) {
@@ -519,6 +521,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new byte array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static byte[] insert(final byte[] array, final int index, final byte... values) {
         if (array == null) {
@@ -550,6 +553,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new char array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static char[] insert(final char[] array, final int index, final char... values) {
         if (array == null) {
@@ -581,6 +585,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new double array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static double[] insert(final double[] array, final int index, final double... values) {
         if (array == null) {
@@ -612,6 +617,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new float array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static float[] insert(final float[] array, final int index, final float... values) {
         if (array == null) {
@@ -643,6 +649,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new int array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static int[] insert(final int[] array, final int index, final int... values) {
         if (array == null) {
@@ -674,6 +681,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new long array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static long[] insert(final long[] array, final int index, final long... values) {
         if (array == null) {
@@ -705,6 +713,7 @@ public final class ArrayUtils {
      * @param index the position within the array to insert the elements
      * @param values the elements to insert
      * @return the new short array with the elements inserted at the specified index
+     * @throws IndexOutOfBoundsException if the index is less than zero or more than the array length
      */
     public static short[] insert(final short[] array, final int index, final short... values) {
         if (array == null) {
@@ -798,6 +807,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a boolean array is sorted in either ascending or descending order
+     *
+     * @param array the boolean array to be checked
+     * @return true if the boolean array is sorted, false otherwise
+     */
     public static boolean isSorted(final boolean[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -819,6 +835,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a byte array is sorted in either ascending or descending order
+     *
+     * @param array the byte array to be checked
+     * @return true if the byte array is sorted, false otherwise
+     */
     public static boolean isSorted(final byte[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -840,6 +863,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a char array is sorted in either ascending or descending order
+     *
+     * @param array the char array to be checked
+     * @return true if the char array is sorted, false otherwise
+     */
     public static boolean isSorted(final char[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -861,6 +891,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a double array is sorted in either ascending or descending order
+     *
+     * @param array the double array to be checked
+     * @return true if the double array is sorted, false otherwise
+     */
     public static boolean isSorted(final double[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -882,6 +919,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a float array is sorted in either ascending or descending order
+     *
+     * @param array the float array to be checked
+     * @return true if the float array is sorted, false otherwise
+     */
     public static boolean isSorted(final float[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -903,6 +947,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a int array is sorted in either ascending or descending order
+     *
+     * @param array the int array to be checked
+     * @return true if the int array is sorted, false otherwise
+     */
     public static boolean isSorted(final int[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -924,6 +975,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a long array is sorted in either ascending or descending order
+     *
+     * @param array the long array to be checked
+     * @return true if the long array is sorted, false otherwise
+     */
     public static boolean isSorted(final long[] array) {
         if (array == null || array.length < 2) {
             return true;
@@ -945,6 +1003,13 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if a short array is sorted in either ascending or descending order
+     *
+     * @param array the short array to be checked
+     * @return true if the short array is sorted, false otherwise
+     */
     public static boolean isSorted(final short[] array) {
         if (array == null || array.length < 2) {
             return true;
