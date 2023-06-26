@@ -369,6 +369,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified byte array
+     *
+     * @param arrayToClone the byte array to be cloned
+     * @return a clone of the specified byte array, or null if the input array is null
+     */
     public static byte[] clone(final byte[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
