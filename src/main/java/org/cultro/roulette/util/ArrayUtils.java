@@ -446,6 +446,17 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Inserts elements at the specified index in the array. Shifts the element
+     * at the specified index as well as all subsequent elements to the right.
+     *
+     * @param array the array to insert the elements into
+     * @param index the position within the array to insert the elements
+     * @param values the elements to insert
+     * @return the new array with the elements inserted at the specified index
+     * @param <T> the type of the elements in the array
+     */
     @SafeVarargs
     public static <T> T[] insert(final T[] array, final int index, final T... values) {
         if (array == null) {
