@@ -603,6 +603,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Inserts elements at the specified index in the float array. Shifts the element
+     * at the specified index as well as all subsequent elements to the right.
+     *
+     * @param array the float array to insert the elements into
+     * @param index the position within the array to insert the elements
+     * @param values the elements to insert
+     * @return the new float array with the elements inserted at the specified index
+     */
     public static float[] insert(final float[] array, final int index, final float... values) {
         if (array == null) {
             return null;
