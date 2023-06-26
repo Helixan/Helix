@@ -727,6 +727,15 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Checks if an array is sorted in either ascending or descending order
+     *
+     * @param array the array to be checked
+     * @param comparator the comparator to be used
+     * @return true if the array is sorted, false otherwise
+     * @param <T> the type of elements in the array
+     */
     public static <T> boolean isSorted(final T[] array, Comparator<T> comparator) {
         if (array == null || array.length < 2) {
             return true;
@@ -754,6 +763,14 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Checks if an array is sorted in either ascending or descending order
+     *
+     * @param array the array to be checked
+     * @return true if the array is sorted, false otherwise
+     * @param <T> the type of the elements in the array
+     */
     public static <T extends Comparable<T>> boolean isSorted(final T[] array) {
         if (array == null || array.length < 2) {
             return true;
