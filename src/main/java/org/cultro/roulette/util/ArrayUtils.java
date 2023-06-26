@@ -391,6 +391,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified double array
+     *
+     * @param arrayToClone the double array to be cloned
+     * @return a clone of the specified double array, or null if the input array is null
+     */
     public static double[] clone(final double[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
