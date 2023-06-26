@@ -424,6 +424,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified long array
+     *
+     * @param arrayToClone the long array to be cloned
+     * @return a clone of the specified long array, or null if the input array is null
+     */
     public static long[] clone(final long[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
