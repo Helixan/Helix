@@ -310,6 +310,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Concatenates the input array with the varargs array by creating a new array that includes all elements
+     * of the initial array followed by all elements of the varargs array
+     *
+     * @param array the array to which the elements are to be added
+     * @param elementsToAdd the elements to be added to the array
+     * @return a new array that contains all elements of the input array followed by all elements of the
+     * input varargs array
+     */
     public static long[] addAll(final long[] array, final long... elementsToAdd) {
         if (elementsToAdd == null) {
             return clone(array);
@@ -1031,6 +1041,14 @@ public final class ArrayUtils {
         return true;
     }
 
+
+    /**
+     * Merges the specified arrays into a single array
+     *
+     * @param arraysToMerge the arrays to be merged
+     * @return an array containing all elements of the specified arrays, in the order they were passed
+     * @param <T> the type of the elements in the array
+     */
     @SafeVarargs
     public static <T> T[] mergeArrays(final T[]... arraysToMerge) {
         final int firstNotNullIndex = firstNotNullElementIndex(arraysToMerge);
@@ -1049,6 +1067,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified boolean arrays into a single array
+     *
+     * @param arraysToMerge the boolean arrays to be merged
+     * @return a boolean array containing all elements of the specified arrays, in the order they were passed
+     */
     public static boolean[] mergeArrays(final boolean[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1067,6 +1092,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified byte arrays into a single array
+     *
+     * @param arraysToMerge the byte arrays to be merged
+     * @return a byte array containing all elements of the specified arrays, in the order they were passed
+     */
     public static byte[] mergeArrays(final byte[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1085,6 +1117,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified char arrays into a single array
+     *
+     * @param arraysToMerge the char arrays to be merged
+     * @return a char array containing all elements of the specified arrays, in the order they were passed
+     */
     public static char[] mergeArrays(final char[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1103,6 +1142,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified double arrays into a single array
+     *
+     * @param arraysToMerge the double arrays to be merged
+     * @return a double array containing all elements of the specified arrays, in the order they were passed
+     */
     public static double[] mergeArrays(final double[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1121,6 +1167,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified float arrays into a single array
+     *
+     * @param arraysToMerge the float arrays to be merged
+     * @return a float array containing all elements of the specified arrays, in the order they were passed
+     */
     public static float[] mergeArrays(final float[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1139,6 +1192,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified int arrays into a single array
+     *
+     * @param arraysToMerge the int arrays to be merged
+     * @return a int array containing all elements of the specified arrays, in the order they were passed
+     */
     public static int[] mergeArrays(final int[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1157,6 +1217,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified long arrays into a single array
+     *
+     * @param arraysToMerge the long arrays to be merged
+     * @return a long array containing all elements of the specified arrays, in the order they were passed
+     */
     public static long[] mergeArrays(final long[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
@@ -1175,6 +1242,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Merges the specified short arrays into a single array
+     *
+     * @param arraysToMerge the short arrays to be merged
+     * @return a short array containing all elements of the specified arrays, in the order they were passed
+     */
     public static short[] mergeArrays(final short[]... arraysToMerge) {
         if (arraysToMerge == null) {
             return null;
