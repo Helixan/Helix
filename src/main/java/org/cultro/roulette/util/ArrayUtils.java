@@ -510,6 +510,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Inserts elements at the specified index in the byte array. Shifts the element
+     * at the specified index as well as all subsequent elements to the right.
+     *
+     * @param array the byte array to insert the elements into
+     * @param index the position within the array to insert the elements
+     * @param values the elements to insert
+     * @return the new byte array with the elements inserted at the specified index
+     */
     public static byte[] insert(final byte[] array, final int index, final byte... values) {
         if (array == null) {
             return null;
