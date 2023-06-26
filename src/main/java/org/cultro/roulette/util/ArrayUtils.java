@@ -572,6 +572,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Inserts elements at the specified index in the double array. Shifts the element
+     * at the specified index as well as all subsequent elements to the right.
+     *
+     * @param array the double array to insert the elements into
+     * @param index the position within the array to insert the elements
+     * @param values the elements to insert
+     * @return the new double array with the elements inserted at the specified index
+     */
     public static double[] insert(final double[] array, final int index, final double... values) {
         if (array == null) {
             return null;
