@@ -346,6 +346,14 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Creates a clone of the specified array
+     *
+     * @param arrayToClone the array to be cloned
+     * @return a clone of the specified array, or null if the input array is null
+     * @param <T> the type of the elements in the array
+     */
     public static <T> T[] clone(final T[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
