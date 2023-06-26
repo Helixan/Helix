@@ -435,6 +435,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified short array
+     *
+     * @param arrayToClone the short array to be cloned
+     * @return a clone of the specified short array, or null if the input array is null
+     */
     public static short[] clone(final short[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
