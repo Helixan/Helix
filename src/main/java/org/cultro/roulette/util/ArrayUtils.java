@@ -358,6 +358,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified boolean array
+     *
+     * @param arrayToClone the boolean array to be cloned
+     * @return a clone of the specified boolean array, or null if the input array is null
+     */
     public static boolean[] clone(final boolean[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
