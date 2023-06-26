@@ -413,6 +413,13 @@ public final class ArrayUtils {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
 
+
+    /**
+     * Creates a clone of the specified int array
+     *
+     * @param arrayToClone the int array to be cloned
+     * @return a clone of the specified int array, or null if the input array is null
+     */
     public static int[] clone(final int[] arrayToClone) {
         return arrayToClone == null ? null : arrayToClone.clone();
     }
