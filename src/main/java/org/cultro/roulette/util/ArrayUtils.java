@@ -1267,6 +1267,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts a null array to an empty array of the specified type
+     *
+     * @param array the array to convert, can be null
+     * @param type the type of the array, cannot be null
+     * @return an empty array of the specified type if the input array is null, otherwise returns the input array
+     * @param <T> the type of the elements in the array
+     * @throws IllegalArgumentException if the type is null
+     */
     public static <T> T[] nullToEmpty(final T[] array, final Class<T[]> type) {
         Validate.notNull(type, "The type may not be null");
         return array == null ? type.cast(Array.newInstance(type.getComponentType(), 0)) : array;
