@@ -1337,6 +1337,13 @@ public final class ArrayUtils {
         return array == null ? EMPTY_FLOAT_ARRAY : array;
     }
 
+
+    /**
+     * Converts a null int array into an empty int array
+     *
+     * @param array the int array to convert, can be null
+     * @return an empty int array if the input array is null, otherwise returns the input array
+     */
     public static int[] nullToEmpty(final int[] array) {
         return array == null ? EMPTY_INT_ARRAY : array;
     }
