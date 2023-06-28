@@ -1282,6 +1282,13 @@ public final class ArrayUtils {
         return array == null ? type.cast(Array.newInstance(type.getComponentType(), 0)) : array;
     }
 
+
+    /**
+     * Converts a null boolean array into an empty boolean array
+     *
+     * @param array the boolean array to convert, can be null
+     * @return an empty boolean array if the input array is null, otherwise returns the input array
+     */
     public static boolean[] nullToEmpty(final boolean[] array) {
         return array == null ? EMPTY_BOOLEAN_ARRAY : array;
     }
