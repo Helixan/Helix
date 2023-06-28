@@ -1326,6 +1326,13 @@ public final class ArrayUtils {
         return array == null ? EMPTY_DOUBLE_ARRAY : array;
     }
 
+
+    /**
+     * Converts a null float array into an empty float array
+     *
+     * @param array the float array to convert, can be null
+     * @return an empty float array if the input array is null, otherwise returns the input array
+     */
     public static float[] nullToEmpty(final float[] array) {
         return array == null ? EMPTY_FLOAT_ARRAY : array;
     }
