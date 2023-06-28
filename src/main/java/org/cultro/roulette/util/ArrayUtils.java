@@ -1359,6 +1359,13 @@ public final class ArrayUtils {
         return array == null ? EMPTY_LONG_ARRAY : array;
     }
 
+
+    /**
+     * Converts a null short array into an empty short array
+     *
+     * @param array the short array to convert, can be null
+     * @return an empty short array if the input array is null, otherwise returns the input array
+     */
     public static short[] nullToEmpty(final short[] array) {
         return array == null ? EMPTY_SHORT_ARRAY : array;
     }
