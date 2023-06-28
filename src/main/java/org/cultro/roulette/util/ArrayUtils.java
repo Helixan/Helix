@@ -1315,6 +1315,13 @@ public final class ArrayUtils {
         return array == null ? EMPTY_CHAR_ARRAY : array;
     }
 
+
+    /**
+     * Converts a null double array into an empty double array
+     *
+     * @param array the double array to convert, can be null
+     * @return an empty double array if the input array is null, otherwise returns the input array
+     */
     public static double[] nullToEmpty(final double[] array) {
         return array == null ? EMPTY_DOUBLE_ARRAY : array;
     }
