@@ -1348,6 +1348,13 @@ public final class ArrayUtils {
         return array == null ? EMPTY_INT_ARRAY : array;
     }
 
+
+    /**
+     * Converts a null long array into an empty long array
+     *
+     * @param array the long array to convert, can be null
+     * @return an empty long array if the input array is null, otherwise returns the input array
+     */
     public static long[] nullToEmpty(final long[] array) {
         return array == null ? EMPTY_LONG_ARRAY : array;
     }
