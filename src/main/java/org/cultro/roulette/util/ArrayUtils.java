@@ -1293,6 +1293,13 @@ public final class ArrayUtils {
         return array == null ? EMPTY_BOOLEAN_ARRAY : array;
     }
 
+
+    /**
+     * Converts a null byte array into an empty byte array
+     *
+     * @param array the byte array to convert, can be null
+     * @return an empty byte array if the input array is null, otherwise returns the input array
+     */
     public static byte[] nullToEmpty(final byte[] array) {
         return array == null ? EMPTY_BYTE_ARRAY : array;
     }
