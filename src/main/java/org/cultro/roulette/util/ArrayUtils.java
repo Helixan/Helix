@@ -1572,6 +1572,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the short array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the short array to remove an element from
+     * @param index the position in the short array at which to remove the element
+     * @return the new short array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the short array
+     */
     public static short[] remove(final short[] array, final int index) {
         if (array == null) {
             return null;
