@@ -1447,6 +1447,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the char array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the char array to remove an element from
+     * @param index the position in the char array at which to remove the element
+     * @return the new char array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the char array
+     */
     public static char[] remove(final char[] array, final int index) {
         if (array == null) {
             return null;
