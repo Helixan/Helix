@@ -1597,6 +1597,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Reverses the elements in a boolean array within the specified bounds
+     *
+     * @param array the array to be reversed
+     * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
+     * @param secondBoundInclusive the index of the last element to be reversed (inclusive)
+     * @param <T> the type of the elements in the array
+     * @throws ArrayIndexOutOfBoundsException if either 'firstBoundInclusive' or 'secondBoundInclusive' is out of the array's bounds
+     */
     public static <T> void reverse(final T[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
