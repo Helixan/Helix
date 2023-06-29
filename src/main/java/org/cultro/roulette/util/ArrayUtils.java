@@ -1370,6 +1370,17 @@ public final class ArrayUtils {
         return array == null ? EMPTY_SHORT_ARRAY : array;
     }
 
+
+    /**
+     * Removes an element at the specified index in the array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the array to remove an element from
+     * @param index the position in the array at which to remove the element
+     * @return the new array with the element removed at the specified index
+     * @param <T> the type of the elements in the array
+     * @throws IndexOutOfBoundsException if the specified index is not within the array
+     */
     public static <T> T[] remove(final T[] array, final int index) {
         if (array == null) {
             return null;
