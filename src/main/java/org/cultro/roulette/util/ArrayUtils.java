@@ -1472,6 +1472,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the double array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the double array to remove an element from
+     * @param index the position in the double array at which to remove the element
+     * @return the new double array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the double array
+     */
     public static double[] remove(final double[] array, final int index) {
         if (array == null) {
             return null;
