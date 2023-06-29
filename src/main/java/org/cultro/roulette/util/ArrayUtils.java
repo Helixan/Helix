@@ -1397,6 +1397,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the boolean array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the boolean array to remove an element from
+     * @param index the position in the boolean array at which to remove the element
+     * @return the new boolean array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the boolean array
+     */
     public static boolean[] remove(final boolean[] array, final int index) {
         if (array == null) {
             return null;
