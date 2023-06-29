@@ -1422,6 +1422,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the byte array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the byte array to remove an element from
+     * @param index the position in the byte array at which to remove the element
+     * @return the new byte array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the byte array
+     */
     public static byte[] remove(final byte[] array, final int index) {
         if (array == null) {
             return null;
