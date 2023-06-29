@@ -1522,6 +1522,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the int array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the int array to remove an element from
+     * @param index the position in the int array at which to remove the element
+     * @return the new int array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the int array
+     */
     public static int[] remove(final int[] array, final int index) {
         if (array == null) {
             return null;
