@@ -1547,6 +1547,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the long array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the long array to remove an element from
+     * @param index the position in the long array at which to remove the element
+     * @return the new long array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the long array
+     */
     public static long[] remove(final long[] array, final int index) {
         if (array == null) {
             return null;
