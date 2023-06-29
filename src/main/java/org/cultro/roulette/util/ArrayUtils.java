@@ -1497,6 +1497,16 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Removes an element at the specified index in the float array. Shifts all subsequent elements
+     * to the left
+     *
+     * @param array the float array to remove an element from
+     * @param index the position in the float array at which to remove the element
+     * @return the new float array with the element removed at the specified index
+     * @throws IndexOutOfBoundsException if the specified index is not within the float array
+     */
     public static float[] remove(final float[] array, final int index) {
         if (array == null) {
             return null;
