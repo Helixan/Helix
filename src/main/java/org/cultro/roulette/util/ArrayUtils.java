@@ -1625,6 +1625,13 @@ public final class ArrayUtils {
         }
     }
 
+
+    /**
+     * Reverses the elements in an array
+     *
+     * @param array the array to be reversed
+     * @param <T> the type of the elements in the array
+     */
     public static <T> void reverse(final T[] array) {
         reverse(array, 0, array.length - 1);
     }
