@@ -959,7 +959,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Checks if a int array is sorted in either ascending or descending order
+     * Checks if an int array is sorted in either ascending or descending order
      *
      * @param array the int array to be checked
      * @return true if the int array is sorted, false otherwise
@@ -1197,7 +1197,7 @@ public final class ArrayUtils {
      * Merges the specified int arrays into a single array
      *
      * @param arraysToMerge the int arrays to be merged
-     * @return a int array containing all elements of the specified arrays, in the order they were passed
+     * @return an int array containing all elements of the specified arrays, in the order they were passed
      */
     public static int[] mergeArrays(final int[]... arraysToMerge) {
         if (arraysToMerge == null) {
