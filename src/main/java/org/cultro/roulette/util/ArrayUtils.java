@@ -1599,7 +1599,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a boolean array within the specified bounds
+     * Reverses the elements in an array within the specified bounds
      *
      * @param array the array to be reversed
      * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
