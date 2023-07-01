@@ -1888,6 +1888,14 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+
+    /**
+     * Reverses the elements in a short array within the specified bounds
+     *
+     * @param array the short array to be reversed
+     * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
+     * @param secondBoundInclusive the index of the last element to be reversed (inclusive)
+     */
     public static void reverse(final short[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -1906,6 +1914,12 @@ public final class ArrayUtils {
         }
     }
 
+
+    /**
+     * Reverses the elements in a short array
+     *
+     * @param array the short array to be reversed
+     */
     public static void reverse(final short[] array) {
         reverse(array, 0, array.length - 1);
     }
