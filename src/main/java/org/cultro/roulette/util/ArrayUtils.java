@@ -1738,7 +1738,7 @@ public final class ArrayUtils {
     /**
      * Reverses the elements in a char array
      *
-     * @param array the byte array to be reversed
+     * @param array the char array to be reversed
      */
     public static void reverse(final char[] array) {
         reverse(array, 0, array.length - 1);
@@ -1772,7 +1772,7 @@ public final class ArrayUtils {
 
 
     /**
-     * Reverses the elements in a char array
+     * Reverses the elements in a double array
      *
      * @param array the double array to be reversed
      */
@@ -1810,7 +1810,7 @@ public final class ArrayUtils {
     /**
      * Reverses the elements in a float array
      *
-     * @param array the double array to be reversed
+     * @param array the float array to be reversed
      */
     public static void reverse(final float[] array) {
         reverse(array, 0, array.length - 1);
@@ -1846,12 +1846,20 @@ public final class ArrayUtils {
     /**
      * Reverses the elements in a int array
      *
-     * @param array the double array to be reversed
+     * @param array the int array to be reversed
      */
     public static void reverse(final int[] array) {
         reverse(array, 0, array.length - 1);
     }
 
+
+    /**
+     * Reverses the elements in a long array within the specified bounds
+     *
+     * @param array the long array to be reversed
+     * @param firstBoundInclusive the index of the first element to be reversed (inclusive)
+     * @param secondBoundInclusive the index of the last element to be reversed (inclusive)
+     */
     public static void reverse(final long[] array, final int firstBoundInclusive, final int secondBoundInclusive) {
         if (array == null) {
             return;
@@ -1870,6 +1878,12 @@ public final class ArrayUtils {
         }
     }
 
+
+    /**
+     * Reverses the elements in a long array
+     *
+     * @param array the long array to be reversed
+     */
     public static void reverse(final long[] array) {
         reverse(array, 0, array.length - 1);
     }
