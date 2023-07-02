@@ -1924,6 +1924,15 @@ public final class ArrayUtils {
         reverse(array, 0, array.length - 1);
     }
 
+
+    /**
+     * Swaps the position of two elements in an array
+     *
+     * @param array the array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     * @param <T> the type of the elements in the array
+     */
     public static <T> void swap(final T[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -1935,6 +1944,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a boolean array
+     *
+     * @param array the boolean array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final boolean[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -1946,6 +1963,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a byte array
+     *
+     * @param array the byte array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final byte[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -1957,6 +1982,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a char array
+     *
+     * @param array the char array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final char[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -1968,6 +2001,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a double array
+     *
+     * @param array the double array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final double[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -1979,6 +2020,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a float array
+     *
+     * @param array the float array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final float[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -1990,6 +2039,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in an int array
+     *
+     * @param array the int array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final int[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -2001,6 +2058,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a long array
+     *
+     * @param array the long array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final long[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
@@ -2012,6 +2077,14 @@ public final class ArrayUtils {
         array[secondOffset] = temp;
     }
 
+
+    /**
+     * Swaps the position of two elements in a short array
+     *
+     * @param array the short array in which to swap elements
+     * @param firstOffset the index of the first element to swap
+     * @param secondOffset the index of the second element to swap
+     */
     public static void swap(final short[] array, final int firstOffset, final int secondOffset) {
         if (array == null || firstOffset >= array.length ||
                 secondOffset >= array.length || firstOffset == 0 ||
