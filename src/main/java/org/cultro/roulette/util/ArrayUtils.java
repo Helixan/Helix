@@ -2240,6 +2240,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Boolean array into a primitive type boolean array
+     *
+     * @param array the Boolean array to convert
+     * @return the converted boolean array, or null if the input array is nullByte
+     */
     public static boolean[] toPrimitive(final Boolean[] array) {
         if (array == null) {
             return null;
@@ -2251,6 +2258,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Byte array into a primitive type byte array
+     *
+     * @param array the Byte array to convert
+     * @return the converted byte array, or null if the input array is nullByte
+     */
     public static byte[] toPrimitive(final Byte[] array) {
         if (array == null) {
             return null;
@@ -2262,6 +2276,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Character array into a primitive type char array
+     *
+     * @param array the Character array to convert
+     * @return the converted char array, or null if the input array is nullByte
+     */
     public static char[] toPrimitive(final Character[] array) {
         if (array == null) {
             return null;
@@ -2273,6 +2294,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Double array into a primitive type double array
+     *
+     * @param array the Double array to convert
+     * @return the converted double array, or null if the input array is nullByte
+     */
     public static double[] toPrimitive(final Double[] array) {
         if (array == null) {
             return null;
@@ -2284,6 +2312,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Float array into a primitive type float array
+     *
+     * @param array the Float array to convert
+     * @return the converted float array, or null if the input array is nullByte
+     */
     public static float[] toPrimitive(final Float[] array) {
         if (array == null) {
             return null;
@@ -2295,6 +2330,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Integer array into a primitive type int array
+     *
+     * @param array the Integer array to convert
+     * @return the converted int array, or null if the input array is nullByte
+     */
     public static int[] toPrimitive(final Integer[] array) {
         if (array == null) {
             return null;
@@ -2306,6 +2348,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Long array into a primitive type long array
+     *
+     * @param array the Long array to convert
+     * @return the converted long array, or null if the input array is nullByte
+     */
     public static long[] toPrimitive(final Long[] array) {
         if (array == null) {
             return null;
@@ -2317,6 +2366,13 @@ public final class ArrayUtils {
         return newArray;
     }
 
+
+    /**
+     * Converts an object type Short array into a primitive type short array
+     *
+     * @param array the Short array to convert
+     * @return the converted short array, or null if the input array is nullByte
+     */
     public static short[] toPrimitive(final Short[] array) {
         if (array == null) {
             return null;
