@@ -105,6 +105,15 @@ public final class MathUtils {
         return isBetween(input, first, second, true, true);
     }
 
+
+    /**
+     * Adds two integers and returns the result, or throws an exception if the result overflows the range of integers.
+     *
+     * @param a the first integer
+     * @param b the second integer
+     * @return the sum of a and b
+     * @throws IllegalArgumentException if the result overflows the range of integers
+     */
     public static int addOrThrow(int a, int b) {
         if (b == 0) {
             return a;
@@ -118,6 +127,15 @@ public final class MathUtils {
         throw new IllegalArgumentException("Integer arithmetic overflow a=" + a + ", b=" + b);
     }
 
+
+    /**
+     * Adds two longs and returns the result, or throws an exception if the result overflows the range of longs.
+     *
+     * @param a the first long
+     * @param b the second long
+     * @return the sum of a and b
+     * @throws IllegalArgumentException if the result overflows the range of longs
+     */
     public static long addOrThrow(long a, long b) {
         if (b == 0) {
             return a;
