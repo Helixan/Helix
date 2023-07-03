@@ -8,6 +8,15 @@ import java.util.concurrent.ThreadLocalRandom;
 @SuppressWarnings("unused")
 public final class MathUtils {
 
+
+    /**
+     * Finds and returns the minimum value of a given array of comparable objects
+     *
+     * @param values an array of comparable objects to search for a minimum value within
+     * @return a reference to the minimum value found in the array
+     * @param <V> an element that implements the {@link Comparable} interface
+     * @throws IllegalArgumentException if all values in the array are null
+     */
     @SafeVarargs
     public static <V extends Comparable<V>> V min(final V... values) {
         final int firstNotNullIndex = ArrayUtils.firstNotNullElementIndex(values);
