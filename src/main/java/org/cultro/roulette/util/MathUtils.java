@@ -10,11 +10,11 @@ public final class MathUtils {
 
 
     /**
-     * Finds and returns the minimum value of a given array of comparable objects
+     * Finds and returns the minimum value of a given array of comparable values
      *
-     * @param values an array of comparable objects to search for a minimum value within
-     * @return a reference to the minimum value found in the array
-     * @param <V> a type parameter that implements the {@link Comparable} interface
+     * @param values the array of values to find the minimum from
+     * @return the minimum value from the array
+     * @param <V> the type parameter representing the values, which must implement the {@link Comparable} interface
      * @throws IllegalArgumentException if all values in the array are null
      */
     @SafeVarargs
@@ -36,11 +36,11 @@ public final class MathUtils {
 
 
     /**
-     * Finds and returns the maximum value of a given array of comparable objects
+     * Finds and returns the maximum value of a given array of comparable values
      *
-     * @param values an array of comparable objects to search for a maximum value within
-     * @return a reference to the maximum value found in the array
-     * @param <V> a type parameter that implements the {@link Comparable} interface
+     * @param values the array of values to find the maximum from
+     * @return the maximum value from the array
+     * @param <V> the type parameter representing the values, which must implement the {@link Comparable} interface
      * @throws IllegalArgumentException if all values in the array are null
      */
     @SafeVarargs
@@ -70,7 +70,7 @@ public final class MathUtils {
      * @param includeLowerBound if true, includes the lower-bound in the range
      * @param includeUpperBound if true, includes the upper-bound in the range
      * @return true if the input value is between {@code first} and {@code second} inclusive of their respective bounds. False otherwise
-     * @param <V> a type parameter that implements the {@link Comparable} interface
+     * @param <V> the type parameter representing the values, which must implement the {@link Comparable} interface
      */
     public static <V extends Comparable<V>> boolean isBetween(final V input, final V first, final V second, final boolean includeLowerBound, final boolean includeUpperBound) {
         if (input == null || first == null || second == null) {
@@ -91,6 +91,16 @@ public final class MathUtils {
         return isBetween;
     }
 
+
+    /**
+     * Checks if a given value is between two other values and optionally including the upper/lower bounds
+     *
+     * @param input a reference to value that will be compared against two other values
+     * @param first the first bound that the {@code input} value will be compared against
+     * @param second the second bound that the {@code input} value will be compared against
+     * @return true if the input value is between {@code first} and {@code second} inclusive. False otherwise
+     * @param <V> the type parameter representing the values, which must implement the {@link Comparable} interface
+     */
     public static <V extends Comparable<V>> boolean isBetween(final V input, final V first, final V second) {
         return isBetween(input, first, second, true, true);
     }
