@@ -14,7 +14,7 @@ public final class MathUtils {
      *
      * @param values an array of comparable objects to search for a minimum value within
      * @return a reference to the minimum value found in the array
-     * @param <V> an element that implements the {@link Comparable} interface
+     * @param <V> a type parameter that implements the {@link Comparable} interface
      * @throws IllegalArgumentException if all values in the array are null
      */
     @SafeVarargs
@@ -34,6 +34,15 @@ public final class MathUtils {
         return currentMin;
     }
 
+
+    /**
+     * Finds and returns the maximum value of a given array of comparable objects
+     *
+     * @param values an array of comparable objects to search for a maximum value within
+     * @return a reference to the maximum value found in the array
+     * @param <V> a type parameter that implements the {@link Comparable} interface
+     * @throws IllegalArgumentException if all values in the array are null
+     */
     @SafeVarargs
     public static <V extends Comparable<V>> V max(final V... values) {
         final int firstNotNullIndex = ArrayUtils.firstNotNullElementIndex(values);
@@ -51,6 +60,18 @@ public final class MathUtils {
         return currentMax;
     }
 
+
+    /**
+     * Checks if a given value is between two other values and optionally including or excluding the lower/upper bounds
+     *
+     * @param input a reference to an object that will be compared against two other values
+     * @param first the first bound that the {@code input} value will be compared against
+     * @param second the second bound that the {@code input} value will be compared against
+     * @param includeLowerBound if true, includes the lower-bound in the range
+     * @param includeUpperBound if true, includes the upper-bound in the range
+     * @return true if the input value is between {@code first} and {@code second} inclusive of their respective bounds. False otherwise
+     * @param <V> a type parameter that implements the {@link Comparable} interface
+     */
     public static <V extends Comparable<V>> boolean isBetween(final V input, final V first, final V second, final boolean includeLowerBound, final boolean includeUpperBound) {
         if (input == null || first == null || second == null) {
             return false;
