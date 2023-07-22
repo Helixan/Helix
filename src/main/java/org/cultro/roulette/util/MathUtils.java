@@ -162,6 +162,15 @@ public final class MathUtils {
         return addOrThrow(a, -b);
     }
 
+
+    /**
+     * Subtracts two longs and returns the result, or throws an exception if the result overflows the range of longs.
+     *
+     * @param a the first long
+     * @param b the second long
+     * @return the difference of a and b
+     * @throws IllegalArgumentException if the result overflows the range of longs
+     */
     public static long subOrThrow(long a, long b) {
         return addOrThrow(a, -b);
     }
