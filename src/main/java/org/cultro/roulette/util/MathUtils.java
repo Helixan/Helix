@@ -149,6 +149,15 @@ public final class MathUtils {
         throw new IllegalArgumentException("Long arithmetic overflow a=" + a + ", b=" + b);
     }
 
+
+    /**
+     * Subtracts two integers and returns the result, or throws an exception if the result overflows the range of integers.
+     *
+     * @param a the first integer
+     * @param b the second integer
+     * @return the difference of a and b
+     * @throws IllegalArgumentException if the result overflows the range of integers
+     */
     public static int subOrThrow(int a, int b) {
         return addOrThrow(a, -b);
     }
