@@ -189,6 +189,43 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    public static <T extends Comparable<T>> void isGreaterThan(T first, T second, String message) {
+        if (first != null && second != null) {
+            if (first.compareTo(second) > 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static <T extends Comparable<T>> void isGreaterThan(T first, T second) {
+        if (first != null && second != null) {
+            if (first.compareTo(second) > 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static <T extends Comparable<T>> void isGreaterThanOrEqualTo(T first, T second, String message) {
+        if (first != null && second != null) {
+            if (first.compareTo(second) >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static <T extends Comparable<T>> void isGreaterThanOrEqualTo(T first, T second) {
+        if (first != null && second != null) {
+            if (first.compareTo(second) >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
     public static void isValidIndex(int index, String message) {
         if (index < 0) {
             if (message != null) {
