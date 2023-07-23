@@ -262,6 +262,90 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+    public static void isNegative(byte number, String message) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isNegative(byte number) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isNegative(double number, String message) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isNegative(double number) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isNegative(float number, String message) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isNegative(float number) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isNegative(int number, String message) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isNegative(int number) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isNegative(long number, String message) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isNegative(long number) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isNegative(short number, String message) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isNegative(short number) {
+        if (number < 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
     public static void isValidIndex(int index, String message) {
         if (index < 0) {
             if (message != null) {
