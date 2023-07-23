@@ -608,6 +608,99 @@ public final class Validate {
     }
 
 
+    public static void isOdd(byte value, String message) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isOdd(byte value) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isOdd(double value, String message) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isOdd(double value) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+
+    public static void isOdd(float value, String message) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isOdd(float value) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+
+    public static void isOdd(int value, String message) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isOdd(int value) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isOdd(long value, String message) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isOdd(long value) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isOdd(short value, String message) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isOdd(short value) {
+        if (value % 2 == 1) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+
     public static void isPositive(byte number, String message) {
         if (number > 0) {
             return;
