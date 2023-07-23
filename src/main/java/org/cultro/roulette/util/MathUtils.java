@@ -448,6 +448,16 @@ public final class MathUtils {
         return result;
     }
 
+
+    /**
+     * Approximates the definite integral of a given function using the trapezoidal rule
+     *
+     * @param function the function to integrate
+     * @param a the lower limit of integration
+     * @param b the upper limit of integration
+     * @param n the number of sub-intervals (must be an even positive integer)
+     * @return the approximate value of the definite integral
+     */
     public static double integrate(Function function, double a, double b, long n) {
         if (n % 2 != 0) {
             throw new IllegalArgumentException("The number of intervals must be even");
