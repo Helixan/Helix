@@ -376,6 +376,13 @@ public final class MathUtils {
         return true;
     }
 
+
+    /**
+     * Generates an array of prime numbers up to a given integer using the Sieve of Eratosthenes algorithm
+     *
+     * @param n the upper limit of the range of numbers to check for primality
+     * @return an array of prime numbers up to n
+     */
     public static int[] sieveOfEratosthenes(int n) {
         boolean[] primes = new boolean[n + 1];
         List<Integer> primeList = new ArrayList<>();
