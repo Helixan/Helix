@@ -484,6 +484,12 @@ public final class MathUtils {
         return integrate(function, a, b, (long) (Math.ceil(max(a, b) - min(a, b)) * 100));
     }
 
+
+    /**
+     * Gets the thread's current random number generator
+     *
+     * @return an instance of Random
+     */
     private static Random random() {
         return ThreadLocalRandom.current();
     }
