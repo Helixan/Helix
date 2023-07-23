@@ -193,7 +193,16 @@ public final class MathUtils {
         return value;
     }
 
+
+    /**
+     * Calculates the factorial of a given number.
+     *
+     * @param n the number for which the factorial needs to be calculated
+     * @return the factorial of the given number
+     * @throws IllegalArgumentException if the given number is negative
+     */
     public static long factorialLong(int n) {
+        Validate.isNotNegative(n, "You cannot take a factorial of negative numbers");
         long value = 1;
         for (int i = 2; i <= n; i++) {
             value *= i;
@@ -201,7 +210,16 @@ public final class MathUtils {
         return value;
     }
 
+
+    /**
+     * Calculates the factorial of a given number.
+     *
+     * @param n the number for which the factorial needs to be calculated
+     * @return the factorial of the given number
+     * @throws IllegalArgumentException if the given number is negative
+     */
     public static double factorialDouble(int n) {
+        Validate.isNotNegative(n, "You cannot take a factorial of negative numbers");
         double value = 1;
         for (int i = 2; i <= n; i++) {
             value *= i;
@@ -209,6 +227,13 @@ public final class MathUtils {
         return value;
     }
 
+
+    /**
+     * Calculates the natural logarithm of the gamma function for a given number.
+     *
+     * @param x the number for which the logarithm of the gamma function needs to be calculated
+     * @return the natural logarithm of the gamma function for the given number
+     */
     public static double logGamma(double x) {
         double tmp = (x - 0.5) * Math.log(x + 4.5) - (x + 4.5);
         double ser = 1.0 + 76.18009173 / (x + 0) - 86.50532033 / (x + 1)
@@ -217,6 +242,13 @@ public final class MathUtils {
         return tmp + Math.log(ser * Math.sqrt(2 * Math.PI));
     }
 
+
+    /**
+     * Calculates the gamma function for a given number.
+     *
+     * @param x the number for which the gamma function needs to be calculated
+     * @return the gamma function for the given number
+     */
     public static double gamma(double x) {
         return Math.exp(logGamma(x));
     }
