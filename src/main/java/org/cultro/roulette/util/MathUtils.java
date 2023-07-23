@@ -1,6 +1,7 @@
 package org.cultro.roulette.util;
 
 import org.cultro.roulette.lang.Function;
+import org.cultro.roulette.lang.Validate;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -175,7 +176,16 @@ public final class MathUtils {
         return addOrThrow(a, -b);
     }
 
+
+    /**
+     * Calculates the factorial of a given number.
+     *
+     * @param n the number for which the factorial needs to be calculated
+     * @return the factorial of the given number
+     * @throws IllegalArgumentException if the given number is negative
+     */
     public static int factorial(int n) {
+        Validate.isNotNegative(n, "You cannot take a factorial of negative numbers");
         int value = 1;
         for (int i = 2; i <= n; i++) {
             value *= i;
