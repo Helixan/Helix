@@ -190,6 +190,99 @@ public final class Validate {
     }
 
 
+    public static void isEven(byte value, String message) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isEven(byte value) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isEven(double value, String message) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isEven(double value) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+
+    public static void isEven(float value, String message) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isEven(float value) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+
+    public static void isEven(int value, String message) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isEven(int value) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isEven(long value, String message) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isEven(long value) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isEven(short value, String message) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+
+    public static void isEven(short value) {
+        if (value % 2 == 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+
     public static <T extends Comparable<T>> void isGreaterThan(T first, T second, String message) {
         if (first != null && second != null) {
             if (first.compareTo(second) > 0) {
