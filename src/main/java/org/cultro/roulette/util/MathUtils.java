@@ -430,6 +430,14 @@ public final class MathUtils {
         return result;
     }
 
+
+    /**
+     * Calculates the permutation (n P r) of two given integers.
+     *
+     * @param n the total number of items
+     * @param r the number of items to be chosen
+     * @return the permutation (n P r)
+     */
     public static double permutation(int n, int r) {
         double result = 1;
 
