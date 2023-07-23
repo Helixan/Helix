@@ -283,6 +283,17 @@ public final class MathUtils {
         return Math.floor(x);
     }
 
+
+    /**
+     * Rounds the given number to the nearest integer in a fair way.
+     * The fractional part of the number is taken into account when rounding.
+     * The closer the fractional part of the number is to a certain integer, the more likely
+     * the number will be rounded in that direction.
+     *
+     * @param x the number to be rounded
+     * @return the rounded number
+     * @throws IllegalArgumentException if the given number cannot be converted to an int
+     */
     public static double fairRound(double x) {
         return fairRound(x, random());
     }
