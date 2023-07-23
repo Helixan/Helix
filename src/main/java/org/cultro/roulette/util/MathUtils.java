@@ -298,6 +298,13 @@ public final class MathUtils {
         return fairRound(x, random());
     }
 
+
+    /**
+     * Determines if a given integer is a power of two
+     *
+     * @param n the integer to check
+     * @return true if the integer is a power of two, false otherwise
+     */
     public static boolean isPowerOfTwo(int n) {
         if (n == 0) {
             return true;
@@ -305,6 +312,13 @@ public final class MathUtils {
         return (n > 0) && ((n & (n - 1)) == 0);
     }
 
+
+    /**
+     * Determines if a given long is a power of two
+     *
+     * @param n the long to check
+     * @return true if the long is a power of two, false otherwise
+     */
     public static boolean isPowerOfTwo(long n) {
         if (n == 0) {
             return true;
@@ -312,6 +326,13 @@ public final class MathUtils {
         return (n > 0) && ((n & (n - 1)) == 0);
     }
 
+
+    /**
+     * Determines if a given integer is prime
+     *
+     * @param n the integer to check
+     * @return true if the integer is a power of two, false otherwise
+     */
     public static boolean isPrime(int n) {
         if (n <= 0) {
             return false;
@@ -330,6 +351,13 @@ public final class MathUtils {
         return true;
     }
 
+
+    /**
+     * Determines if a given long is prime
+     *
+     * @param n the long to check
+     * @return true if the integer is prime, false otherwise
+     */
     public static boolean isPrime(long n) {
         if (n <= 0) {
             return false;
