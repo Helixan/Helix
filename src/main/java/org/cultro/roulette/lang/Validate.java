@@ -514,6 +514,91 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    public static void isPositive(byte number, String message) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isPositive(byte number) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isPositive(double number, String message) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isPositive(double number) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isPositive(float number, String message) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isPositive(float number) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isPositive(int number, String message) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isPositive(int number) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isPositive(long number, String message) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isPositive(long number) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isPositive(short number, String message) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isPositive(short number) {
+        if (number > 0) {
+            return;
+        }
+        throw new IllegalArgumentException();
+    }
+
     public static void isValidIndex(int index, String message) {
         if (index < 0) {
             if (message != null) {
