@@ -459,9 +459,8 @@ public final class MathUtils {
      * @return the approximate value of the definite integral
      */
     public static double integrate(Function function, double a, double b, long n) {
-        if (n % 2 != 0) {
-            throw new IllegalArgumentException("The number of intervals must be even");
-        }
+        Validate.isNotNegative(n, "The number of intervals must be a positive integer");
+        Validate.isEven(n, "The number of intervals must be even");
 
         double deltaX = (b - a) / n;
         double area = function.valueAt(a) + function.valueAt(b);
