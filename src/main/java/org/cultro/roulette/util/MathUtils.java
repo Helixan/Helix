@@ -253,6 +253,18 @@ public final class MathUtils {
         return Math.exp(logGamma(x));
     }
 
+
+    /**
+     * Rounds the given number to the nearest integer in a fair way.
+     * The fractional part of the number is taken into account when rounding.
+     * The closer the fractional part of the number is to a certain integer, the more likely
+     * the number will be rounded in that direction.
+     *
+     * @param x the number to be rounded
+     * @param random the random number generator used for rounding
+     * @return the rounded number
+     * @throws IllegalArgumentException if the given number cannot be converted to an int
+     */
     public static double fairRound(double x, Random random) {
         if (x > Integer.MAX_VALUE || x < Integer.MIN_VALUE) {
             throw new IllegalArgumentException("Double value=" + x + " cannot be converted to an int");
