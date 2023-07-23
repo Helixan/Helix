@@ -408,6 +408,14 @@ public final class MathUtils {
         return primesArray;
     }
 
+
+    /**
+     * Calculates the combination (n C r) of two given integers.
+     *
+     * @param n the total number of items
+     * @param r the number of items to be chosen
+     * @return the combination (n C r)
+     */
     public static double combination(int n, int r) {
         if (r > n - r) {
             r = n - r;
