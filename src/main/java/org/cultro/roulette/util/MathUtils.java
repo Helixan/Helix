@@ -471,6 +471,15 @@ public final class MathUtils {
         return area * (deltaX / 3);
     }
 
+
+    /**
+     * Approximates the definite integral of a given function using the trapezoidal rule
+     *
+     * @param function the function to integrate
+     * @param a the lower limit of integration
+     * @param b the upper limit of integration
+     * @return the approximate value of the definite integral
+     */
     public static double integrate(Function function, double a, double b) {
         return integrate(function, a, b, (long) (Math.ceil(max(a, b) - min(a, b)) * 100));
     }
