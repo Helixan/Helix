@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 @SuppressWarnings("unused")
 public final class MapUtils {
 
-    public static <K, V> Map<K, V> filterByKey(Map<K, V> map, Predicate<K> predicate) {
+    public static <K, V> Map<K, V> filterByKeyPredicate(Map<K, V> map, Predicate<K> predicate) {
         for (K key : map.keySet()) {
             if (!predicate.test(key)) {
                 map.remove(key);
@@ -18,7 +18,7 @@ public final class MapUtils {
         return map;
     }
 
-    public static <K, V> Map<K, V> filterByValue(Map<K, V> map, Predicate<V> predicate) {
+    public static <K, V> Map<K, V> filterByValuePredicate(Map<K, V> map, Predicate<V> predicate) {
         for (K key : map.keySet()) {
             if (!predicate.test(map.get(key))) {
                 map.remove(key);
