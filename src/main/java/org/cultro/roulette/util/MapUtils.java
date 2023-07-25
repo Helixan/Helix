@@ -18,6 +18,15 @@ public final class MapUtils {
         return map;
     }
 
+    public static <K, V> Map<K, V> filterByValue(Map<K, V> map, Predicate<V> predicate) {
+        for (K key : map.keySet()) {
+            if (!predicate.test(map.get(key))) {
+                map.remove(key);
+            }
+        }
+        return map;
+    }
+
     public static <K> K getKeyAtIndex(LinkedHashMap<K, ?> map, int index) {
         Validate.notNull(map, "A null map does not have keys");
         Validate.isValidIndex(index, "An index may not be negative");
