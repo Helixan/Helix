@@ -58,6 +58,17 @@ public final class MapUtils {
         return subMap;
     }
 
+    public static <K,V> Map<K, V> getSubMapByValues(Map<K, V> map, Set<V> values) {
+        Map<K, V> subMap = new HashMap<>();
+
+        for (K key : map.keySet()) {
+            if (values.contains(map.get(key))) {
+                subMap.put(key, map.get(key));
+            }
+        }
+        return subMap;
+    }
+
     public static <V> V getValueAtIndex(LinkedHashMap<?, V> map, int index) {
         Validate.notNull(map, "A null map does not have keys");
         Validate.isValidIndex(index, "An index may not be negative");
