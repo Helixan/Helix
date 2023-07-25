@@ -3,10 +3,20 @@ package org.cultro.roulette.util;
 import org.cultro.roulette.lang.Validate;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
 public final class MapUtils {
+
+    public static <K, V> Map<K, V> filterByKey(Map<K, V> map, Predicate<K> predicate) {
+        for (K key : map.keySet()) {
+            if (!predicate.test(key)) {
+                map.remove(key);
+            }
+        }
+        return map;
+    }
 
     public static <K> K getKeyAtIndex(LinkedHashMap<K, ?> map, int index) {
         Validate.notNull(map, "A null map does not have keys");
