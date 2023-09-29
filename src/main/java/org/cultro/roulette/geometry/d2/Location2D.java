@@ -1,5 +1,6 @@
 package org.cultro.roulette.geometry.d2;
 
+import org.cultro.roulette.geometry.Location;
 import org.cultro.roulette.lang.Validate;
 
 /**
