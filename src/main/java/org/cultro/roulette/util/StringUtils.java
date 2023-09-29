@@ -67,6 +67,18 @@ public final class StringUtils {
         return editDistance(first.toString().toLowerCase(), second.toString().toLowerCase());
     }
 
+    public static String join(String delimiter, String[] array, int startIndex, int endIndex) {
+        Validate.isGreaterThanOrEqualTo(startIndex, 0, "The start index of an array must be non-negative");
+        Validate.isLessThanOrEqualTo(array.length - 1, endIndex, "The end index cannot be outside of the array");
+        Validate.isGreaterThanOrEqualTo(startIndex, endIndex, "The start index cannot be more than the end index");
+
+        StringBuilder builder = new StringBuilder(array[startIndex]);
+        for (int i = startIndex + 1; i < endIndex; i++) {
+            builder.append(delimiter).append(array[i]);
+        }
+        return builder.toString();
+    }
+
     public static boolean isByte(String value) {
         try {
             Byte.parseByte(value);
@@ -119,5 +131,29 @@ public final class StringUtils {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    public static String[] toLowerCase(String[] inputArray) {
+        Validate.notNull(inputArray, "Cannot convert a null String array to an array up lowercase Strings");
+
+        String[] lowercaseArray = new String[inputArray.length];
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] != null) {
+                lowercaseArray[i] = inputArray[i].toLowerCase();
+            }
+        }
+        return lowercaseArray;
+    }
+
+    public static String[] toUpperCase(String[] inputArray) {
+        Validate.notNull(inputArray, "Cannot convert a null String array to an array up uppercase Strings");
+
+        String[] uppercaseArray = new String[inputArray.length];
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] != null) {
+                uppercaseArray[i] = inputArray[i].toUpperCase();
+            }
+        }
+        return uppercaseArray;
     }
 }
