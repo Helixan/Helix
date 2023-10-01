@@ -1564,7 +1564,6 @@ public final class Validate {
      * @param index The index to check.
      * @throws IllegalArgumentException If the index is not valid.
      */
-
     public static void isValidIndex(int index) {
         if (index < 0) {
             throw new IllegalArgumentException();
