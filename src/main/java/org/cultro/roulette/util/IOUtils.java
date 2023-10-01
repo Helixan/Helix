@@ -9,6 +9,7 @@ import java.nio.file.Files;
 /**
  * The IOUtils class provides utility methods for performing various input/output operations.
  */
+@SuppressWarnings("unused")
 public class IOUtils {
 
 
@@ -20,6 +21,7 @@ public class IOUtils {
      * @throws IOException           If an I/O error occurs during the copying process.
      * @throws IllegalArgumentException If either sourceDirectory or destinationDirectory is null.
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void copyDirectory(File sourceDirectory, File destinationDirectory) throws IOException {
         Validate.notNull(sourceDirectory, "Cannot copy a null source directory into a destination directory");
         Validate.notNull(destinationDirectory, "Cannot copy a source directory into a null destination directory");
