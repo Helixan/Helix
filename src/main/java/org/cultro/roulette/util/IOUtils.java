@@ -12,7 +12,6 @@ import java.nio.file.Files;
 @SuppressWarnings("unused")
 public class IOUtils {
 
-
     /**
      * Copies the contents of a directory to another directory.
      *
