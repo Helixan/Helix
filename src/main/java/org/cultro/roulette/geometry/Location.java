@@ -67,4 +67,6 @@ public interface Location {
      * @return A new location resulting from the division.
      */
     Location divide(Location location);
+
+    void setComponent(int component, double value);
 }
