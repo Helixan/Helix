@@ -5,8 +5,11 @@ import org.cultro.roulette.geometry.d3.AABB;
 import org.cultro.roulette.geometry.d3.Location3D;
 import org.cultro.roulette.geometry.d3.Vector3D;
 import org.cultro.roulette.geometry.dn.NDLocation;
+import org.cultro.roulette.geometry.dn.NDVector;
+import org.cultro.roulette.geometry.dn.Orthotope;
 import org.cultro.roulette.lang.Validate;
 
+@SuppressWarnings("unused")
 public class GeometryUtils {
 
     public static Location3D findIntersection(AABB boundingBox, Location3D origin, Vector3D direction) {
@@ -31,6 +34,43 @@ public class GeometryUtils {
         double z = origin.getZ() + tMin * direction.getZ();
 
         return new Location3D(x, y, z);
+    }
+
+    public static NDLocation findIntersection(Orthotope orthotope, NDLocation origin, NDVector direction) {
+        Validate.isGreaterThan(origin.getDimension(), 0, "Cannot calculate intersection in the 0th dimension.");
+        Validate.isEquivalent(orthotope.getDimension(), origin.getDimension(), "You cannot calculate the intersection point of an orthotope if the ray origin exists in a different dimension from the orthotope.");
+        Validate.isEquivalent(orthotope.getDimension(), direction.getDimension(), "You cannot calculate the intersection point of an orthotope if the ray direction vector exists in a different dimension from the orthotope.");
+        Validate.isGreaterThan(direction.getDimension(), 0, "You cannot have the direction vector equal the zero vector.");
+
+        int dimension = origin.getDimension();
+        NDLocation orthotopeMin = orthotope.getMin();
+        NDLocation orthotopeMax = orthotope.getMax();
+
+        double tMax = Math.max((orthotopeMin.getComponent(0) - origin.getComponent(0)) / direction.getComponent(0),
+                (orthotopeMax.getComponent(0) - origin.getComponent(0)) / direction.getComponent(0));
+        double tMin = Math.min((orthotopeMin.getComponent(0) - origin.getComponent(0)) / direction.getComponent(0),
+                (orthotopeMax.getComponent(0) - origin.getComponent(0)) / direction.getComponent(0));
+
+        for (int i = 0; i < dimension; i++) {
+            double first = (orthotopeMin.getComponent(i) - origin.getComponent(i)) / direction.getComponent(i);
+            double second = (orthotopeMax.getComponent(i) - origin.getComponent(i)) / direction.getComponent(i);
+            if (tMin < Math.max(first, second)) {
+                tMin = Math.max(first, second);
+            }
+            if (tMax > Math.min(first, second)) {
+                tMax = Math.min(first, second);
+            }
+        }
+
+        if (tMin > tMax || tMax < 0) {
+            return null;
+        }
+
+        NDLocation temp = new NDLocation(dimension);
+        for (int i = 0; i < dimension; i++) {
+            temp.setComponent(i, origin.getComponent(i) + tMin * direction.getComponent(i));
+        }
+        return temp; //todo check to see if this works
     }
 
     public static double distance(NDLocation first, NDLocation second) {
