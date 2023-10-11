@@ -143,4 +143,9 @@ public class Location2D implements Location {
         Validate.isEquivalent(location.getDimension(), this.getDimension(), "You cannot divide locations that exist in different dimensions.");
         return new Location2D(elements[0] / location.getComponent(0), elements[1] / location.getComponent(1));
     }
+
+    @Override
+    public void setComponent(int component, double value) {
+        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
+    }
 }
