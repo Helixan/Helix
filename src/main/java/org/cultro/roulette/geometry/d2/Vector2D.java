@@ -170,5 +170,9 @@ public class Vector2D implements Vector {
     public Vector2D scale(double scalar) {
         return new Vector2D(elements[0] * scalar, elements[1] * scalar);
     }
+
+    public void setComponent(int component, double value) {
+        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
+    }
 }
 

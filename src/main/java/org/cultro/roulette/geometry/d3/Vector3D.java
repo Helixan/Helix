@@ -204,4 +204,8 @@ public class Vector3D implements Vector {
     public Vector3D scale(double scalar) {
         return new Vector3D(elements[0] * scalar, elements[1] * scalar, elements[2] * scalar);
     }
+
+    public void setComponent(int component, double value) {
+        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
+    }
 }

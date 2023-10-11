@@ -82,4 +82,14 @@ public class Orthotope {
     public double[] getMinElements() {
         return min.getElements();
     }
+
+
+    /**
+     * Gets the dimension that the Orthotope exists in.
+     *
+     * @return The integer representation of the dimension.
+     */
+    public int getDimension() {
+        return max.getDimension();
+    }
 }

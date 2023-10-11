@@ -26,6 +26,16 @@ public class NDVector implements Vector {
         }
     }
 
+    /**
+     * Constructs a new NDVector with empty elements.
+     *
+     * @param size The size of the empty vector.
+     */
+    public NDVector(int size) {
+        Validate.isGreaterThanOrEqualTo(size, 0, "A vector cannot be a negative size.");
+        this.elements = new double[size];
+    }
+
 
     /**
      * Retrieves the component of the vector at the specified index.
@@ -171,5 +181,9 @@ public class NDVector implements Vector {
             scaledElements[i] = elements[i] * scalar;
         }
         return new NDVector(scaledElements);
+    }
+
+    public void setComponent(int component, double value) {
+        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
     }
 }

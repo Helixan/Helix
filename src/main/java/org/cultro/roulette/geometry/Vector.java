@@ -13,7 +13,6 @@ public interface Vector {
      * @param index The index of the vector component.
      * @return The value of the vector component at the specified index.
      */
-
     double getComponent(int index);
 
 
@@ -83,4 +82,6 @@ public interface Vector {
      * @return A new scaled vector.
      */
     Vector scale(double scalar);
+
+    void setComponent(int component, double value);
 }
