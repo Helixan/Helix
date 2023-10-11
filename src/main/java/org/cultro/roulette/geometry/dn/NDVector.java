@@ -183,7 +183,17 @@ public class NDVector implements Vector {
         return new NDVector(scaledElements);
     }
 
+    /**
+     * Sets the value of the specified component of this vector.
+     *
+     * @param component The index of the component to be set.
+     * @param value The value to be assigned to the specified component.
+     * @throws IllegalArgumentException If the provided component is out of bounds.
+     */
+    @Override
     public void setComponent(int component, double value) {
-        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
+        Validate.isTrue(component >= 0 && component < elements.length, "Component index is out of bounds for the vector.");
+
+        elements[component] = value;
     }
 }

@@ -83,5 +83,12 @@ public interface Vector {
      */
     Vector scale(double scalar);
 
+
+    /**
+     * Sets the value of a specified component of the vector.
+     *
+     * @param component The index of the component to set.
+     * @param value The value to set the component to.
+     */
     void setComponent(int component, double value);
 }

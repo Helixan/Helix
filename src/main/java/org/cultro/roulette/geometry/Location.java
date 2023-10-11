@@ -68,5 +68,12 @@ public interface Location {
      */
     Location divide(Location location);
 
+
+    /**
+     * Sets the value for a specific component of this location.
+     *
+     * @param component The index of the component to modify.
+     * @param value The value to assign to the specified component.
+     */
     void setComponent(int component, double value);
 }
