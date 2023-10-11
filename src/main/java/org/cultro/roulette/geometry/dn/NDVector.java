@@ -8,6 +8,7 @@ import org.cultro.roulette.lang.Validate;
  * It implements the Vector interface and provides various vector operations such as
  * addition, subtraction, dot product, magnitude, normalization, and scaling.
  */
+@SuppressWarnings("unused")
 public class NDVector implements Vector {
 
     private final double[] elements;

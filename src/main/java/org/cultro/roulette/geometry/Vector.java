@@ -5,6 +5,7 @@ package org.cultro.roulette.geometry;
  * Implementing classes should provide methods for retrieving vector components,
  * calculating dot products, magnitudes, and performing vector operations.
  */
+@SuppressWarnings("unused")
 public interface Vector {
 
     /**

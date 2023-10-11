@@ -7,6 +7,7 @@ import org.cultro.roulette.lang.Validate;
  * represented as NDLocation objects.
  * An Orthotope is similar to an axis-aligned bounding box (AABB).
  */
+@SuppressWarnings("unused")
 public class Orthotope {
 
     private final NDLocation max;

@@ -11,6 +11,7 @@ import org.cultro.roulette.lang.Validate;
  * This class is specifically designed for 2D locations and is suitable for use in
  * two-dimensional geometric calculations and graphics applications.
  */
+@SuppressWarnings("unused")
 public class Location2D implements Location {
 
     private final double[] elements = new double[2];

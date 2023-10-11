@@ -11,6 +11,7 @@ import org.cultro.roulette.lang.Validate;
  * This class is specifically designed for 3D locations and is suitable for use in
  * three-dimensional geometric calculations and graphics applications.
  */
+@SuppressWarnings("unused")
 public class Location3D implements Location {
 
     private final double[] elements = new double[3];

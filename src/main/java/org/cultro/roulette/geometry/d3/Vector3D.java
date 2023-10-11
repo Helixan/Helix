@@ -11,6 +11,7 @@ import org.cultro.roulette.lang.Validate;
  * This class is specifically designed for 3D vectors and is suitable for use in
  * three-dimensional geometric calculations and graphics applications.
  */
+@SuppressWarnings("unused")
 public class Vector3D implements Vector {
 
     private final double[] elements = new double[3];

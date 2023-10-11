@@ -3,6 +3,7 @@ package org.cultro.roulette.geometry.d3;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+@SuppressWarnings("unused")
 public class Cube implements Iterable<Location3D> {
 
     private final Location3D minCorner;

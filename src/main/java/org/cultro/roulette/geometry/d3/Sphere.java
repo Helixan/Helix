@@ -1,12 +1,10 @@
 package org.cultro.roulette.geometry.d3;
 
-
 import org.cultro.roulette.util.GeometryUtils;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-
 
 @SuppressWarnings("unused")
 public class Sphere implements Iterable<Location3D> {

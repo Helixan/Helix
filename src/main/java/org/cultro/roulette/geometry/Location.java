@@ -5,6 +5,7 @@ package org.cultro.roulette.geometry;
  * Implementing classes should provide methods for retrieving components, getting
  * the dimension, and performing mathematical operations on locations.
  */
+@SuppressWarnings("unused")
 public interface Location {
 
     /**

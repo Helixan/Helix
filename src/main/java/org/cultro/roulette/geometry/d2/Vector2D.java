@@ -8,6 +8,7 @@ import org.cultro.roulette.lang.Validate;
  * It implements the Vector interface and provides common vector operations such as dot product, magnitude, normalization,
  * addition, subtraction, and scaling.
  */
+@SuppressWarnings("unused")
 public class Vector2D implements Vector {
 
     private final double[] elements = new double[3];

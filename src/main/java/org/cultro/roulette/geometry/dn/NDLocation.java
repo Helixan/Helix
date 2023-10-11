@@ -11,6 +11,7 @@ import org.cultro.roulette.lang.Validate;
  * <p>
  * The class allows working with locations in spaces with any number of dimensions.
  */
+@SuppressWarnings("unused")
 public class NDLocation implements Location {
 
     private final double[] elements;

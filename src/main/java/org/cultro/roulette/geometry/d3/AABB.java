@@ -11,6 +11,7 @@ import java.util.Objects;
  * (X, Y, and Z), making it an efficient structure for collision detection and containment
  * checks.
  */
+@SuppressWarnings("unused")
 public class AABB {
 
     private final Location3D min;
