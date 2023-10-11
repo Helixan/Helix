@@ -29,6 +29,15 @@ public class NDLocation implements Location {
         }
     }
 
+    /**
+     * Constructs a new NDLocation with empty elements.
+     *
+     * @param size The size of the empty location.
+     */
+    public NDLocation(int size) {
+        Validate.isGreaterThanOrEqualTo(size, 0, "A location cannot be a negative size.");
+        this.elements = new double[size];
+    }
 
     /**
      * Retrieves the component of the location at the specified index.
@@ -144,5 +153,11 @@ public class NDLocation implements Location {
             dividedElements[i] = this.getComponent(i) / location.getComponent(i);
         }
         return new NDLocation(dividedElements);
+    }
+
+
+    @Override
+    public void setComponent(int component, double value) {
+        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
     }
 }
