@@ -5,9 +5,6 @@ import org.bouncycastle.crypto.params.Argon2Parameters;
 import org.cultro.roulette.lang.Validate;
 import org.cultro.roulette.security.hashing.Hash;
 import org.cultro.roulette.security.hashing.HashAlgorithm;
-import org.cultro.roulette.security.hashing.keccak.Keccack128Hasher;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * Implementation of the Hash interface for the Argon2 algorithm.
@@ -77,21 +74,5 @@ public class Argon2Hasher implements Hash {
         gen.generateBytes(password, result, 0, result.length);
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(bytesToHex(new Keccack128Hasher().digest("test".getBytes(StandardCharsets.UTF_8), "".getBytes())));
-    }
-
-    private static String bytesToHex(byte[] hash) {
-        StringBuilder hexString = new StringBuilder(2 * hash.length);
-        for (int i = 0; i < hash.length; i++) {
-            String hex = Integer.toHexString(0xff & hash[i]);
-            if(hex.length() == 1) {
-                hexString.append('0');
-            }
-            hexString.append(hex);
-        }
-        return hexString.toString();
     }
 }
