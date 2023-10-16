@@ -50,7 +50,7 @@ public class RSACipher implements AsymmetricCipher {
     public KeyPair generateKeyPair() {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_ALGORITHM);
-            keyPairGenerator.initialize(keySize); // 2048-bit key size is recommended
+            keyPairGenerator.initialize(keySize);
             return keyPairGenerator.generateKeyPair();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Error generating RSA key pair", e);
@@ -63,7 +63,7 @@ public class RSACipher implements AsymmetricCipher {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA_ALGORITHM);
             SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
             secureRandom.setSeed(seed);
-            keyPairGenerator.initialize(keySize, secureRandom); // 2048-bit key size with seed
+            keyPairGenerator.initialize(keySize, secureRandom);
             return keyPairGenerator.generateKeyPair();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Error generating RSA key pair with seed", e);

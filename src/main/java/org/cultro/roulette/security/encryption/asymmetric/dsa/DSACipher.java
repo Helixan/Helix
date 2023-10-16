@@ -56,7 +56,7 @@ public class DSACipher implements AsymmetricCipher {
     public KeyPair generateKeyPair() {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(DSA_ALGORITHM);
-            keyPairGenerator.initialize(2048); // 2048-bit key size is recommended
+            keyPairGenerator.initialize(2048);
             return keyPairGenerator.generateKeyPair();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Error generating DSA key pair", e);
@@ -69,7 +69,7 @@ public class DSACipher implements AsymmetricCipher {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(DSA_ALGORITHM);
             SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
             secureRandom.setSeed(seed);
-            keyPairGenerator.initialize(2048, secureRandom); // 2048-bit key size with seed
+            keyPairGenerator.initialize(2048, secureRandom);
             return keyPairGenerator.generateKeyPair();
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Error generating DSA key pair with seed", e);
