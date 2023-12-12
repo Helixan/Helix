@@ -1,6 +1,6 @@
 package org.cultro.roulette.util;
 
-public class ByteUtils {
+public final class ByteUtils {
 
     /**
      * Converts a byte array to a hexadecimal string representation.
@@ -15,6 +15,7 @@ public class ByteUtils {
         }
         return sb.toString();
     }
+
 
     /**
      * Converts a hexadecimal string to a byte array.
@@ -31,6 +32,7 @@ public class ByteUtils {
         }
         return data;
     }
+
 
     /**
      * Concatenates two byte arrays.

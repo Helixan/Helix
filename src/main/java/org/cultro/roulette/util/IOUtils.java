@@ -10,7 +10,7 @@ import java.nio.file.Files;
  * The IOUtils class provides utility methods for performing various input/output operations.
  */
 @SuppressWarnings("unused")
-public class IOUtils {
+public final class IOUtils {
 
     /**
      * Copies the contents of a directory to another directory.

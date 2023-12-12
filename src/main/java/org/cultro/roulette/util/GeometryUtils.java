@@ -10,7 +10,7 @@ import org.cultro.roulette.geometry.dn.Orthotope;
 import org.cultro.roulette.lang.Validate;
 
 @SuppressWarnings("unused")
-public class GeometryUtils {
+public final class GeometryUtils {
 
     public static Location3D findIntersection(AABB boundingBox, Location3D origin, Vector3D direction) {
         double txMin = (boundingBox.getMin().getX() - origin.getX()) / direction.getX();
