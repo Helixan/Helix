@@ -1,5 +1,7 @@
 package org.cultro.roulette.lang;
 
+import java.util.Collection;
+
 /**
  * The Validate class provides static methods for performing various validation checks.
  */
@@ -1568,5 +1570,185 @@ public final class Validate {
         if (index < 0) {
             throw new IllegalArgumentException();
         }
+    }
+
+    public static void isValidIndex(boolean[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(boolean[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(byte[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(byte[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(char[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(char[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(double[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(double[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(float[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(float[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(int[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(int[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(long[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(long[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static void isValidIndex(short[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static void isValidIndex(short[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static <T> void isValidIndex(T[] array, int index, String message) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static <T> void isValidIndex(T[] array, int index) {
+        if (array != null) {
+            if (array.length > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public static <T extends Collection<T>> void isValidIndex(T collection, int index, String message) {
+        if (collection != null) {
+            if (collection.size() > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException(message);
+    }
+
+    public static <T extends Collection<T>> void isValidIndex(T collection, int index) {
+        if (collection != null) {
+            if (collection.size() > index && index >= 0) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException();
     }
 }
