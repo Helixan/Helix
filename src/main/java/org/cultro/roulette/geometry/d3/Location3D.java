@@ -157,6 +157,14 @@ public class Location3D implements Location {
         return new Location3D(elements[0] / location.getComponent(0), elements[1] / location.getComponent(1), elements[2] / location.getComponent(2));
     }
 
+
+    /**
+     * Sets the value of the specified component of this location.
+     *
+     * @param component The index of the component to be set.
+     * @param value The value to be assigned to the specified component.
+     * @throws IllegalArgumentException If the provided component index is out of bounds.
+     */
     @Override
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
