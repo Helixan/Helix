@@ -819,7 +819,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte number is not negative. If it is negative, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given byte number is not negative.
      *
      * @param number  The byte number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -834,7 +834,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte number is not negative. If it is negative, it throws an IllegalArgumentException.
+     * Checks if the given byte number is not negative.
      *
      * @param number The byte number to check.
      * @throws IllegalArgumentException If the number is negative.
@@ -848,7 +848,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double number is not negative. If it is negative, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given double number is not negative.
      *
      * @param number  The double number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -863,7 +863,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double number is not negative. If it is negative, it throws an IllegalArgumentException.
+     * Checks if the given double number is not negative.
      *
      * @param number The double number to check.
      * @throws IllegalArgumentException If the number is negative.
@@ -877,7 +877,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float number is not negative. If it is negative, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given float number is not negative.
      *
      * @param number  The float number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -892,7 +892,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float number is not negative. If it is negative, it throws an IllegalArgumentException.
+     * Checks if the given float number is not negative.
      *
      * @param number The float number to check.
      * @throws IllegalArgumentException If the number is negative.
@@ -906,7 +906,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int number is not negative. If it is negative, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given int number is not negative.
      *
      * @param number  The int number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -921,7 +921,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int number is not negative. If it is negative, it throws an IllegalArgumentException.
+     * Checks if the given int number is not negative.
      *
      * @param number The int number to check.
      * @throws IllegalArgumentException If the number is negative.
@@ -935,7 +935,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long number is not negative. If it is negative, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given long number is not negative.
      *
      * @param number  The long number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -950,7 +950,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long number is not negative. If it is negative, it throws an IllegalArgumentException.
+     * Checks if the given long number is not negative.
      *
      * @param number The long number to check.
      * @throws IllegalArgumentException If the number is negative.
@@ -964,7 +964,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short number is not negative. If it is negative, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given short number is not negative.
      *
      * @param number  The short number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -979,7 +979,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short number is not negative. If it is negative, it throws an IllegalArgumentException.
+     * Checks if the given short number is not negative.
      *
      * @param number The short number to check.
      * @throws IllegalArgumentException If the number is negative.
@@ -993,7 +993,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte number is not positive. If it is positive or zero, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given byte number is not positive.
      *
      * @param number  The byte number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1008,7 +1008,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte number is not positive. If it is positive or zero, it throws an IllegalArgumentException.
+     * Checks if the given byte number is not positive.
      *
      * @param number The byte number to check.
      * @throws IllegalArgumentException If the number is positive or zero.
@@ -1022,7 +1022,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double number is not positive. If it is positive or zero, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given double number is not positive.
      *
      * @param number  The double number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1037,7 +1037,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double number is not positive. If it is positive or zero, it throws an IllegalArgumentException.
+     * Checks if the given double number is not positive.
      *
      * @param number The double number to check.
      * @throws IllegalArgumentException If the number is positive or zero.
@@ -1051,7 +1051,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float number is not positive. If it is positive or zero, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given float number is not positive.
      *
      * @param number  The float number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1066,7 +1066,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float number is not positive. If it is positive or zero, it throws an IllegalArgumentException.
+     * Checks if the given float number is not positive.
      *
      * @param number The float number to check.
      * @throws IllegalArgumentException If the number is positive or zero.
@@ -1080,7 +1080,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int number is not positive. If it is positive or zero, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given int number is not positive.
      *
      * @param number  The int number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1095,7 +1095,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int number is not positive. If it is positive or zero, it throws an IllegalArgumentException.
+     * Checks if the given int number is not positive.
      *
      * @param number The int number to check.
      * @throws IllegalArgumentException If the number is positive or zero.
@@ -1109,7 +1109,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long number is not positive. If it is positive or zero, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given long number is not positive.
      *
      * @param number  The long number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1124,7 +1124,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long number is not positive. If it is positive or zero, it throws an IllegalArgumentException.
+     * Checks if the given long number is not positive.
      *
      * @param number The long number to check.
      * @throws IllegalArgumentException If the number is positive or zero.
@@ -1138,7 +1138,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short number is not positive. If it is positive or zero, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given short number is not positive.
      *
      * @param number  The short number to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1153,7 +1153,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short number is not positive. If it is positive or zero, it throws an IllegalArgumentException.
+     * Checks if the given short number is not positive.
      *
      * @param number The short number to check.
      * @throws IllegalArgumentException If the number is positive or zero.
@@ -1167,7 +1167,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte value is odd. If it is not odd, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given byte value is odd.
      *
      * @param value   The byte value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1182,7 +1182,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte value is odd. If it is not odd, it throws an IllegalArgumentException.
+     * Checks if the given byte value is odd.
      *
      * @param value The byte value to check.
      * @throws IllegalArgumentException If the value is not odd.
@@ -1196,7 +1196,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double value is odd. If it is not odd, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given double value is odd.
      *
      * @param value   The double value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1211,7 +1211,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double value is odd. If it is not odd, it throws an IllegalArgumentException.
+     * Checks if the given double value is odd.
      *
      * @param value The double value to check.
      * @throws IllegalArgumentException If the value is not odd.
@@ -1225,7 +1225,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float value is odd. If it is not odd, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given float value is odd.
      *
      * @param value   The float value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1240,7 +1240,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float value is odd. If it is not odd, it throws an IllegalArgumentException.
+     * Checks if the given float value is odd.
      *
      * @param value The float value to check.
      * @throws IllegalArgumentException If the value is not odd.
@@ -1254,7 +1254,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int value is odd. If it is not odd, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given int value is odd.
      *
      * @param value   The int value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1269,7 +1269,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int value is odd. If it is not odd, it throws an IllegalArgumentException.
+     * Checks if the given int value is odd.
      *
      * @param value The int value to check.
      * @throws IllegalArgumentException If the value is not odd.
@@ -1283,7 +1283,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long value is odd. If it is not odd, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given long value is odd.
      *
      * @param value   The long value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1298,7 +1298,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long value is odd. If it is not odd, it throws an IllegalArgumentException.
+     * Checks if the given long value is odd.
      *
      * @param value The long value to check.
      * @throws IllegalArgumentException If the value is not odd.
@@ -1312,7 +1312,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short value is odd. If it is not odd, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given short value is odd.
      *
      * @param value   The short value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1327,7 +1327,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short value is odd. If it is not odd, it throws an IllegalArgumentException.
+     * Checks if the given short value is odd.
      *
      * @param value The short value to check.
      * @throws IllegalArgumentException If the value is not odd.
@@ -1341,7 +1341,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given byte value is positive (greater than 0).
      *
      * @param number  The byte value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1356,7 +1356,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given byte value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException.
+     * Checks if the given byte value is positive (greater than 0).
      *
      * @param number The byte value to check.
      * @throws IllegalArgumentException If the value is not positive.
@@ -1370,7 +1370,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given double value is positive (greater than 0).
      *
      * @param number  The double value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1385,7 +1385,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given double value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException.
+     * Checks if the given double value is positive (greater than 0).
      *
      * @param number The double value to check.
      * @throws IllegalArgumentException If the value is not positive.
@@ -1399,7 +1399,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given float value is positive (greater than 0).
      *
      * @param number  The float value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1414,7 +1414,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given float value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException.
+     * Checks if the given float value is positive (greater than 0).
      *
      * @param number The float value to check.
      * @throws IllegalArgumentException If the value is not positive.
@@ -1428,7 +1428,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given int value is positive (greater than 0).
      *
      * @param number  The int value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1443,7 +1443,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given int value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException.
+     * Checks if the given int value is positive (greater than 0).
      *
      * @param number The int value to check.
      * @throws IllegalArgumentException If the value is not positive.
@@ -1457,7 +1457,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given long value is positive (greater than 0).
      *
      * @param number  The long value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1472,7 +1472,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given long value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException.
+     * Checks if the given long value is positive (greater than 0).
      *
      * @param number The long value to check.
      * @throws IllegalArgumentException If the value is not positive.
@@ -1486,7 +1486,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException with the provided message.
+     * Checks if the given short value is positive (greater than 0).
      *
      * @param number  The short value to check.
      * @param message The error message to include in the exception if the check fails.
@@ -1501,7 +1501,7 @@ public final class Validate {
 
 
     /**
-     * Checks if the given short value is positive (greater than 0). If it is not positive, it throws an IllegalArgumentException.
+     * Checks if the given short value is positive (greater than 0).
      *
      * @param number The short value to check.
      * @throws IllegalArgumentException If the value is not positive.
@@ -1560,6 +1560,7 @@ public final class Validate {
         }
     }
 
+
     /**
      * Checks if an index is valid (non-negative).
      *
@@ -1572,6 +1573,15 @@ public final class Validate {
         }
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a boolean array.
+     *
+     * @param array   The boolean array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(boolean[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1581,6 +1591,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a boolean array.
+     *
+     * @param array The boolean array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(boolean[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1590,6 +1608,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a byte array.
+     *
+     * @param array   The byte array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(byte[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1599,6 +1626,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a byte array.
+     *
+     * @param array The byte array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(byte[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1608,6 +1643,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a char array.
+     *
+     * @param array   The char array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(char[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1617,6 +1661,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a char array.
+     *
+     * @param array The char array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(char[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1626,6 +1678,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a double array.
+     *
+     * @param array   The double array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(double[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1635,6 +1696,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a double array.
+     *
+     * @param array The double array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(double[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1644,6 +1713,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a float array.
+     *
+     * @param array   The float array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(float[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1653,6 +1731,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a float array.
+     *
+     * @param array The float array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(float[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1662,6 +1748,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for an int array.
+     *
+     * @param array   The int array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(int[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1671,6 +1766,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for an int array.
+     *
+     * @param array The int array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(int[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1680,6 +1783,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a long array.
+     *
+     * @param array   The long array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(long[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1689,6 +1801,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a long array.
+     *
+     * @param array The long array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(long[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1698,6 +1818,15 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a short array.
+     *
+     * @param array   The short array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(short[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1707,6 +1836,14 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a short array.
+     *
+     * @param array The short array to check.
+     * @param index The index to validate.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static void isValidIndex(short[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1716,6 +1853,16 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for an array of a generic type.
+     *
+     * @param array   The array to check.
+     * @param index   The index to validate.
+     * @param message The error message to throw if the index is invalid.
+     * @param <T>     The type of the elements in the array.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static <T> void isValidIndex(T[] array, int index, String message) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1725,6 +1872,15 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for an array of a generic type.
+     *
+     * @param array The array to check.
+     * @param index The index to validate.
+     * @param <T>   The type of the elements in the array.
+     * @throws IllegalArgumentException If the index is outside the bounds of the array or if the array is null.
+     */
     public static <T> void isValidIndex(T[] array, int index) {
         if (array != null) {
             if (array.length > index && index >= 0) {
@@ -1734,6 +1890,16 @@ public final class Validate {
         throw new IllegalArgumentException();
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a collection of a generic type.
+     *
+     * @param collection The collection to check.
+     * @param index      The index to validate.
+     * @param message    The error message to throw if the index is invalid.
+     * @param <T>        The type of the elements in the collection.
+     * @throws IllegalArgumentException If the index is outside the bounds of the collection or if the collection is null.
+     */
     public static <T extends Collection<T>> void isValidIndex(T collection, int index, String message) {
         if (collection != null) {
             if (collection.size() > index && index >= 0) {
@@ -1743,6 +1909,15 @@ public final class Validate {
         throw new IllegalArgumentException(message);
     }
 
+
+    /**
+     * Checks if the specified index is a valid index for a collection of a generic type.
+     *
+     * @param collection The collection to check.
+     * @param index      The index to validate.
+     * @param <T>        The type of the elements in the collection.
+     * @throws IllegalArgumentException If the index is outside the bounds of the collection or if the collection is null.
+     */
     public static <T extends Collection<T>> void isValidIndex(T collection, int index) {
         if (collection != null) {
             if (collection.size() > index && index >= 0) {
