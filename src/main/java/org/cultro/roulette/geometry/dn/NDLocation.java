@@ -159,6 +159,7 @@ public class NDLocation implements Location {
 
     @Override
     public void setComponent(int component, double value) {
-        elements[component] = value; //todo make sure that this checks if in bound with validates maybe?
+        Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
+        elements[component] = value;
     }
 }

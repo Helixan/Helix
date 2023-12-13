@@ -215,8 +215,7 @@ public class Vector3D implements Vector {
      */
     @Override
     public void setComponent(int component, double value) {
-        Validate.isTrue(component >= 0 && component < 3, "Component index is out of bounds for the vector.");
-
+        Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
     }
 }
