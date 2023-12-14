@@ -29,7 +29,7 @@ public final class GeometryUtils {
             return null;
         }
 
-        double x = origin.getX() + tMin * direction.getX() ;
+        double x = origin.getX() + tMin * direction.getX();
         double y = origin.getY() + tMin * direction.getY();
         double z = origin.getZ() + tMin * direction.getZ();
 
@@ -54,11 +54,11 @@ public final class GeometryUtils {
         for (int i = 0; i < dimension; i++) {
             double first = (orthotopeMin.getComponent(i) - origin.getComponent(i)) / direction.getComponent(i);
             double second = (orthotopeMax.getComponent(i) - origin.getComponent(i)) / direction.getComponent(i);
-            if (tMin < Math.max(first, second)) {
-                tMin = Math.max(first, second);
+            if (tMin < Math.min(first, second)) {
+                tMin = Math.min(first, second);
             }
-            if (tMax > Math.min(first, second)) {
-                tMax = Math.min(first, second);
+            if (tMax > Math.max(first, second)) {
+                tMax = Math.max(first, second);
             }
         }
 
@@ -70,7 +70,7 @@ public final class GeometryUtils {
         for (int i = 0; i < dimension; i++) {
             temp.setComponent(i, origin.getComponent(i) + tMin * direction.getComponent(i));
         }
-        return temp; //todo check to see if this works
+        return temp;
     }
 
     public static double distance(NDLocation first, NDLocation second) {
