@@ -35,6 +35,17 @@ public class AABB {
 
 
     /**
+     * Constructs an AABB using two opposite corners.
+     *
+     * @param corner1 The first corner of the AABB.
+     * @param corner2 The second corner diagonally opposite to the first.
+     */
+    public AABB(Location3D corner1, Location3D corner2) {
+        this(corner1.getX(), corner1.getY(), corner1.getZ(), corner2.getX(), corner2.getY(), corner2.getZ());
+    }
+
+
+    /**
      * Gets the minimum corner of the AABB.
      *
      * @return The minimum corner of the AABB.
@@ -55,26 +66,10 @@ public class AABB {
 
 
     /**
-     * Returns a string representation of the AABB in the format:
-     * "AABB{min=MIN_LOCATION, max=MAX_LOCATION}".
+     * Compares this AABB to another object for equality.
      *
-     * @return A string representation of the AABB.
-     */
-    @Override
-    public String toString() {
-        return "AABB{" +
-                "min=" + min +
-                ", max=" + max +
-                '}';
-    }
-
-
-    /**
-     * Compares this AABB to another object for equality. Two AABBs are considered equal
-     * if their minimum and maximum corners are equal.
-     *
-     * @param o The object to compare to this AABB.
-     * @return true if the objects are equal, false otherwise.
+     * @param o The object to compare with.
+     * @return true if the other object is a AABB with the same min and max locations, false otherwise.
      */
     @Override
     public boolean equals(Object o) {
@@ -90,12 +85,26 @@ public class AABB {
 
 
     /**
-     * Computes the hash code of this AABB based on its minimum and maximum corners.
+     * Computes the hash code for the AABB object.
      *
-     * @return The hash code of this AABB.
+     * @return The hash code of the AABB.
      */
     @Override
     public int hashCode() {
         return Objects.hash(min, max);
+    }
+
+
+    /**
+     * Provides a string representation of the AABB object.
+     *
+     * @return A string representation of the AABB.
+     */
+    @Override
+    public String toString() {
+        return "AABB{" +
+                "min=" + min +
+                ", max=" + max +
+                '}';
     }
 }
