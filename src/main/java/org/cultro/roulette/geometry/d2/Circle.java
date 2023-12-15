@@ -72,12 +72,21 @@ public class Circle implements Iterable<Location2D> {
 
 
     /**
-     * Compares this circle to the specified object. The result is true if and only if
-     * the argument is not null and is a Circle object that represents the same
-     * circle (same center and radius) as this object.
+     * Returns an iterator over the points on the perimeter of the circle.
      *
-     * @param o The object to compare this Circle against.
-     * @return true if the given object represents a Circle equivalent to this circle, false otherwise.
+     * @return An Iterator for Location2D objects on the circle's perimeter.
+     */
+    @Override
+    public Iterator<Location2D> iterator() {
+        return new Circle.CircleIterator();
+    }
+
+
+    /**
+     * Compares this Circle to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a Circle with the same center and radius, false otherwise.
      */
     @Override
     public boolean equals(Object o) {
@@ -88,14 +97,14 @@ public class Circle implements Iterable<Location2D> {
             return false;
         }
         Circle that = (Circle) o;
-        return Double.compare(radius, that.radius) == 0 && Objects.equals(center, that.center);
+        return Double.compare(that.radius, radius) == 0 && Objects.equals(center, that.center);
     }
 
 
     /**
-     * Returns a hash code value for the circle.
+     * Computes the hash code for the Circle object.
      *
-     * @return A hash code value for this circle.
+     * @return The hash code of the Circle.
      */
     @Override
     public int hashCode() {
@@ -104,7 +113,7 @@ public class Circle implements Iterable<Location2D> {
 
 
     /**
-     * Returns a string representation of the Circle.
+     * Provides a string representation of the Circle object.
      *
      * @return A string representation of the Circle.
      */
@@ -114,17 +123,6 @@ public class Circle implements Iterable<Location2D> {
                 "center=" + center +
                 ", radius=" + radius +
                 '}';
-    }
-
-
-    /**
-     * Returns an iterator over the points on the perimeter of the circle.
-     *
-     * @return An Iterator for Location2D objects on the circle's perimeter.
-     */
-    @Override
-    public Iterator<Location2D> iterator() {
-        return new Circle.CircleIterator();
     }
 
 

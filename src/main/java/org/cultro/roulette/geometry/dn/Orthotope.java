@@ -2,6 +2,8 @@ package org.cultro.roulette.geometry.dn;
 
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Objects;
+
 /**
  * The Orthotope class represents a geometric object in n-dimensional space, defined by its minimum and maximum corners
  * represented as NDLocation objects.
@@ -92,5 +94,49 @@ public class Orthotope {
      */
     public int getDimension() {
         return max.getDimension();
+    }
+
+
+    /**
+     * Compares this orthotope to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is an Orthotope with the same min and max locations, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Orthotope orthotope = (Orthotope) o;
+        return Objects.equals(max, orthotope.max) && Objects.equals(min, orthotope.min);
+    }
+
+
+    /**
+     * Computes the hash code for the Orthotope object.
+     *
+     * @return The hash code of the Orthotope.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(max, min);
+    }
+
+
+    /**
+     * Provides a string representation of the Orthotope object.
+     *
+     * @return A string representation of the Orthotope.
+     */
+    @Override
+    public String toString() {
+        return "Orthotope{" +
+                "max=" + max +
+                ", min=" + min +
+                '}';
     }
 }

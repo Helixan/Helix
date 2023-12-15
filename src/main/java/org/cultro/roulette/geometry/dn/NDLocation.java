@@ -3,6 +3,8 @@ package org.cultro.roulette.geometry.dn;
 import org.cultro.roulette.geometry.Location;
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Arrays;
+
 /**
  * The NDLocation class represents a location or position in an n-dimensional space.
  * It implements the Location interface and provides various location operations such
@@ -168,5 +170,48 @@ public class NDLocation implements Location {
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
+    }
+
+
+    /**
+     * Compares this NDLocation to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a NDLocation with the same elements, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        NDLocation that = (NDLocation) o;
+        return Arrays.equals(elements, that.elements);
+    }
+
+
+    /**
+     * Computes the hash code for the NDLocation object.
+     *
+     * @return The hash code of the NDLocation.
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(elements);
+    }
+
+
+    /**
+     * Provides a string representation of the NDLocation object.
+     *
+     * @return A string representation of the NDLocation.
+     */
+    @Override
+    public String toString() {
+        return "NDLocation{" +
+                "elements=" + Arrays.toString(elements) +
+                '}';
     }
 }

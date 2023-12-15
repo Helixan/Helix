@@ -3,6 +3,8 @@ package org.cultro.roulette.geometry.d3;
 import org.cultro.roulette.geometry.Vector;
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Arrays;
+
 /**
  * The Vector3D class represents a three-dimensional vector in Euclidean space.
  * It implements the Vector interface and provides various vector operations
@@ -217,5 +219,48 @@ public class Vector3D implements Vector {
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
+    }
+
+
+    /**
+     * Compares this Vector3D to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a Vector3D with the same center and radius, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Vector3D vector3D = (Vector3D) o;
+        return Arrays.equals(elements, vector3D.elements);
+    }
+
+
+    /**
+     * Computes the hash code for the Vector3D object.
+     *
+     * @return The hash code of the Vector3D.
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(elements);
+    }
+
+
+    /**
+     * Provides a string representation of the Vector3D object.
+     *
+     * @return A string representation of the Vector3D.
+     */
+    @Override
+    public String toString() {
+        return "Vector3D{" +
+                "elements=" + Arrays.toString(elements) +
+                '}';
     }
 }

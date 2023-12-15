@@ -3,6 +3,8 @@ package org.cultro.roulette.geometry.d2;
 import org.cultro.roulette.geometry.Location;
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Arrays;
+
 /**
  * The Location2D class represents a two-dimensional location or position in Euclidean space.
  * It implements the Location interface and provides various location operations such as
@@ -157,5 +159,48 @@ public class Location2D implements Location {
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
+    }
+
+
+    /**
+     * Compares this Location2D to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a Location2D with the same elements, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Location2D that = (Location2D) o;
+        return Arrays.equals(elements, that.elements);
+    }
+
+
+    /**
+     * Computes the hash code for the Location2D object.
+     *
+     * @return The hash code of the Location2D.
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(elements);
+    }
+
+
+    /**
+     * Provides a string representation of the Location2D object.
+     *
+     * @return A string representation of the Location2D.
+     */
+    @Override
+    public String toString() {
+        return "Location2D{" +
+                "elements=" + Arrays.toString(elements) +
+                '}';
     }
 }

@@ -3,6 +3,8 @@ package org.cultro.roulette.geometry.dn;
 import org.cultro.roulette.geometry.Vector;
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Arrays;
+
 /**
  * The NDVector class represents a vector with an arbitrary number of dimensions.
  * It implements the Vector interface and provides various vector operations such as
@@ -195,5 +197,48 @@ public class NDVector implements Vector {
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
+    }
+
+
+    /**
+     * Compares this NDVector to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a NDVector with the same elements, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        NDVector ndVector = (NDVector) o;
+        return Arrays.equals(elements, ndVector.elements);
+    }
+
+
+    /**
+     * Computes the hash code for the NDVector object.
+     *
+     * @return The hash code of the NDVector.
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(elements);
+    }
+
+
+    /**
+     * Provides a string representation of the NDVector object.
+     *
+     * @return A string representation of the NDVector.
+     */
+    @Override
+    public String toString() {
+        return "NDVector{" +
+                "elements=" + Arrays.toString(elements) +
+                '}';
     }
 }

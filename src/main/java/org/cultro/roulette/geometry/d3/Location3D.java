@@ -3,6 +3,8 @@ package org.cultro.roulette.geometry.d3;
 import org.cultro.roulette.geometry.Location;
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Arrays;
+
 /**
  * The Location3D class represents a three-dimensional location or position in Euclidean space.
  * It implements the Location interface and provides various location operations such as
@@ -169,5 +171,48 @@ public class Location3D implements Location {
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
+    }
+
+
+    /**
+     * Compares this Location3D to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a Location3D with the same elements, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Location3D that = (Location3D) o;
+        return Arrays.equals(elements, that.elements);
+    }
+
+
+    /**
+     * Computes the hash code for the Location3D object.
+     *
+     * @return The hash code of the Location3D.
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(elements);
+    }
+
+
+    /**
+     * Provides a string representation of the Location3D object.
+     *
+     * @return A string representation of the Location3D.
+     */
+    @Override
+    public String toString() {
+        return "Location3D{" +
+                "elements=" + Arrays.toString(elements) +
+                '}';
     }
 }

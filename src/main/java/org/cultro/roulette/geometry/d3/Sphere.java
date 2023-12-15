@@ -83,10 +83,10 @@ public class Sphere implements Iterable<Location3D> {
 
 
     /**
-     * Compares this sphere to another object for equality.
+     * Compares this Sphere to another object for equality.
      *
      * @param o The object to compare with.
-     * @return True if the other object is a Sphere with the same center and radius, false otherwise.
+     * @return true if the other object is a Sphere with the same center and radius, false otherwise.
      */
     @Override
     public boolean equals(Object o) {
@@ -102,6 +102,17 @@ public class Sphere implements Iterable<Location3D> {
 
 
     /**
+     * Computes the hash code for the Sphere object.
+     *
+     * @return The hash code of the Sphere.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(center, radius);
+    }
+
+
+    /**
      * Provides a string representation of the Sphere object.
      *
      * @return A string representation of the Sphere.
@@ -112,17 +123,6 @@ public class Sphere implements Iterable<Location3D> {
                 "center=" + center +
                 ", radius=" + radius +
                 '}';
-    }
-
-
-    /**
-     * Computes the hash code for the Sphere object.
-     *
-     * @return The hash code of the Sphere.
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(center, radius);
     }
 
 
@@ -152,7 +152,7 @@ public class Sphere implements Iterable<Location3D> {
         /**
          * Checks if there are more points to iterate over.
          *
-         * @return True if there are more points, false otherwise.
+         * @return true if there are more points, false otherwise.
          */
         @Override
         public boolean hasNext() {
@@ -181,7 +181,7 @@ public class Sphere implements Iterable<Location3D> {
         /**
          * Updates the iterator to the next valid Location3D within the sphere.
          *
-         * @return True if a next location is available, false otherwise.
+         * @return true if a next location is available, false otherwise.
          */
         private boolean updateNext() {
             while (currentX <= center.getX() + radius) {
