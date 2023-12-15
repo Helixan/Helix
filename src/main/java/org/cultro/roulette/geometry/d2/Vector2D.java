@@ -3,6 +3,8 @@ package org.cultro.roulette.geometry.d2;
 import org.cultro.roulette.geometry.Vector;
 import org.cultro.roulette.lang.Validate;
 
+import java.util.Arrays;
+
 /**
  * The Vector2D class represents a two-dimensional vector with components (x, y).
  * It implements the Vector interface and provides common vector operations such as dot product, magnitude, normalization,
@@ -11,7 +13,7 @@ import org.cultro.roulette.lang.Validate;
 @SuppressWarnings("unused")
 public class Vector2D implements Vector {
 
-    private final double[] elements = new double[3];
+    private final double[] elements = new double[2];
 
 
     /**
@@ -184,6 +186,49 @@ public class Vector2D implements Vector {
     public void setComponent(int component, double value) {
         Validate.isValidIndex(elements, component, "The targeted component is out of bounds.");
         elements[component] = value;
+    }
+
+
+    /**
+     * Compares this Vector2D to another object for equality.
+     *
+     * @param o The object to compare with.
+     * @return true if the other object is a Vector2D with the same elements, false otherwise.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Vector2D vector2D = (Vector2D) o;
+        return Arrays.equals(elements, vector2D.elements);
+    }
+
+
+    /**
+     * Computes the hash code for the Vector2D object.
+     *
+     * @return The hash code of the Vector2D.
+     */
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(elements);
+    }
+
+
+    /**
+     * Provides a string representation of the Vector2D object.
+     *
+     * @return A string representation of the Vector2D.
+     */
+    @Override
+    public String toString() {
+        return "Vector2D{" +
+                "elements=" + Arrays.toString(elements) +
+                '}';
     }
 }
 
