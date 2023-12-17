@@ -16,6 +16,7 @@ public interface SymmetricCipher {
      */
     byte[] encrypt(byte[] plaintext, byte[] key);
 
+
     /**
      * Decrypts the provided ciphertext using the specified key.
      *
@@ -25,12 +26,14 @@ public interface SymmetricCipher {
      */
     byte[] decrypt(byte[] ciphertext, byte[] key);
 
+
     /**
      * Generates a new symmetric key suitable for this cipher.
      *
      * @return The generated symmetric key.
      */
     byte[] generateKey();
+
 
     /**
      * Generates a new symmetric key based on the provided seed.
@@ -39,6 +42,7 @@ public interface SymmetricCipher {
      * @return The generated symmetric key.
      */
     byte[] generateKey(byte[] seed);
+
 
     /**
      * Retrieves the symmetric encryption algorithm used by the implementation.
