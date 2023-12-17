@@ -14,7 +14,6 @@ public interface Location {
      * @param index The index of the component.
      * @return The component value at the specified index.
      */
-
     double getComponent(int index);
 
 
