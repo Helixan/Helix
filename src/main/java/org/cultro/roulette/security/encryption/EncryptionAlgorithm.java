@@ -1,5 +1,9 @@
 package org.cultro.roulette.security.encryption;
 
+/**
+ * Enumeration of various encryption algorithms.
+ * This enum classifies different cryptographic algorithms used for encryption and decryption operations.
+ */
 public enum EncryptionAlgorithm {
     AES,
     BLOWFISH,
@@ -7,5 +11,4 @@ public enum EncryptionAlgorithm {
     DSA,
     RSA,
     TRIPLE_DES
-
 }
