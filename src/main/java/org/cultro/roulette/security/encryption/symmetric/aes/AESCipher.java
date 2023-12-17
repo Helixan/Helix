@@ -12,12 +12,25 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+/**
+ * Implementation of the SymmetricCipher interface using the Advanced Encryption Standard (AES).
+ * This class provides functionality for encrypting and decrypting data using AES with various modes of operation.
+ * AES supports key sizes of 128, 192, or 256 bits.
+ */
 public class AESCipher implements SymmetricCipher {
 
     private final int keySize;
     private final AESEncryptionMode encryptionMode;
     private byte[] iv;
 
+
+    /**
+     * Constructs an AESCipher with a specified key size and encryption mode.
+     *
+     * @param keySize         Size of the AES key in bits. Must be either 128, 192, or 256.
+     * @param encryptionMode  The mode of AES encryption (e.g., ECB, CBC, etc.).
+     * @throws IllegalArgumentException If the key size is not one of the specified valid values.
+     */
     public AESCipher(int keySize, AESEncryptionMode encryptionMode) {
         if (keySize != 128 && keySize != 192 && keySize != 256) {
             throw new IllegalArgumentException("Invalid AES key size. Allowed values are 128, 192, or 256 bits.");
@@ -26,6 +39,16 @@ public class AESCipher implements SymmetricCipher {
         this.encryptionMode = encryptionMode;
     }
 
+
+    /**
+     * Encrypts the given plaintext using the specified AES key.
+     * The method of encryption is determined by the specified encryption mode.
+     * For modes other than ECB, an Initialization Vector (IV) is used and generated randomly.
+     *
+     * @param plaintext The plaintext to encrypt.
+     * @param key       The AES key to use for encryption.
+     * @return The encrypted data, including the IV prepended if applicable.
+     */
     @Override
     public byte[] encrypt(byte[] plaintext, byte[] key) {
         try {
@@ -56,6 +79,16 @@ public class AESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Decrypts the given ciphertext using the specified AES key.
+     * The method of decryption is determined by the specified encryption mode.
+     * For modes other than ECB, an Initialization Vector (IV) is extracted from the ciphertext.
+     *
+     * @param ciphertext The ciphertext to decrypt.
+     * @param key        The AES key to use for decryption.
+     * @return The decrypted plaintext.
+     */
     @Override
     public byte[] decrypt(byte[] ciphertext, byte[] key) {
         try {
@@ -79,6 +112,12 @@ public class AESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new AES key of the specified key size.
+     *
+     * @return The generated AES key.
+     */
     @Override
     public byte[] generateKey() {
         try {
@@ -91,6 +130,14 @@ public class AESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new AES key based on the provided seed.
+     * The seed is used to initialize a SecureRandom instance, ensuring reproducibility of the key.
+     *
+     * @param seed The seed used for key generation.
+     * @return The generated AES key.
+     */
     @Override
     public byte[] generateKey(byte[] seed) {
         try {
@@ -105,6 +152,12 @@ public class AESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Returns the encryption algorithm used, which is AES in this implementation.
+     *
+     * @return The encryption algorithm, AES.
+     */
     @Override
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return EncryptionAlgorithm.AES;
