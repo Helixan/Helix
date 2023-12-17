@@ -15,6 +15,7 @@ public interface Hash {
      */
     byte[] digest(byte[] input);
 
+
     /**
      * Computes the hash digest of the given input with optional prefix and suffix salts.
      * The resulting hash is computed over the concatenated value of prefixSalt, input, and suffixSalt.
@@ -25,12 +26,14 @@ public interface Hash {
      */
     byte[] digest(byte[] input, byte[] salt);
 
+
     /**
      * Retrieves the specific hashing algorithm used by the implementation.
      *
      * @return The hashing algorithm.
      */
     HashAlgorithm getHashAlgorithm();
+
 
     /**
      * Retrieves the length of the hash produced by the implementation.
