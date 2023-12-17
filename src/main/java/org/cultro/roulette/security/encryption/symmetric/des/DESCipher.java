@@ -12,12 +12,27 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+/**
+ * Implementation of the SymmetricCipher interface for the DES (Data Encryption Standard) algorithm.
+ * DES is a symmetric key algorithm used for secure data encryption and decryption.
+ * This class utilizes DES in CBC (Cipher Block Chaining) mode with PKCS5 padding.
+ */
 public class DESCipher implements SymmetricCipher {
 
     private static final String DES_ALGORITHM = "DES";
     private static final String DES_TRANSFORMATION = "DES/CBC/PKCS5Padding";
     private byte[] iv;
 
+
+    /**
+     * Encrypts the given plaintext using the specified DES key.
+     * The method initializes a DES cipher in encrypt mode with a randomly generated IV (Initialization Vector),
+     * combines the IV with the encrypted data, and returns the result.
+     *
+     * @param plaintext The data to be encrypted.
+     * @param key       The DES key to use for encryption.
+     * @return The encrypted data with the IV prepended.
+     */
     @Override
     public byte[] encrypt(byte[] plaintext, byte[] key) {
         try {
@@ -39,6 +54,16 @@ public class DESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Decrypts the given ciphertext using the specified DES key.
+     * The method extracts the IV from the beginning of the ciphertext, initializes a DES cipher in decrypt mode,
+     * and decrypts the remaining data.
+     *
+     * @param ciphertext The data to be decrypted.
+     * @param key        The DES key to use for decryption.
+     * @return The decrypted plaintext.
+     */
     @Override
     public byte[] decrypt(byte[] ciphertext, byte[] key) {
         try {
@@ -56,6 +81,13 @@ public class DESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new DES key.
+     * This method utilizes a KeyGenerator to produce a random DES key.
+     *
+     * @return The generated DES key.
+     */
     @Override
     public byte[] generateKey() {
         try {
@@ -67,6 +99,14 @@ public class DESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new DES key based on the provided seed.
+     * This method utilizes a KeyGenerator with a SecureRandom instance seeded with the provided seed.
+     *
+     * @param seed The seed to use for key generation.
+     * @return The generated DES key.
+     */
     @Override
     public byte[] generateKey(byte[] seed) {
         try {
@@ -81,6 +121,12 @@ public class DESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Retrieves the symmetric encryption algorithm used by this implementation.
+     *
+     * @return The encryption algorithm, DES.
+     */
     @Override
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return EncryptionAlgorithm.DES;
