@@ -12,12 +12,29 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+/**
+ * Implementation of the SymmetricCipher interface for the Triple DES encryption algorithm.
+ * Triple DES, or 3DES, is an extension of the DES algorithm, providing enhanced security
+ * by encrypting data with three keys instead of one.
+ * This class provides functionality for encrypting and decrypting data using the Triple DES algorithm
+ * in CBC mode with PKCS5 padding.
+ */
 public class TripleDESCipher implements SymmetricCipher {
 
     private static final String TRIPLE_DES_ALGORITHM = "DESede";
     private static final String TRIPLE_DES_TRANSFORMATION = "DESede/CBC/PKCS5Padding";
     private byte[] iv;
 
+
+    /**
+     * Encrypts the given plaintext using the specified Triple DES key.
+     * Encrypts the data using CBC mode with PKCS5 padding.
+     * An Initialization Vector (IV) is generated randomly for each encryption operation.
+     *
+     * @param plaintext The plaintext to encrypt.
+     * @param key       The Triple DES key to use for encryption.
+     * @return The encrypted data, including the IV prepended to the actual ciphertext.
+     */
     @Override
     public byte[] encrypt(byte[] plaintext, byte[] key) {
         try {
@@ -39,6 +56,16 @@ public class TripleDESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Decrypts the given ciphertext using the specified Triple DES key.
+     * Decrypts the data using CBC mode with PKCS5 padding.
+     * The IV is extracted from the beginning of the ciphertext.
+     *
+     * @param ciphertext The ciphertext to decrypt.
+     * @param key        The Triple DES key to use for decryption.
+     * @return The decrypted plaintext.
+     */
     @Override
     public byte[] decrypt(byte[] ciphertext, byte[] key) {
         try {
@@ -56,6 +83,13 @@ public class TripleDESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new Triple DES key.
+     * This method uses a KeyGenerator to create a random key suitable for Triple DES encryption.
+     *
+     * @return The generated Triple DES key.
+     */
     @Override
     public byte[] generateKey() {
         try {
@@ -67,6 +101,14 @@ public class TripleDESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new Triple DES key based on the provided seed.
+     * The seed is used to initialize a SecureRandom instance, ensuring reproducibility of the key.
+     *
+     * @param seed The seed used for key generation.
+     * @return The generated Triple DES key.
+     */
     @Override
     public byte[] generateKey(byte[] seed) {
         try {
@@ -81,6 +123,12 @@ public class TripleDESCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Returns the encryption algorithm used, which is Triple DES in this implementation.
+     *
+     * @return The encryption algorithm, Triple DES.
+     */
     @Override
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return EncryptionAlgorithm.TRIPLE_DES;
