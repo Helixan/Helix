@@ -4,14 +4,30 @@ import org.bouncycastle.crypto.digests.KeccakDigest;
 import org.cultro.roulette.security.hashing.Hash;
 import org.cultro.roulette.security.hashing.HashAlgorithm;
 
+/**
+ * This class implements the Hash interface using the Keccak-256 hashing algorithm.
+ * It provides methods for computing hash digests with a 256-bit output, suitable for various security applications.
+ */
 public class Keccack256Hasher implements Hash {
 
     private final KeccakDigest keccakDigest;
 
+
+    /**
+     * Constructs a new Keccack256Hasher by initializing the Keccak-256 hashing algorithm.
+     */
     public Keccack256Hasher() {
         this.keccakDigest = new KeccakDigest(256);
     }
 
+
+    /**
+     * Computes the hash digest of the given input using the Keccak-256 algorithm.
+     * This method updates the digest with the input byte array and then finalizes the hash computation.
+     *
+     * @param input The byte array to be hashed.
+     * @return The hashed byte array (32 bytes).
+     */
     @Override
     public byte[] digest(byte[] input) {
         keccakDigest.update(input, 0, input.length);
@@ -20,6 +36,15 @@ public class Keccack256Hasher implements Hash {
         return out;
     }
 
+
+    /**
+     * Computes the hash digest of the given input, concatenating with the provided salt, using the Keccak-256 algorithm.
+     * This method first combines the input array and salt array before performing the hash computation.
+     *
+     * @param input The byte array to be hashed.
+     * @param salt  The salt to be appended to the input before hashing.
+     * @return The hashed byte array (32 bytes).
+     */
     @Override
     public byte[] digest(byte[] input, byte[] salt) {
         byte[] combinedInput = new byte[input.length + salt.length];
@@ -29,11 +54,24 @@ public class Keccack256Hasher implements Hash {
         return digest(combinedInput);
     }
 
+
+    /**
+     * Retrieves the specific hashing algorithm used by this Keccack256 hasher.
+     *
+     * @return The hashing algorithm, KECCACK_256.
+     */
     @Override
     public HashAlgorithm getHashAlgorithm() {
         return HashAlgorithm.KECCACK_256;
     }
 
+
+    /**
+     * Retrieves the length of the hash produced by this Keccack256 hasher.
+     * KECCACK_256 generates a hash of 32 bytes.
+     *
+     * @return The length of the hash in bytes (32 bytes).
+     */
     @Override
     public int getHashLength() {
         return 32;
