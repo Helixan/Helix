@@ -12,12 +12,28 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+/**
+ * Implementation of the SymmetricCipher interface using the Blowfish encryption algorithm.
+ * Blowfish is a symmetric-key block cipher, known for its speed and effectiveness.
+ * This class provides functionality for encrypting and decrypting data using the Blowfish algorithm
+ * in CBC mode with PKCS5 padding.
+ */
 public class BlowfishCipher implements SymmetricCipher {
 
     private static final String BLOWFISH_ALGORITHM = "Blowfish";
     private static final String BLOWFISH_TRANSFORMATION = "Blowfish/CBC/PKCS5Padding";
     private byte[] iv;
 
+
+    /**
+     * Encrypts the given plaintext using the specified Blowfish key.
+     * Encrypts the data using CBC mode with PKCS5 padding.
+     * An Initialization Vector (IV) is generated randomly for each encryption operation.
+     *
+     * @param plaintext The plaintext to encrypt.
+     * @param key       The Blowfish key to use for encryption.
+     * @return The encrypted data, including the IV prepended to the actual ciphertext.
+     */
     @Override
     public byte[] encrypt(byte[] plaintext, byte[] key) {
         try {
@@ -39,6 +55,16 @@ public class BlowfishCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Decrypts the given ciphertext using the specified Blowfish key.
+     * Decrypts the data using CBC mode with PKCS5 padding.
+     * The IV is extracted from the beginning of the ciphertext.
+     *
+     * @param ciphertext The ciphertext to decrypt.
+     * @param key        The Blowfish key to use for decryption.
+     * @return The decrypted plaintext.
+     */
     @Override
     public byte[] decrypt(byte[] ciphertext, byte[] key) {
         try {
@@ -56,6 +82,13 @@ public class BlowfishCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new Blowfish key.
+     * This method uses a KeyGenerator to create a random key suitable for Blowfish encryption.
+     *
+     * @return The generated Blowfish key.
+     */
     @Override
     public byte[] generateKey() {
         try {
@@ -67,6 +100,14 @@ public class BlowfishCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Generates a new Blowfish key based on the provided seed.
+     * The seed is used to initialize a SecureRandom instance, ensuring reproducibility of the key.
+     *
+     * @param seed The seed used for key generation.
+     * @return The generated Blowfish key.
+     */
     @Override
     public byte[] generateKey(byte[] seed) {
         try {
@@ -81,6 +122,12 @@ public class BlowfishCipher implements SymmetricCipher {
         }
     }
 
+
+    /**
+     * Returns the encryption algorithm used, which is Blowfish in this implementation.
+     *
+     * @return The encryption algorithm, Blowfish.
+     */
     @Override
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return EncryptionAlgorithm.BLOWFISH;
