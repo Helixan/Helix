@@ -1,5 +1,10 @@
 package org.cultro.roulette.security.hashing;
 
+
+/**
+ * Enumeration of various hashing algorithms.
+ * This enum provides a comprehensive list of hash functions and identifiers for hash algorithms.
+ */
 public enum HashAlgorithm {
 
     ARGON2,
