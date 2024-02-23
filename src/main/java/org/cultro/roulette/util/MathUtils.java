@@ -334,7 +334,7 @@ public final class MathUtils {
      * @return true if the integer is a power of two, false otherwise
      */
     public static boolean isPrime(int n) {
-        if (n <= 0) {
+        if (n <= 1) {
             return false;
         }
         if (n < 4) {
@@ -359,7 +359,7 @@ public final class MathUtils {
      * @return true if the integer is prime, false otherwise
      */
     public static boolean isPrime(long n) {
-        if (n <= 0) {
+        if (n <= 1) {
             return false;
         }
         if (n < 4) {
