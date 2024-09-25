@@ -85,7 +85,7 @@ public class Vector3D implements Vector {
      */
     @Override
     public double[] getElements() {
-        return elements;
+        return Arrays.copyOf(elements, elements.length);
     }
 
 
@@ -177,7 +177,7 @@ public class Vector3D implements Vector {
     @Override
     public Vector3D add(Vector vector) {
         Validate.notNull(vector, "You cannot add a vector to a null vector.");
-        Validate.isEquivalent(vector.getDimension(), 3, "You cannot add vectors that exist in different dimensions.");
+        Validate.isEquivalent(vector.getDimension(), this.getDimension(), "You cannot add vectors that exist in different dimensions.");
         return new Vector3D(elements[0] + vector.getComponent(0), elements[1] + vector.getComponent(1), elements[2] + vector.getComponent(2));
     }
 
@@ -192,7 +192,7 @@ public class Vector3D implements Vector {
     @Override
     public Vector3D subtract(Vector vector) {
         Validate.notNull(vector, "You cannot subtract a null vector from a vector.");
-        Validate.isEquivalent(vector.getDimension(), 3, "You cannot subtract vectors that exist in different dimensions.");
+        Validate.isEquivalent(vector.getDimension(), this.getDimension(), "You cannot subtract vectors that exist in different dimensions.");
         return new Vector3D(elements[0] - vector.getComponent(0), elements[1] - vector.getComponent(1), elements[2] - vector.getComponent(2));
     }
 

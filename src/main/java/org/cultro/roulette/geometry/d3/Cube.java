@@ -187,7 +187,7 @@ public class Cube implements Iterable<Location3D> {
             while (currentX <= maxCorner.getX()) {
                 while (currentY <= maxCorner.getY()) {
                     while (currentZ <= maxCorner.getZ()) {
-                        if (currentX >= minCorner.getX() && currentX >= minCorner.getY() && currentZ >= minCorner.getZ()) {
+                        if (currentX >= minCorner.getX() && currentY >= minCorner.getY() && currentZ >= minCorner.getZ()) {
                             return true;
                         }
                         currentZ++;

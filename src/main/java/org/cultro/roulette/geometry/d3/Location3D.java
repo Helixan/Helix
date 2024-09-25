@@ -85,7 +85,7 @@ public class Location3D implements Location {
      */
     @Override
     public double[] getElements() {
-        return elements;
+        return Arrays.copyOf(elements, elements.length);
     }
 
 

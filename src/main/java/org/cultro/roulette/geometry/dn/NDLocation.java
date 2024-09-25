@@ -64,7 +64,7 @@ public class NDLocation implements Location {
      */
     @Override
     public double[] getElements() {
-        return elements;
+        return Arrays.copyOf(elements, elements.length);
     }
 
 

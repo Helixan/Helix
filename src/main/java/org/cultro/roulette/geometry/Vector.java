@@ -6,7 +6,7 @@ package org.cultro.roulette.geometry;
  * calculating dot products, magnitudes, and performing vector operations.
  */
 @SuppressWarnings("unused")
-public interface Vector {
+public interface Vector extends Cloneable {
 
     /**
      * Retrieves the component of the vector at the specified index.

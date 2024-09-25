@@ -1,12 +1,13 @@
 package org.cultro.roulette.geometry;
 
+
 /**
  * The Location interface represents a location or position in n-dimensional space.
  * Implementing classes should provide methods for retrieving components, getting
  * the dimension, and performing mathematical operations on locations.
  */
 @SuppressWarnings("unused")
-public interface Location {
+public interface Location extends Cloneable {
 
     /**
      * Retrieves the component of the location at the specified index.

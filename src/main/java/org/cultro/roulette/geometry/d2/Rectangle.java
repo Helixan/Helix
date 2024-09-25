@@ -92,7 +92,7 @@ public class Rectangle implements Iterable<Location2D> {
         private boolean updateNext() {
             while (currentX <= maxCorner.getX()) {
                 while (currentY <= maxCorner.getY()) {
-                    if (currentX >= minCorner.getX() && currentX >= minCorner.getY()) {
+                    if (currentX >= minCorner.getX() && currentY >= minCorner.getY()) {
                         return true;
                     }
                     currentY++;
@@ -103,4 +103,5 @@ public class Rectangle implements Iterable<Location2D> {
             return false;
         }
     }
+
 }

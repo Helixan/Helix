@@ -62,7 +62,7 @@ public class NDVector implements Vector {
      */
     @Override
     public double[] getElements() {
-        return elements;
+        return Arrays.copyOf(elements, elements.length);
     }
 
 
