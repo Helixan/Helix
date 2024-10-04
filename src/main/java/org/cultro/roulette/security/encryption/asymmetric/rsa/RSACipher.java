@@ -14,7 +14,7 @@ import java.security.*;
 public class RSACipher implements AsymmetricCipher {
 
     private static final String RSA_ALGORITHM = "RSA";
-    private static final String RSA_TRANSFORMATION = "RSA/ECB/PKCS1Padding";
+    private static final String RSA_TRANSFORMATION = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
     private final int keySize;
 
 
