@@ -1,8 +1,8 @@
-# Cultro Roulette Project Overview
+# Helix Project Overview
 
 ## Overview
 
-The **Cultro Roulette Project** is a comprehensive framework consisting of multiple modules, each designed to address specific functionalities such as caching, geometry, string manipulation, reflection, and more. The primary modules covered in this project so far include the **Caching Module**, the **Geometry Module**, the **Language Module**, the **Reflection Module**, the **Security Module**, and the **Utils Module**. These modules offer various features, from efficient data caching mechanisms to flexible geometric computations, enhanced string utilities, advanced reflection capabilities, comprehensive security functionalities, and a suite of utility functions. This makes the project suitable for a wide range of applications, including scientific computing, simulations, general software optimization, and data security.
+The **Helix Project** is a comprehensive framework consisting of multiple modules, each designed to address specific functionalities such as caching, geometry, string manipulation, reflection, and more. The primary modules covered in this project so far include the **Caching Module**, the **Geometry Module**, the **Language Module**, the **Reflection Module**, the **Security Module**, and the **Utils Module**. These modules offer various features, from efficient data caching mechanisms to flexible geometric computations, enhanced string utilities, advanced reflection capabilities, comprehensive security functionalities, and a suite of utility functions. This makes the project suitable for a wide range of applications, including scientific computing, simulations, general software optimization, and data security.
 
 ## Modules Overview
 
@@ -27,8 +27,8 @@ The **Caching Module** is designed to provide in-memory caching functionality wi
 To create and use a cache with LRU eviction:
 
 ```java
-import org.cultro.roulette.cache.Cache;
-import org.cultro.roulette.cache.CacheFactory;
+import org.cultro.helix.cache.Cache;
+import org.cultro.helix.cache.CacheFactory;
 
 public class CacheUsageExample {
     public static void main(String[] args) {
@@ -83,7 +83,7 @@ The **Geometry Module** provides a comprehensive framework for working with geom
 To create and manipulate a `Vector3D`:
 
 ```java
-import org.cultro.roulette.geometry.d3.Vector3D;
+import org.cultro.helix.geometry.d3.Vector3D;
 
 public class GeometryUsageExample {
     public static void main(String[] args) {
@@ -98,8 +98,8 @@ public class GeometryUsageExample {
 To create an `Orthotope` and calculate its volume:
 
 ```java
-import org.cultro.roulette.geometry.dn.Orthotope;
-import org.cultro.roulette.geometry.dn.NDLocation;
+import org.cultro.helix.geometry.dn.Orthotope;
+import org.cultro.helix.geometry.dn.NDLocation;
 
 public class OrthotopeExample {
     public static void main(String[] args) {
@@ -117,24 +117,25 @@ The **Language Module** provides utilities for string manipulation and validatio
 
 #### Key Features
 
-- **`RString`**: A rich wrapper around Java's `String` class, providing additional methods for advanced string operations.
+- **`HString`**: A rich wrapper around Java's `String` class, providing additional methods for advanced string operations.
   - **String Operations**: Methods for case-insensitive replacement, substring extraction, joining sequences, hex conversion, and more.
   - **Character and Byte Manipulation**: Supports converting strings to bytes with specific encodings and character manipulation like reversing.
   - **Formatting**: Provides static methods for formatted string creation with `format()` similar to `String.format()`.
 
 #### Example Usage
 
-To use `RString` for advanced string operations:
+To use `HString` for advanced string operations:
 
 ```java
-import org.cultro.roulette.lang.RString;
+import org.cultro.helix.lang.HString;
+import org.cultro.helix.lang.HString;
 
-public class RStringExample {
-    public static void main(String[] args) {
-        RString rstr = new RString("Hello World");
-        RString replaced = rstr.replaceIgnoreCase("world", "Java");
-        System.out.println(replaced); // Outputs: Hello Java
-    }
+public class HStringExample {
+  public static void main(String[] args) {
+    HString rstr = new HString("Hello World");
+    HString replaced = rstr.replaceIgnoreCase("world", "Java");
+    System.out.println(replaced); // Outputs: Hello Java
+  }
 }
 ```
 
@@ -145,7 +146,7 @@ public class RStringExample {
 To use the `Validate` class for validation:
 
 ```java
-import org.cultro.roulette.lang.Validate;
+import org.cultro.helix.lang.Validate;
 
 public class ValidateExample {
     public static void main(String[] args) {
@@ -181,8 +182,8 @@ The **Reflection Module** facilitates introspection, dynamic invocation, and met
 To dynamically create an instance of a class using a constructor:
 
 ```java
-import org.cultro.roulette.reflection.invokers.ConstructorInvoker;
-import org.cultro.roulette.lang.ReflectionException;
+import org.cultro.helix.reflection.invokers.ConstructorInvoker;
+import org.cultro.helix.lang.ReflectionException;
 
 public class ConstructorInvokerExample {
     public static void main(String[] args) {
@@ -199,8 +200,8 @@ public class ConstructorInvokerExample {
 To get and set a field value using reflection:
 
 ```java
-import org.cultro.roulette.reflection.invokers.FieldAccessor;
-import org.cultro.roulette.lang.ReflectionException;
+import org.cultro.helix.reflection.invokers.FieldAccessor;
+import org.cultro.helix.lang.ReflectionException;
 
 public class FieldAccessorExample {
     public static void main(String[] args) {
@@ -219,8 +220,8 @@ public class FieldAccessorExample {
 To create a proxy for an interface:
 
 ```java
-import org.cultro.roulette.reflection.proxies.ProxyFactory;
-import org.cultro.roulette.lang.ReflectionException;
+import org.cultro.helix.reflection.proxies.ProxyFactory;
+import org.cultro.helix.lang.ReflectionException;
 
 public class ProxyFactoryExample {
     public static void main(String[] args) {
@@ -275,8 +276,8 @@ The **Security Module** offers robust encryption and hashing functionalities to 
 To encrypt and decrypt using AES:
 
 ```java
-import org.cultro.roulette.security.encryption.symmetric.aes.AESCipher;
-import org.cultro.roulette.security.encryption.symmetric.aes.AESEncryptionMode;
+import org.cultro.helix.security.encryption.symmetric.aes.AESCipher;
+import org.cultro.helix.security.encryption.symmetric.aes.AESEncryptionMode;
 
 public class AESExample {
     public static void main(String[] args) {
@@ -298,7 +299,7 @@ public class AESExample {
 To create a hash using SHA-256:
 
 ```java
-import org.cultro.roulette.security.hashing.sha.SHA256Hasher;
+import org.cultro.helix.security.hashing.sha.SHA256Hasher;
 
 public class HashingExample {
     public static void main(String[] args) {
@@ -338,7 +339,7 @@ The **Utils Module** provides a set of utility classes designed to assist in var
 To merge two arrays using `ArrayUtils`:
 
 ```java
-import org.cultro.roulette.util.ArrayUtils;
+import org.cultro.helix.util.ArrayUtils;
 
 public class ArrayUtilsExample {
     public static void main(String[] args) {

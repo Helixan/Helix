@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.cultro</groupId>
-    <artifactId>Roulette</artifactId>
+    <artifactId>Helix</artifactId>
     <version>1.0</version>
 
     <properties>
