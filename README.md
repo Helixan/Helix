@@ -332,6 +332,7 @@ The **Utils Module** provides a set of utility classes designed to assist in var
 - **`ObjectUtils`**: Provides deep copy utilities, type checks, and utility methods to manipulate sets and lists of objects.
 - **`ReflectionUtils`**: Offers common reflection operations, such as finding methods or fields in classes, getting metadata, and dynamically loading classes from packages.
 - **`StringUtils`**: Provides string-related utilities like calculating edit distance, joining sequences, and checking if a string can be parsed as a number.
+- **`ThreadUtils`**: Utilities for thread management, safe sleeps, and convenient executor creation.
 - **`TypeUtils`**: Utility for checking type compatibility, converting primitives to their wrapper types, and other type-related operations.
 
 #### Example Usage
